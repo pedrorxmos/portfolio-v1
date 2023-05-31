@@ -3,5 +3,5 @@
 }
 
 @function fs($size-name) {
-  @return map-get($sizes-map, $size-name);
+  @return map-get($size-map, $size-name);
 }
