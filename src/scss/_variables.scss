@@ -1,0 +1,83 @@
+/* COLOR PROPERTIES */
+
+// Greyscale
+$grey0: #1a1a1a;
+$grey20: #4d4d4d;
+$grey40: #808080;
+$grey60: #b3b3b3;
+$grey80: #e6e6e6;
+$grey100: #fefefe;
+
+// Color palette
+$purple0: #5940a5;
+$purple20: #6a4fbb;
+$purple40: #7f68c5;
+$purple60: #9683cf;
+$purple80: #ab9cd9;
+$purple100: #c1b5e3;
+
+$yellow0: #d6b200;
+$yellow20: #fad000;
+$yellow40: #ffd91f;
+$yellow60: #ffdf42;
+$yellow80: #ffe566;
+$yellow100: #ffeb8a;
+
+$dark0: #585755;
+$dark20: #6a6967;
+$dark40: #7d7b78;
+$dark60: #8e8d8a;
+$dark80: #a09f9c;
+$dark100: #b1b1af;
+
+$light0: #acac9a;
+$light20: #bcbcae;
+$light40: #cdcdc1;
+$light60: #ddddd5;
+$light80: #edede9;
+$light100: #f6f6f4;
+
+$default-font-size: 16px;
+
+$color-map: (
+  'grey0': $grey0,
+  'grey20': $grey20,
+  'grey40': $grey40,
+  'grey60': $grey60,
+  'grey80': $grey80,
+  'grey100': $grey100,
+  'purple0': $purple0,
+  'purple20': $purple20,
+  'purple40': $purple40,
+  'purple60': $purple60,
+  'purple80': $purple80,
+  'purple100': $purple100,
+  'yellow0': $yellow0,
+  'yellow20': $yellow20,
+  'yellow40': $yellow40,
+  'yellow60': $yellow60,
+  'yellow80': $yellow80,
+  'yellow100': $yellow100,
+  'dark0': $dark0,
+  'dark20': $dark20,
+  'dark40': $dark40,
+  'dark60': $dark60,
+  'dark80': $dark80,
+  'dark100': $dark100,
+  'light0': $light0,
+  'light20': $light20,
+  'light40': $light40,
+  'light60': $light60,
+  'light80': $light80,
+  'light100': $light100
+);
+
+$size-map: (
+	'x-small': 0.75, // h6
+	'small': 0.833333, // small
+	'normal': 1, // default & h5
+	'x-normal': 1.2, // big
+	'big': 1.333333, // h4
+	'x-big': 1.777778, // h3
+	'huge': 2.369 // h2 & h1
+);
