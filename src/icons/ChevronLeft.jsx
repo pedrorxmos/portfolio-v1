@@ -4,15 +4,13 @@ const SvgChevronLeft = (props) => (
     width={48}
     height={48}
     fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
     {...props}
   >
-    <path
-      stroke="#1A1A1A"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M30 36 18 24l12-12"
-    />
+    <path d="M30 36 18 24l12-12" />
   </svg>
 );
 export default SvgChevronLeft;

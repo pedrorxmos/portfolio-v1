@@ -4,15 +4,13 @@ const SvgPlus = (props) => (
     width={48}
     height={48}
     fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
     {...props}
   >
-    <path
-      stroke="#1A1A1A"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M24 10v28M10 24h28"
-    />
+    <path d="M24 10v28M10 24h28" />
   </svg>
 );
 export default SvgPlus;
