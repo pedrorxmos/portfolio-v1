@@ -1,0 +1,31 @@
+h1,
+.h1,
+h2,
+.h2 {
+	font-family: $headers-font-family;
+	font-size: fs('huge');
+}
+
+h3,
+.h3 {
+	font-family: $headers-font-family;
+	font-size: fs('x-big');
+}
+
+h4,
+.h4 {
+	font-family: $headers-font-family;
+	font-size: fs('big');
+}
+
+h5,
+.h5 {
+	font-family: $headers-font-family;
+	font-size: fs('normal');
+}
+
+h6,
+.h6 {
+	font-family: $headers-font-family;
+	font-size: fs('x-small');
+}

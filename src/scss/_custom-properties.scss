@@ -1,9 +1,9 @@
 :root {
   
-  --bg-color: color('light80');
-  --font-color: color('dark0');
+  --bg-color: #{color('light80')};
+  --font-color: #{color('dark0')};
 
-  --purple-color: color('purple60');
-  --yellow-color: color('yellow60');
-  --light-color: color('light100');
+  --purple-color: #{color('purple60')};
+  --yellow-color: #{color('yellow60')};
+  --light-color: #{color('light100')};
 }
