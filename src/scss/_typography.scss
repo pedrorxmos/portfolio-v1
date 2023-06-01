@@ -9,3 +9,10 @@ small {
 big {
 	font-size: fs('x-normal');
 }
+
+ul,
+li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}

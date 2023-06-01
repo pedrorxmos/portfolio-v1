@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.topbar {
+  @include d-flex(row, 0);
+  justify-content: space-between;
+  align-items: center;
+}
