@@ -1,0 +1,33 @@
+.svg {
+	color: var(--font-color);
+
+	&.svg-x-small {
+		//20px
+		height: 1.25rem;
+		width: 1.25rem;
+	}
+
+	&.svg-small {
+		//24px
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+
+	&.svg-medium {
+		//32px
+		height: 2rem;
+		width: 2rem;
+	}
+
+	&.svg-big {
+		//36px
+		height: 2.25rem;
+		width: 2.25rem;
+	}
+
+	&.svg-x-big {
+		//48px
+		height: 3rem;
+		width: 3rem;
+	}
+}

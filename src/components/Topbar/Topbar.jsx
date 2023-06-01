@@ -14,7 +14,7 @@ function Topbar() {
 							</a>
 						</li>
 						<li className="nav--item">
-							<SvgSun />
+							<SvgSun title="Light Mode" size="x-small" />
 						</li>
 						<li className="nav--item">menu</li>
 					</ul>
