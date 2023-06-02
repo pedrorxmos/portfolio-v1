@@ -24,7 +24,7 @@ function Button({ type, value, color, icon, size, action }) {
 				</button>
 			)}
 			{type === 'link' && (
-				<a href={action} className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}`} target="_blank" rel="noreferrer">
+				<a href={action} className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}`} target="_blank" rel="noreferrer">
 					{icon ? iconMap[icon] : ''}
 					{value}
 				</a>
