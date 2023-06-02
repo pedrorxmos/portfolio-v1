@@ -13,13 +13,19 @@
 	.logo {
 		font-family: $headers-font-family;
 		font-weight: 500;
+		font-size: fs('big');
 	}
 
 	.nav {
+		@include d-flex(row, 0);
+		justify-content: flex-end;
+
 		.nav--items {
 			@include d-flex(row, 1.5rem);
 			justify-content: flex-end;
 			align-items: center;
+			overflow: hidden;
+			animation: width 0.3s;
 
 			&.nav__actions {
 				display: flex;
@@ -39,6 +45,9 @@
 					background: none;
 					color: inherit;
 					cursor: pointer;
+					font-family: $main-font-family;
+					font-size: fs('normal');
+					font-weight: 300;
 				}
 			}
 		}

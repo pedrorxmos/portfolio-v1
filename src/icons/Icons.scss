@@ -2,19 +2,26 @@
 	color: var(--font-color);
 
 	&.svg-x-small {
+		//16px
+		height: 1rem;
+		width: 1rem;
+		stroke-width: 4;
+	}
+
+	&.svg-small {
 		//20px
 		height: 1.25rem;
 		width: 1.25rem;
 		stroke-width: 3;
 	}
 
-	&.svg-small {
+	&.svg-normal {
 		//24px
 		height: 1.5rem;
 		width: 1.5rem;
 	}
 
-	&.svg-medium {
+	&.svg-x-normal {
 		//32px
 		height: 2rem;
 		width: 2rem;

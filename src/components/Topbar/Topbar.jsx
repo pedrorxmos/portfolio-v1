@@ -2,11 +2,12 @@ import SvgSun from '../../icons/Sun';
 import SvgCross from '../../icons/Cross';
 import SvgMenu from '../../icons/Menu';
 import './Topbar.scss';
+import Button from '../Button/Button';
 
 function Topbar() {
-	const nav = document.querySelector('.nav');
 	const toggleMenu = () => {
-		nav.classList.toggle('nav-open');
+		console.log('toggle menu');
+		document.querySelector('.nav').classList.toggle('nav-open');
 	};
 
 	return (
@@ -21,12 +22,12 @@ function Topbar() {
 							</a>
 						</li>
 						<li className="nav--item">
-							<SvgSun title="Light Mode" size="x-small" />
+							<SvgSun title="Light Mode" size="small" />
 						</li>
 						<li className="nav--item">
 							<button className="nav__action" onClick={toggleMenu} title="open menu">
 								menu
-								<SvgMenu title="Open menu" size="x-small" />
+								<SvgMenu title="Open menu" size="small" />
 							</button>
 						</li>
 					</ul>
@@ -35,10 +36,12 @@ function Topbar() {
 						<li className="nav--item">about</li>
 						<li className="nav--item">work</li>
 						<li className="nav--item">contact</li>
-						<li className="nav--item">resume</li>
+						<li className="nav--item">
+							<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
+						</li>
 						<li className="nav--item">
 							<button className="nav__action" onClick={toggleMenu}>
-								<SvgCross title="Close menu" size="x-small" />
+								<SvgCross title="Close menu" size="small" />
 							</button>
 						</li>
 					</ul>

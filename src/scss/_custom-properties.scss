@@ -1,9 +1,13 @@
 :root {
-  
-  --bg-color: #{color('light80')};
-  --font-color: #{color('dark0')};
+	--bg-color: #{color('light80')};
+	--light-color-40: #{color-opacity('light100', 0.4)};
+	--light-color-50: #{color-opacity('light100', 0.5)};
+	--light-color-80: #{color-opacity('light100', 0.8)};
+	--font-color: #{color('dark0')};
 
-  --purple-color: #{color('purple60')};
-  --yellow-color: #{color('yellow60')};
-  --light-color: #{color('light100')};
+	--purple-color: #{color('purple60')};
+	--yellow-color: #{color('yellow20')};
+
+	--threejs-purple: #{color('purple100')};
+	--threejs-yellow: #{color('yellow100')};
 }
