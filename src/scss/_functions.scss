@@ -2,6 +2,10 @@
 	@return map-get($color-map, $color-name);
 }
 
+@function color-opacity($color-name, $opacity) {
+	@return rgba(map-get($color-map, $color-name), $opacity);
+}
+
 @function fs($size-name) {
 	@return map-get($size-map, $size-name) * $default-font-size;
 }
