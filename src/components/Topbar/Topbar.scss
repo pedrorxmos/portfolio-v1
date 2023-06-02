@@ -1,0 +1,58 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.topbar {
+	@include d-flex(row, 0);
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1280px;
+	height: 84px;
+	margin: 0 auto;
+
+	.logo {
+		font-family: $headers-font-family;
+		font-weight: 500;
+	}
+
+	.nav {
+		.nav--items {
+			@include d-flex(row, 1.5rem);
+			justify-content: flex-end;
+			align-items: center;
+
+			&.nav__actions {
+				display: flex;
+			}
+
+			&.nav__menu {
+				display: none;
+			}
+
+			.nav--item {
+				cursor: pointer;
+
+				.nav__action {
+					@include d-flex(row, 4px);
+					align-items: center;
+					border: none;
+					background: none;
+					color: inherit;
+					cursor: pointer;
+				}
+			}
+		}
+
+		&.nav-open {
+			.nav--items {
+				&.nav__actions {
+					display: none;
+				}
+
+				&.nav__menu {
+					display: flex;
+				}
+			}
+		}
+	}
+}

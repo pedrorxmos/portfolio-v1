@@ -1,83 +1,85 @@
 /* COLOR PROPERTIES */
 
 // Greyscale
-$grey0: #1a1a1a;
-$grey20: #4d4d4d;
-$grey40: #808080;
-$grey60: #b3b3b3;
-$grey80: #e6e6e6;
-$grey100: #fefefe;
+$grey0: hsl(0, 0%, 10%);
+$grey20: hsl(0, 0%, 30%);
+$grey40: hsl(0, 0%, 50%);
+$grey60: hsl(0, 0%, 70%);
+$grey80: hsl(0, 0%, 90%);
+$grey100: hsl(0, 0%, 100%);
 
 // Color palette
-$purple0: #5940a5;
-$purple20: #6a4fbb;
-$purple40: #7f68c5;
-$purple60: #9683cf;
-$purple80: #ab9cd9;
-$purple100: #c1b5e3;
+$purple0: hsl(255, 44%, 45%);
+$purple20: hsl(255, 44%, 52%);
+$purple40: hsl(255, 44%, 59%);
+$purple60: hsl(255, 44%, 66%);
+$purple80: hsl(255, 45%, 73%);
+$purple100: hsl(256, 45%, 80%);
 
-$yellow0: #d6b200;
-$yellow20: #fad000;
-$yellow40: #ffd91f;
-$yellow60: #ffdf42;
-$yellow80: #ffe566;
-$yellow100: #ffeb8a;
+$yellow0: hsl(50, 100%, 42%);
+$yellow20: hsl(50, 100%, 49%);
+$yellow40: hsl(50, 100%, 56%);
+$yellow60: hsl(50, 100%, 63%);
+$yellow80: hsl(50, 100%, 70%);
+$yellow100: hsl(50, 100%, 77%);
 
-$dark0: #585755;
-$dark20: #6a6967;
-$dark40: #7d7b78;
-$dark60: #8e8d8a;
-$dark80: #a09f9c;
-$dark100: #b1b1af;
+$dark0: hsl(40, 2%, 34%);
+$dark20: hsl(40, 1%, 41%);
+$dark40: hsl(36, 2%, 48%);
+$dark60: hsl(45, 2%, 55%);
+$dark80: hsl(45, 2%, 62%);
+$dark100: hsl(60, 1%, 69%);
 
-$light0: #acac9a;
-$light20: #bcbcae;
-$light40: #cdcdc1;
-$light60: #ddddd5;
-$light80: #edede9;
-$light100: #f6f6f4;
+$light0: hsl(60, 10%, 64%);
+$light20: hsl(60, 9%, 71%);
+$light40: hsl(60, 11%, 78%);
+$light60: hsl(60, 11%, 85%);
+$light80: hsl(60, 10%, 92%);
+$light100: hsl(60, 10%, 96%);
 
 $default-font-size: 16px;
+$main-font-family: 'Outfit', sans-serif;
+$headers-font-family: 'IBM Plex Sans Condensed', sans-serif;
 
 $color-map: (
-  'grey0': $grey0,
-  'grey20': $grey20,
-  'grey40': $grey40,
-  'grey60': $grey60,
-  'grey80': $grey80,
-  'grey100': $grey100,
-  'purple0': $purple0,
-  'purple20': $purple20,
-  'purple40': $purple40,
-  'purple60': $purple60,
-  'purple80': $purple80,
-  'purple100': $purple100,
-  'yellow0': $yellow0,
-  'yellow20': $yellow20,
-  'yellow40': $yellow40,
-  'yellow60': $yellow60,
-  'yellow80': $yellow80,
-  'yellow100': $yellow100,
-  'dark0': $dark0,
-  'dark20': $dark20,
-  'dark40': $dark40,
-  'dark60': $dark60,
-  'dark80': $dark80,
-  'dark100': $dark100,
-  'light0': $light0,
-  'light20': $light20,
-  'light40': $light40,
-  'light60': $light60,
-  'light80': $light80,
-  'light100': $light100
+	'grey0': $grey0,
+	'grey20': $grey20,
+	'grey40': $grey40,
+	'grey60': $grey60,
+	'grey80': $grey80,
+	'grey100': $grey100,
+	'purple0': $purple0,
+	'purple20': $purple20,
+	'purple40': $purple40,
+	'purple60': $purple60,
+	'purple80': $purple80,
+	'purple100': $purple100,
+	'yellow0': $yellow0,
+	'yellow20': $yellow20,
+	'yellow40': $yellow40,
+	'yellow60': $yellow60,
+	'yellow80': $yellow80,
+	'yellow100': $yellow100,
+	'dark0': $dark0,
+	'dark20': $dark20,
+	'dark40': $dark40,
+	'dark60': $dark60,
+	'dark80': $dark80,
+	'dark100': $dark100,
+	'light0': $light0,
+	'light20': $light20,
+	'light40': $light40,
+	'light60': $light60,
+	'light80': $light80,
+	'light100': $light100,
 );
 
 $size-map: (
-	'x-small': 0.75, // h6
-	'small': 0.833333, // small
-	'normal': 1, // default & h5
-	'x-normal': 1.2, // big
-	'big': 1.333333, // h4
-	'x-big': 1.777778, // h3
-	'huge': 2.369 // h2 & h1
+	'x-small': 0.75,
+	'small': 0.833333,
+	'normal': 1,
+	'x-normal': 1.2,
+	'big': 1.333333,
+	'x-big': 1.777778,
+	'huge': 2.369,
 );
