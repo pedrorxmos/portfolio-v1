@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "svgr": "npx @svgr/cli --out-dir ./src/icons --ignore-existing --jsx-runtime automatic --no-index --ext jsx -- ./src/assets/svg",
+    "svgr": "npx @svgr/cli --out-dir ./src/icons --ignore-existing --jsx-runtime automatic --no-svgo --no-index --ext jsx -- ./src/assets/svg",
     "preview": "vite preview"
   },
   "dependencies": {
