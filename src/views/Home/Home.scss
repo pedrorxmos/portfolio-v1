@@ -10,9 +10,10 @@
 		position: absolute;
 		left: -10px;
 		bottom: -3px;
-		line-height: 77.5%;
+		@include d-flex(column, 0);
 		font-weight: 400;
 		width: fit-content;
+		line-height: 77.5%;
 	}
 
 	.home__prefix {
