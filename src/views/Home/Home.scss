@@ -27,4 +27,20 @@
 		bottom: 495px;
 		color: var(--purple-color);
 	}
+
+	.home__social {
+		@include d-flex(column, 1.5rem);
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+		position: absolute;
+		right: 48px;
+		bottom: 32px;
+
+		a {
+			padding: 12px;
+			background: var(--light-color-50);
+			border-radius: 50%;
+		}
+	}
 }
