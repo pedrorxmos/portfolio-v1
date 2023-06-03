@@ -17,30 +17,30 @@ function Topbar() {
 				<nav className="nav">
 					<ul className="nav--items nav__actions">
 						<li className="nav--item">
-							<a href="#locale" className="nav--item__locale" alt="change language">
+							<a href="#locale" className="nav--item__locale cursor-target" alt="change language">
 								en
 							</a>
 						</li>
-						<li className="nav--item">
+						<li className="nav--item cursor-target">
 							<SvgSun title="Light Mode" size="small" />
 						</li>
 						<li className="nav--item">
-							<button className="nav__action" onClick={toggleMenu} title="open menu">
+							<button className="nav__action cursor-target" onClick={toggleMenu} title="open menu">
 								menu
 								<SvgMenu title="Open menu" size="small" />
 							</button>
 						</li>
 					</ul>
 					<ul className="nav--items nav__menu">
-						<li className="nav--item">home</li>
-						<li className="nav--item">about</li>
-						<li className="nav--item">work</li>
-						<li className="nav--item">contact</li>
+						<li className="nav--item cursor-target">home</li>
+						<li className="nav--item cursor-target">about</li>
+						<li className="nav--item cursor-target">work</li>
+						<li className="nav--item cursor-target">contact</li>
 						<li className="nav--item">
 							<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
 						</li>
 						<li className="nav--item">
-							<button className="nav__action" onClick={toggleMenu}>
+							<button className="nav__action cursor-target" onClick={toggleMenu}>
 								<SvgCross title="Close menu" size="small" />
 							</button>
 						</li>
