@@ -1,7 +1,10 @@
+import Footer from '../components/Footer/Footer';
+
 function Contact() {
 	return (
 		<>
-			<h1>Contact.jsx</h1>
+			<main className="contact">contact.jsx</main>
+			<Footer />
 		</>
 	);
 }

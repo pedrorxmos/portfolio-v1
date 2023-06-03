@@ -14,4 +14,12 @@ body {
 	font-weight: 300;
 	color: var(--font-color);
 	margin: 0;
+	overflow: hidden;
+}
+main {
+	height: calc(100vh - 84px - 44px);
+
+	&.home {
+		height: calc(100vh - 84px);
+	}
 }
