@@ -1,0 +1,30 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.home {
+	position: relative;
+
+	.home__name {
+		font-size: 21.333125rem;
+		position: absolute;
+		left: -10px;
+		bottom: -3px;
+		line-height: 77.5%;
+		font-weight: 400;
+		width: fit-content;
+	}
+
+	.home__prefix {
+		position: absolute;
+		left: 18px;
+		bottom: 525px;
+	}
+
+	.home__title {
+		position: absolute;
+		left: 544px;
+		bottom: 495px;
+		color: var(--purple-color);
+	}
+}
