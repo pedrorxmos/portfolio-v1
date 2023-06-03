@@ -1,7 +1,10 @@
+import Footer from '../components/Footer/Footer';
+
 function Work() {
 	return (
 		<>
-			<h1>Work.jsx</h1>
+			<main className="work">work.jsx</main>
+			<Footer />
 		</>
 	);
 }
