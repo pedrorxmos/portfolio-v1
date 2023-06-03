@@ -6,6 +6,7 @@ import Home from './views/Home.jsx';
 import About from './views/About.jsx';
 import Work from './views/Work.jsx';
 import Contact from './views/Contact.jsx';
+import Project from './views/Project.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
 			{
 				path: 'work',
 				element: <Work />,
+			},
+			{
+				path: 'work/:id',
+				element: <Project />,
 			},
 			{
 				path: 'contact',
