@@ -14,7 +14,11 @@ function Topbar() {
 	return (
 		<>
 			<header className="topbar">
-				<span className="logo">Pedro Ramos</span>
+				<span className="logo">
+					<Link to="/" className="cursor-target">
+						Pedro Ramos
+					</Link>
+				</span>
 				<nav className="nav">
 					<ul className="nav--items nav__actions">
 						<li className="nav--item">
@@ -39,17 +43,17 @@ function Topbar() {
 							</Link>
 						</li>
 						<li className="nav--item">
-							<Link to="about" className="cursor-target">
+							<Link to="/about" className="cursor-target">
 								about
 							</Link>
 						</li>
 						<li className="nav--item">
-							<Link to="work" className="cursor-target">
+							<Link to="/work" className="cursor-target">
 								work
 							</Link>
 						</li>
 						<li className="nav--item">
-							<Link to="contact" className="cursor-target">
+							<Link to="/contact" className="cursor-target">
 								contact
 							</Link>
 						</li>

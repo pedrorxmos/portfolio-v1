@@ -4,6 +4,15 @@
 	box-sizing: border-box;
 }
 
+::-moz-selection {
+	/* Code for Firefox */
+	background: var(--text-selected-color);
+}
+
+::selection {
+	background: var(--text-selected-color);
+}
+
 html {
 	font-size: fs('normal');
 }

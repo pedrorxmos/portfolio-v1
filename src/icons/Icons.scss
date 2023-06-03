@@ -24,19 +24,20 @@
 		//32px
 		height: 2rem;
 		width: 2rem;
+		stroke-width: 1.25;
 	}
 
 	&.svg-big {
 		//36px
 		height: 2.25rem;
 		width: 2.25rem;
-		stroke-width: 2;
+		stroke-width: 1;
 	}
 
 	&.svg-x-big {
 		//48px
 		height: 3rem;
 		width: 3rem;
-		stroke-width: 2;
+		stroke-width: 1;
 	}
 }
