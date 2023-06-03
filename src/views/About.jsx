@@ -1,7 +1,10 @@
+import Footer from '../components/Footer/Footer';
+
 function About() {
 	return (
 		<>
-			<h1>About.jsx</h1>
+			<main>about.jsx</main>
+			<Footer />
 		</>
 	);
 }
