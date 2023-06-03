@@ -2,9 +2,28 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgSun = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-sun`}
+	>
 		<title>{title}</title>
-		<path d="M24 34c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10ZM24 2v4M24 42v4M8.44 8.44l2.84 2.84M36.72 36.72l2.84 2.84M2 24h4M42 24h4M8.44 39.56l2.84-2.84M36.72 11.28l2.84-2.84" />
+		<circle cx={12} cy={12} r={5} />
+		<line x1={12} y1={1} x2={12} y2={3} />
+		<line x1={12} y1={21} x2={12} y2={23} />
+		<line x1={4.22} y1={4.22} x2={5.64} y2={5.64} />
+		<line x1={18.36} y1={18.36} x2={19.78} y2={19.78} />
+		<line x1={1} y1={12} x2={3} y2={12} />
+		<line x1={21} y1={12} x2={23} y2={12} />
+		<line x1={4.22} y1={19.78} x2={5.64} y2={18.36} />
+		<line x1={18.36} y1={5.64} x2={19.78} y2={4.22} />
 	</svg>
 );
 export default SvgSun;

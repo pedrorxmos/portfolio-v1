@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './Icons.scss';
 
-const SvgCross = ({ title, color, size }) => (
+const SvgSend = ({ title, color, size }) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width={24}
@@ -12,16 +12,16 @@ const SvgCross = ({ title, color, size }) => (
 		strokeWidth={2}
 		strokeLinecap="round"
 		strokeLinejoin="round"
-		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-x`}
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-send`}
 	>
 		<title>{title}</title>
-		<line x1={18} y1={6} x2={6} y2={18} />
-		<line x1={6} y1={6} x2={18} y2={18} />
+		<line x1={22} y1={2} x2={11} y2={13} />
+		<polygon points="22 2 15 22 11 13 2 9 22 2" />
 	</svg>
 );
-export default SvgCross;
+export default SvgSend;
 
-SvgCross.propTypes = {
+SvgSend.propTypes = {
 	title: PropTypes.string.isRequired,
 	color: PropTypes.string,
 	size: PropTypes.string,

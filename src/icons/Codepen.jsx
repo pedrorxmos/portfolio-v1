@@ -2,11 +2,24 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgCodepen = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-codepen`}
+	>
 		<title>{title}</title>
-		<path d="m24 4 20 13v14L24 44 4 31V17L24 4ZM24 44V31" />
-		<path d="M44 17 24 31 4 17" />
-		<path d="m4 31 20-14 20 14M24 4v13" />
+		<polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+		<line x1={12} y1={22} x2={12} y2={15.5} />
+		<polyline points="22 8.5 12 15.5 2 8.5" />
+		<polyline points="2 15.5 12 8.5 22 15.5" />
+		<line x1={12} y1={2} x2={12} y2={8.5} />
 	</svg>
 );
 export default SvgCodepen;

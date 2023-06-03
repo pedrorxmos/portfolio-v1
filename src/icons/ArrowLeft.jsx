@@ -2,9 +2,21 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgArrowLeft = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-arrow-left`}
+	>
 		<title>{title}</title>
-		<path d="M38 24H10M24 38 10 24l14-14" />
+		<line x1={19} y1={12} x2={5} y2={12} />
+		<polyline points="12 19 5 12 12 5" />
 	</svg>
 );
 export default SvgArrowLeft;

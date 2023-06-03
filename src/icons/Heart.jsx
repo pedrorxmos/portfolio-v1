@@ -2,9 +2,20 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgHeart = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-heart`}
+	>
 		<title>{title}</title>
-		<path d="M41.68 9.22a11 11 0 0 0-15.56 0L24 11.34l-2.12-2.12A11.003 11.003 0 1 0 6.32 24.78l2.12 2.12L24 42.46 39.56 26.9l2.12-2.12a11 11 0 0 0 0-15.56Z" />
+		<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
 	</svg>
 );
 export default SvgHeart;

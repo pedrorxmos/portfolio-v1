@@ -2,9 +2,20 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgGithub = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-github`}
+	>
 		<title>{title}</title>
-		<path d="M18 38C8 41 8 33 4 32m28 12v-7.74a6.74 6.74 0 0 0-1.88-5.22c6.28-.7 12.88-3.08 12.88-14a10.88 10.88 0 0 0-3-7.5A10.14 10.14 0 0 0 39.82 2S37.46 1.3 32 4.96a26.76 26.76 0 0 0-14 0C12.54 1.3 10.18 2 10.18 2A10.14 10.14 0 0 0 10 9.54a10.88 10.88 0 0 0-3 7.56c0 10.84 6.6 13.22 12.88 14A6.74 6.74 0 0 0 18 36.26V44" />
+		<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
 	</svg>
 );
 export default SvgGithub;

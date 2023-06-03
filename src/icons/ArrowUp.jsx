@@ -2,9 +2,21 @@ import PropTypes from 'prop-types';
 import './Icons.scss';
 
 const SvgArrowUp = ({ title, color, size }) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={48} height={48} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''}`}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={24}
+		height={24}
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth={2}
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={`svg ${size ? `svg-${size}` : ''} ${color ? `color-${color}` : ''} feather feather-arrow-up`}
+	>
 		<title>{title}</title>
-		<path d="M24 38V10M10 24l14-14 14 14" />
+		<line x1={12} y1={19} x2={12} y2={5} />
+		<polyline points="5 12 12 5 19 12" />
 	</svg>
 );
 export default SvgArrowUp;
