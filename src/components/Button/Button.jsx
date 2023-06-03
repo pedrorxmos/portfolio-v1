@@ -18,13 +18,18 @@ function Button({ type, value, color, icon, size, action }) {
 	return (
 		<>
 			{type !== 'link' && (
-				<button className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}`} onClick={action}>
+				<button className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''} cursor-target`} onClick={action}>
 					${icon ? iconMap[icon] : ''}
 					{value}
 				</button>
 			)}
 			{type === 'link' && (
-				<a href={action} className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}`} target="_blank" rel="noreferrer">
+				<a
+					href={action}
+					className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''} cursor-target`}
+					target="_blank"
+					rel="noreferrer"
+				>
 					{icon ? iconMap[icon] : ''}
 					{value}
 				</a>
