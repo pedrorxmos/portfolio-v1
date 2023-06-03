@@ -3,6 +3,7 @@ import SvgCross from '../../icons/Cross';
 import SvgMenu from '../../icons/Menu';
 import './Topbar.scss';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 function Topbar() {
 	const toggleMenu = () => {
@@ -32,10 +33,26 @@ function Topbar() {
 						</li>
 					</ul>
 					<ul className="nav--items nav__menu">
-						<li className="nav--item cursor-target">home</li>
-						<li className="nav--item cursor-target">about</li>
-						<li className="nav--item cursor-target">work</li>
-						<li className="nav--item cursor-target">contact</li>
+						<li className="nav--item">
+							<Link to="/" className="cursor-target">
+								home
+							</Link>
+						</li>
+						<li className="nav--item">
+							<Link to="about" className="cursor-target">
+								about
+							</Link>
+						</li>
+						<li className="nav--item">
+							<Link to="work" className="cursor-target">
+								work
+							</Link>
+						</li>
+						<li className="nav--item">
+							<Link to="contact" className="cursor-target">
+								contact
+							</Link>
+						</li>
 						<li className="nav--item">
 							<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
 						</li>
