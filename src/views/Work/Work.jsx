@@ -1,7 +1,7 @@
 import { collection } from 'firebase/firestore';
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 
-import SvgArrowDown from '../../icons/ArrowDown';
+import SvgChevronDown from '../../icons/ChevronDown';
 import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 
@@ -35,7 +35,7 @@ function Work() {
 								<span>Filter:</span>
 								<button className="cursor-target dropdown">
 									All
-									<SvgArrowDown size="x-small" title="dropdown icon" />
+									<SvgChevronDown size="x-small" title="dropdown icon" />
 								</button>
 							</div>
 						</div>

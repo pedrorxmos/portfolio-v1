@@ -42,6 +42,20 @@
 				.work__title {
 					@include d-flex(column, 6px);
 				}
+
+				.work__filter {
+					@include d-flex(row, 0.75rem);
+					align-items: center;
+
+					.dropdown {
+						background-color: var(--light-color-50);
+						border: none;
+						color: var(--font-color);
+						@include d-flex(row, 10px);
+						padding: 4px 8px;
+						border-radius: 10px;
+					}
+				}
 			}
 		}
 	}
