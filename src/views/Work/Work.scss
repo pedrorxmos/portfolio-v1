@@ -17,7 +17,7 @@
 		.work__img {
 			flex: calc(45% - 8px);
 			width: 100%;
-			padding: 0 1.5rem 8rem;
+			padding: 0 1.5rem 4rem;
 
 			.selected-work {
 				width: 100%;
@@ -26,8 +26,9 @@
 				background-color: transparent;
 				background-size: cover;
 				background-position: center;
-				transition: background-image 1s;
+				transition: background 1s;
 				border-radius: 8px;
+				@include prefix(mask-image, linear-gradient(180deg, white 0%, white 60%, transparent 90%));
 			}
 		}
 

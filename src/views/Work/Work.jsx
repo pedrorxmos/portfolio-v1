@@ -16,7 +16,7 @@ function Work() {
 			<main className="work main">
 				<div className="work__container">
 					<div className="work__img">
-						<div style={{ backgroundImage: `url('/img/${'about-me'}.webp')` }} className="selected-work"></div>
+						<div style={{ backgroundImage: `url('/img/about-me.webp')` }} className="selected-work"></div>
 					</div>
 					<div className="work__projects">
 						<div className="work__header">
