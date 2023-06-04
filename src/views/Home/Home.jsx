@@ -21,19 +21,19 @@ function Home() {
 
 				<div className="home__social">
 					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgGithub size="x-normal" />
+						<SvgGithub size="x-normal" title="github" />
 					</a>
 					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgLinkedin size="x-normal" />
+						<SvgLinkedin size="x-normal" title="linkedin" />
 					</a>
 					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgCodepen size="x-normal" />
+						<SvgCodepen size="x-normal" title="codepen" />
 					</a>
 					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgTwitter size="x-normal" />
+						<SvgTwitter size="x-normal" title="twitter" />
 					</a>
 					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgMail size="x-normal" />
+						<SvgMail size="x-normal" title="mail" />
 					</a>
 				</div>
 			</main>
