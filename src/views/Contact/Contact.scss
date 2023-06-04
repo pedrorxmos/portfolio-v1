@@ -1,0 +1,21 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.contact {
+	@include d-flex(row, 24px);
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 216px;
+	padding-right: 354px;
+
+	.contact--section {
+		max-width: 524px;
+		width: 100%;
+
+		.contact__form {
+			@include d-flex(column, 0.75rem);
+			align-items: center;
+		}
+	}
+}

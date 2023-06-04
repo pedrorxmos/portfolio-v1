@@ -19,7 +19,7 @@ function Button({ type, value, color, icon, size, action }) {
 		<>
 			{type !== 'link' && (
 				<button className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''} cursor-target`} onClick={action}>
-					${icon ? iconMap[icon] : ''}
+					{icon ? iconMap[icon] : ''}
 					{value}
 				</button>
 			)}

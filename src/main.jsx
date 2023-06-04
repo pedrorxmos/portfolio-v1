@@ -6,7 +6,7 @@ import App from './App.jsx';
 import Home from './views/Home/Home.jsx';
 import About from './views/About/About.jsx';
 import Work from './views/Work/Work.jsx';
-import Contact from './views/Contact.jsx';
+import Contact from './views/Contact/Contact.jsx';
 import Project from './views/Project.jsx';
 
 const firebaseConfig = {
