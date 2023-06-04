@@ -21,8 +21,14 @@
 			border-bottom: 3px solid var(--purple-color);
 			padding: 3rem 2.25rem;
 
+			* {
+				flex-grow: 0;
+				flex-shrink: 1;
+			}
+
 			.card__info {
 				@include d-flex(column, 0.75rem);
+				width: 100%;
 			}
 		}
 	}
