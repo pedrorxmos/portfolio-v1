@@ -1,0 +1,29 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.about {
+	@include d-flex(column, 24px);
+	justify-content: center;
+	align-items: center;
+	padding: 0 108px;
+
+	.about__items {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-rows: 1fr;
+		gap: 24px;
+
+		.about__card {
+			@include d-flex(row, 1rem);
+			align-items: center;
+			background-color: var(--light-color-40);
+			border-bottom: 3px solid var(--purple-color);
+			padding: 3rem 2.25rem;
+
+			.card__info {
+				@include d-flex(column, 0.75rem);
+			}
+		}
+	}
+}
