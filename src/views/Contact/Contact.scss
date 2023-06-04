@@ -1,0 +1,70 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.contact {
+	@include d-flex(row, 0);
+	justify-content: stretch;
+	align-items: center;
+
+	.contact-content {
+		@include d-flex(row, 24px);
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 216px;
+		padding-right: 354px;
+		flex: 1;
+
+		.contact--section {
+			@include d-flex(column, 0.75rem);
+			max-width: 524px;
+			width: 100%;
+
+			.contact__form {
+				@include d-flex(column, 1.25rem);
+				align-items: center;
+
+				.form__item {
+					align-self: stretch;
+				}
+			}
+		}
+
+		.contact__social {
+			@include d-flex(column, 2.25rem);
+
+			a {
+				position: relative;
+
+				&::after {
+					content: attr(title);
+					position: absolute;
+					left: 0px;
+					top: 50%;
+					transform: translateY(-50%);
+					opacity: 0;
+					padding: 8px 12px;
+					font-size: fs('small');
+					font-weight: 400;
+					background: var(--threejs-purple);
+					border-radius: 29px;
+					line-height: 80%;
+					@include prefix(transition, (left 0.3s, opacity 0.3s));
+				}
+
+				&:nth-child(2n) {
+					&::after {
+						background: var(--threejs-yellow);
+					}
+				}
+
+				&:hover {
+					&::after {
+						left: calc(100% + 10px);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

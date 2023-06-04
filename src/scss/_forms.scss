@@ -1,0 +1,64 @@
+.form {
+	.form__item {
+		position: relative;
+		background: var(--light-color-40);
+		border-bottom: 3px solid var(--purple-color);
+		padding: 1rem 1.5rem;
+		@include d-flex(row, 1.25rem);
+		justify-content: flex-start;
+		@include prefix(transition, background 0.3s);
+		cursor: text;
+
+		.form--label {
+			position: absolute;
+			top: 1.5rem;
+			left: calc(1.5rem + 1.5rem + 1.25rem); //padding + icon-size + gap
+			transform: translateY(-50%);
+			pointer-events: none;
+			@include prefix(transition, (top 0.3s, font-size 0.3s));
+			border-radius: 8px;
+		}
+
+		.form--input {
+			background: none;
+			border: none;
+			outline: none;
+			color: var(--font-color);
+			font-family: $main-font-family;
+			font-size: fs('normal');
+			font-weight: 300;
+			padding: 0;
+			margin: 0;
+			flex: 1;
+			display: block;
+
+			&.error {
+				& + .form--label {
+					top: 0px;
+					font-size: fs('small');
+					color: red;
+					font-weight: 400;
+					background: var(--light-color-80);
+					padding: 0 5px 3px;
+				}
+			}
+
+			&:focus,
+			&:valid {
+				& + .form--label {
+					top: 0px;
+					font-size: fs('small');
+					color: var(--purple-color);
+					font-weight: 400;
+					background: var(--light-color-80);
+					padding: 0 5px 3px;
+				}
+			}
+		}
+
+		.form--area {
+			min-height: 11rem;
+			resize: vertical;
+		}
+	}
+}
