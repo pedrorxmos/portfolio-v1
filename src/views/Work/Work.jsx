@@ -10,14 +10,20 @@ function Work() {
 	const { data } = useFirestoreCollectionData(workData);
 	// console.log(data);
 
-	const url = '/public/img/about-me.webp';
+	// document.querySelector('.dropdown')?.addEventListener('mouseenter', () => {
+	// 	document.querySelector('.selected-work').style.backgroundImage = `url('/img/${'portfolio'}.webp')`;
+	// });
+
+	// document.querySelector('.dropdown')?.addEventListener('mouseleave', () => {
+	// 	document.querySelector('.selected-work').style.backgroundImage = `url('/img/${'blank'}.webp')`;
+	// });
 
 	return (
 		<>
 			<main className="work">
 				<div className="work__container">
 					<div className="work__img">
-						<div style={{ backgroundImage: `url('/public/img/${'about-me'}.webp')` }} className="selected-work"></div>
+						<div style={{ backgroundImage: `url('/img/${'about-me'}.webp')` }} className="selected-work"></div>
 					</div>
 					<div className="work__projects">
 						<div className="work__header">
