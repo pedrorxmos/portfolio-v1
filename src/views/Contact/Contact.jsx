@@ -28,7 +28,7 @@ function Contact() {
 				<div className="contact-content">
 					<div className="contact--section">
 						<h2>Contact</h2>
-						<form action="" className="contact__form form ">
+						<form action="" className="contact__form form" autoComplete="off">
 							<label htmlFor="form-name" className="form__item cursor-target">
 								<SvgUser size="normal" title="form name icon" />
 								<input type="text" className="form--input" id="form-name" name="form-name" onFocus={onFocus} onBlur={onBlur} required />
