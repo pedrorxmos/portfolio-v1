@@ -31,4 +31,9 @@ main {
 	&.home {
 		height: calc(100vh - 84px);
 	}
+
+	&.main {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
 }
