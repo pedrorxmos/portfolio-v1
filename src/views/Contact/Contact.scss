@@ -39,9 +39,30 @@
 				&::after {
 					content: attr(title);
 					position: absolute;
-					left: calc(100% + 10px);
+					left: 0px;
 					top: 50%;
 					transform: translateY(-50%);
+					opacity: 0;
+					padding: 8px 12px;
+					font-size: fs('small');
+					font-weight: 400;
+					background: var(--threejs-purple);
+					border-radius: 29px;
+					line-height: 80%;
+					@include prefix(transition, (left 0.3s, opacity 0.3s));
+				}
+
+				&:nth-child(2n) {
+					&::after {
+						background: var(--threejs-yellow);
+					}
+				}
+
+				&:hover {
+					&::after {
+						left: calc(100% + 10px);
+						opacity: 1;
+					}
 				}
 			}
 		}
