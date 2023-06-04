@@ -21,7 +21,7 @@
 			width: 100%;
 
 			.contact__form {
-				@include d-flex(column, 0.75rem);
+				@include d-flex(column, 1.25rem);
 				align-items: center;
 
 				.form__item {
