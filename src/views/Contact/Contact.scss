@@ -3,11 +3,18 @@
 @import '../../scss/functions';
 
 .contact {
-	@include d-flex(row, 24px);
-	justify-content: space-between;
+	@include d-flex(row, 0);
+	justify-content: stretch;
 	align-items: center;
-	padding-left: 216px;
-	padding-right: 354px;
+
+	.contact-content {
+		@include d-flex(row, 24px);
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 216px;
+		padding-right: 354px;
+		flex: 1;
+	}
 
 	.contact--section {
 		max-width: 524px;
@@ -16,6 +23,22 @@
 		.contact__form {
 			@include d-flex(column, 0.75rem);
 			align-items: center;
+		}
+	}
+
+	.contact__social {
+		@include d-flex(column, 2.25rem);
+
+		a {
+			position: relative;
+
+			&::after {
+				content: attr(title);
+				position: absolute;
+				left: calc(100% + 10px);
+				top: 50%;
+				transform: translateY(-50%);
+			}
 		}
 	}
 }
