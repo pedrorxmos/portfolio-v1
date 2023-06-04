@@ -33,6 +33,16 @@
 
 		.work__projects {
 			flex: calc(55% - 8px);
+
+			.work__header {
+				@include d-flex(row, 0);
+				justify-content: space-between;
+				align-items: flex-end;
+
+				.work__title {
+					@include d-flex(column, 6px);
+				}
+			}
 		}
 	}
 }
