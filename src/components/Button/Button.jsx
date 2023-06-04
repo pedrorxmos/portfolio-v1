@@ -41,7 +41,7 @@ function Button({ type, value, color, icon, size, action }) {
 export default Button;
 
 Button.propTypes = {
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	value: PropTypes.string.isRequired,
 	color: PropTypes.string,
 	icon: PropTypes.string,

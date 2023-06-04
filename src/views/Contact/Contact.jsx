@@ -11,36 +11,41 @@ import SvgTwitter from '../../icons/Twitter';
 import SvgMail from '../../icons/Mail';
 
 function Contact() {
+	const onFocus = (e) => {
+		e.target.parentElement.style.background = 'var(--light-color-80)';
+	};
+
+	const onBlur = (e) => {
+		e.target.parentElement.style.background = 'var(--light-color-40)';
+
+		if (e.target.checkValidity() === false && e.target.value !== '') e.target.classList.add('error');
+		else e.target.classList.remove('error');
+	};
+
 	return (
 		<>
 			<main className="contact main">
 				<div className="contact-content">
 					<div className="contact--section">
 						<h2>Contact</h2>
-						<form action="" className="contact__form">
-							<div className="form__item">
-								<SvgUser />
-								<label htmlFor="form-name" className="form--label">
-									name
-								</label>
-								<input type="text" className="form--input" name="form-name" />
-							</div>
+						<form action="" className="contact__form form ">
+							<label htmlFor="form-name" className="form__item cursor-target">
+								<SvgUser size="normal" title="form name icon" />
+								<input type="text" className="form--input" id="form-name" name="form-name" onFocus={onFocus} onBlur={onBlur} required />
+								<span className="form--label">name</span>
+							</label>
 
-							<div className="form__item">
-								<SvgAtSign />
-								<label htmlFor="form-email" className="form--label">
-									email
-								</label>
-								<input type="text" className="form--input" name="form-email" />
-							</div>
+							<label htmlFor="form-email" className="form__item cursor-target">
+								<SvgAtSign size="normal" title="form email icon" />
+								<input type="email" className="form--input" id="form-email" name="form-email" onFocus={onFocus} onBlur={onBlur} required />
+								<span className="form--label">email</span>
+							</label>
 
-							<div className="form__item">
-								<SvgMessage />
-								<label htmlFor="form-message" className="form--label">
-									message
-								</label>
-								<textarea className="form--input form--area" name="form-message" />
-							</div>
+							<label htmlFor="form-message" className="form__item cursor-target">
+								<SvgMessage size="normal" title="form name icon" />
+								<textarea className="form--input form--area" id="form-message" name="form-message" onFocus={onFocus} onBlur={onBlur} required />
+								<span className="form--label">message</span>
+							</label>
 
 							<Button value="get in touch" />
 						</form>
