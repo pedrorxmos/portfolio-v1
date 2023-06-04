@@ -13,19 +13,19 @@ function Footer() {
 				<small>designed and coded with ♥ by Pedro Ramos</small>
 				<div className="footer__social">
 					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgGithub size="small" />
+						<SvgGithub size="small" title="github" />
 					</a>
 					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgLinkedin size="small" />
+						<SvgLinkedin size="small" title="linkedin" />
 					</a>
 					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgCodepen size="small" />
+						<SvgCodepen size="small" title="codepen" />
 					</a>
 					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgTwitter size="small" />
+						<SvgTwitter size="small" title="twitter" />
 					</a>
 					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgMail size="small" />
+						<SvgMail size="small" title="mail" />
 					</a>
 				</div>
 			</div>

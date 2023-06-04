@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 function Topbar() {
 	const toggleMenu = () => {
-		console.log('toggle menu');
 		document.querySelector('.nav').classList.toggle('nav-open');
 	};
 

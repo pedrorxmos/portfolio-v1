@@ -11,8 +11,8 @@ function Button({ type, value, color, icon, size, action }) {
 	};
 
 	const iconMap = {
-		github: <SvgGithub size={iconSizeMap[size]} />,
-		'external-link': <SvgExternalLink size={iconSizeMap[size]} />,
+		github: <SvgGithub size={iconSizeMap[size]} title="github" />,
+		'external-link': <SvgExternalLink size={iconSizeMap[size]} title="external-link" />,
 	};
 
 	return (
