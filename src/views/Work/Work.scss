@@ -26,13 +26,14 @@
 				background-color: transparent;
 				background-size: cover;
 				background-position: center;
-				transition: background-image 0.3s;
+				transition: background-image 1s;
 				border-radius: 8px;
 			}
 		}
 
 		.work__projects {
 			flex: calc(55% - 8px);
+			@include d-flex(column, 0.75rem);
 
 			.work__header {
 				@include d-flex(row, 0);
@@ -55,6 +56,29 @@
 						padding: 4px 8px;
 						border-radius: 10px;
 					}
+				}
+			}
+
+			.work__list {
+				@include d-flex(column, 0.75rem);
+				align-self: stretch;
+				flex: 1;
+				overflow-y: scroll;
+				padding-bottom: 1rem;
+				padding-right: 0.75rem;
+
+				&::-webkit-scrollbar {
+					width: 8px;
+					height: 100px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: none;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					border-radius: 10px;
+					background: var(--scroll-color);
 				}
 			}
 		}

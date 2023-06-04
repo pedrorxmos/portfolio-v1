@@ -4,19 +4,12 @@ import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import SvgChevronDown from '../../icons/ChevronDown';
 import Footer from '../../components/Footer/Footer';
 import './Work.scss';
+import ProjectButton from '../../components/ProjectButton/ProjectButton';
 
 function Work() {
 	const workData = collection(useFirestore(), 'projects');
 	const { data } = useFirestoreCollectionData(workData);
-	// console.log(data);
-
-	// document.querySelector('.dropdown')?.addEventListener('mouseenter', () => {
-	// 	document.querySelector('.selected-work').style.backgroundImage = `url('/img/${'portfolio'}.webp')`;
-	// });
-
-	// document.querySelector('.dropdown')?.addEventListener('mouseleave', () => {
-	// 	document.querySelector('.selected-work').style.backgroundImage = `url('/img/${'blank'}.webp')`;
-	// });
+	console.log(data);
 
 	return (
 		<>
@@ -39,7 +32,13 @@ function Work() {
 								</button>
 							</div>
 						</div>
-						<div className="work__list">the projects list</div>
+						<div className="work__list">
+							{data
+								?.sort((a, b) => a.order - b.order)
+								.map((e) => (
+									<ProjectButton key={e.NO_ID_FIELD} id={e.NO_ID_FIELD} title={e.title} img={e.img} tags={e.tags} />
+								))}
+						</div>
 					</div>
 				</div>
 			</main>
