@@ -1,0 +1,87 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.work {
+	@include d-flex(row, 0);
+	align-items: stretch;
+	justify-content: center;
+	padding-top: 8rem;
+
+	.work__container {
+		@include d-flex(row, 1rem);
+		width: 100%;
+		justify-content: center;
+		align-items: stretch;
+
+		.work__img {
+			flex: calc(45% - 8px);
+			width: 100%;
+			padding: 0 1.5rem 4rem;
+
+			.selected-work {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				background-color: transparent;
+				background-size: cover;
+				background-position: center;
+				transition: background 0.5s;
+				border-radius: 8px;
+				@include prefix(mask-image, linear-gradient(180deg, white 0%, white 60%, transparent 90%));
+			}
+		}
+
+		.work__projects {
+			flex: calc(55% - 8px);
+			@include d-flex(column, 0.75rem);
+
+			.work__header {
+				@include d-flex(row, 0);
+				justify-content: space-between;
+				align-items: flex-end;
+
+				.work__title {
+					@include d-flex(column, 6px);
+				}
+
+				.work__filter {
+					@include d-flex(row, 0.75rem);
+					align-items: center;
+
+					.dropdown {
+						background-color: var(--light-color-50);
+						border: none;
+						color: var(--font-color);
+						@include d-flex(row, 10px);
+						padding: 4px 8px;
+						border-radius: 10px;
+					}
+				}
+			}
+
+			.work__list {
+				@include d-flex(column, 0.75rem);
+				align-self: stretch;
+				flex: 1;
+				overflow-y: scroll;
+				padding-bottom: 1rem;
+				padding-right: 0.75rem;
+
+				&::-webkit-scrollbar {
+					width: 8px;
+					height: 100px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: none;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					border-radius: 10px;
+					background: var(--scroll-color);
+				}
+			}
+		}
+	}
+}
