@@ -26,7 +26,7 @@
 				background-color: transparent;
 				background-size: cover;
 				background-position: center;
-				transition: background 1s;
+				transition: background 0.5s;
 				border-radius: 8px;
 				@include prefix(mask-image, linear-gradient(180deg, white 0%, white 60%, transparent 90%));
 			}
