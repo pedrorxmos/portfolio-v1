@@ -1,10 +1,5 @@
-import SvgGithub from '../../icons/Github';
-import SvgLinkedin from '../../icons/Linkedin';
-import SvgCodepen from '../../icons/Codepen';
-import SvgTwitter from '../../icons/Twitter';
-import SvgMail from '../../icons/Mail';
-
 import './Home.scss';
+import Icon from '../../components/Icon/Icon';
 
 function Home() {
 	return (
@@ -21,19 +16,19 @@ function Home() {
 
 				<div className="home__social">
 					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgGithub size="x-normal" title="github" />
+						<Icon title="github" name="github" size="x-normal" />
 					</a>
 					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgLinkedin size="x-normal" title="linkedin" />
+						<Icon title="linkedin" name="linkedin" size="x-normal" />
 					</a>
 					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgCodepen size="x-normal" title="codepen" />
+						<Icon title="codepen" name="codepen" size="x-normal" />
 					</a>
 					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgTwitter size="x-normal" title="twitter" />
+						<Icon title="twitter" name="twitter" size="x-normal" />
 					</a>
 					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgMail size="x-normal" title="mail" />
+						<Icon title="mail" name="mail" size="x-normal" />
 					</a>
 				</div>
 			</main>

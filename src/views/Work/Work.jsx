@@ -3,6 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
 import { useCollection } from '../../hooks/getFirestore';
+import Icon from '../../components/Icon/Icon';
 
 function Work() {
 	const data = useCollection('projects');
@@ -24,7 +25,7 @@ function Work() {
 								<span>Filter:</span>
 								<button className="cursor-target dropdown">
 									All
-									<SvgChevronDown size="x-small" title="dropdown icon" />
+									<Icon title="dropdown icon" name="chevron-down" size="x-small" />
 								</button>
 							</div>
 						</div>

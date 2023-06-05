@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import SvgArrowLeft from '../../icons/ArrowLeft';
-import SvgHash from '../../icons/Hash';
 import './ProjectButton.scss';
+import Icon from '../Icon/Icon';
 
 function ProjectButton({ id, title, tags, img }) {
 	const selectedWork = document.querySelector('.selected-work');
@@ -20,13 +19,13 @@ function ProjectButton({ id, title, tags, img }) {
 	return (
 		<>
 			<Link to={`/work/${id}`} className="cursor-target project-button" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-				<SvgArrowLeft size="x-normal" title={`go to ${title}`} />
+				<Icon title={`go to ${title}`} name="arrow-left" size="x-normal" />
 				<div className="project__info">
 					<h2 className="h3">{title}</h2>
 					<div className="project__tags">
 						{tags.map((tag, index) => (
 							<div key={index} className="project__tag" style={{ '--tag-color': tag.color }}>
-								<SvgHash title="hash icon" size="x-small" />
+								<Icon title="hash" name="hash" size="x-small" />
 								{tag.tag}
 							</div>
 						))}
