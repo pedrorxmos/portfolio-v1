@@ -13,7 +13,7 @@ function Button({ type, value, color, icon, size, action }) {
 		<>
 			{type !== 'link' && (
 				<button className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''} cursor-target`} onClick={action}>
-					{icon ? <Icon title="icon" name="icon" size={iconSizeMap[size]} /> : ''}
+					{icon ? <Icon title={icon} name={icon} size={iconSizeMap[size]} /> : ''}
 					{value}
 				</button>
 			)}
@@ -24,7 +24,7 @@ function Button({ type, value, color, icon, size, action }) {
 					target="_blank"
 					rel="noreferrer"
 				>
-					{icon ? <Icon title="icon" name="icon" size={iconSizeMap[size]} /> : ''}
+					{icon ? <Icon title={icon} name={icon} size={iconSizeMap[size]} /> : ''}
 					{value}
 				</a>
 			)}

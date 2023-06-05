@@ -1,4 +1,3 @@
-import SvgChevronDown from '../../icons/ChevronDown';
 import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
