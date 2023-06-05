@@ -1,5 +1,5 @@
 import './Footer.scss';
-import Icon from '../Icon/Icon';
+import Button from '../Button/Button';
 
 function Footer() {
 	return (
@@ -7,21 +7,11 @@ function Footer() {
 			<div className="footer__content">
 				<small>designed and coded with ♥ by Pedro Ramos</small>
 				<div className="footer__social">
-					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="github" name="github" size="small" />
-					</a>
-					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="linkedin" name="linkedin" size="small" />
-					</a>
-					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="codepen" name="codepen" size="small" />
-					</a>
-					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="twitter" name="twitter" size="small" />
-					</a>
-					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="mail" name="mail" size="small" />
-					</a>
+					<Button type="link" rightIcon="github" justIcon size="medium" action="https://github.com/pedrorxmos" nothing />
+					<Button type="link" rightIcon="linkedin" justIcon size="medium" action="https://www.linkedin.com/in/pedroramosguardiola/" nothing />
+					<Button type="link" rightIcon="codepen" justIcon size="medium" action="https://codepen.io/pedrorxmos" nothing />
+					<Button type="link" rightIcon="twitter" justIcon size="medium" action="https://twitter.com/pedrorxmos" nothing />
+					<Button type="link" rightIcon="mail" justIcon size="medium" action="mailTo:pedrorxmosdev@gmail.com" nothing />
 				</div>
 			</div>
 		</footer>

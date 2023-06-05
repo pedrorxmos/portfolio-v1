@@ -19,9 +19,11 @@
 			justify-content: flex-end;
 			align-items: center;
 
-			a {
+			.btn {
+				color: var(--bg-color);
 				display: flex;
 				margin: 0;
+				padding: 0;
 			}
 		}
 	}

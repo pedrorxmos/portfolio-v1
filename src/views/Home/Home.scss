@@ -38,10 +38,9 @@
 		right: 48px;
 		bottom: 32px;
 
-		a {
-			padding: 12px;
-			background: var(--light-color-50);
+		.btn {
 			border-radius: 50%;
+			border: none;
 		}
 	}
 }

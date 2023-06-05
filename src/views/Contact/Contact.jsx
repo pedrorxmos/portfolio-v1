@@ -40,7 +40,7 @@ function Contact() {
 								<span className="form--label">message</span>
 							</label>
 
-							<Button value="get in touch" />
+							<Button value="get in touch" color="main" size="medium" />
 						</form>
 					</div>
 
