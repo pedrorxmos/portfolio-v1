@@ -4,6 +4,7 @@ import SvgMenu from '../../icons/Menu';
 import './Topbar.scss';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import Icon from '../Icon/Icon';
 
 function Topbar() {
 	const toggleMenu = () => {
@@ -27,6 +28,7 @@ function Topbar() {
 						</li>
 						<li className="nav--item cursor-target">
 							<SvgSun title="Light Mode" size="small" />
+							{/* <Icon title="sun" name="sun" /> */}
 						</li>
 						<li className="nav--item">
 							<button className="nav__action cursor-target" onClick={toggleMenu} title="open menu">
