@@ -22,23 +22,49 @@
 		color: var(--purple-color);
 	}
 
+	&.btn-icon {
+		padding: 6px;
+	}
+
 	// Size
 	&.btn-small {
 		gap: 4px;
 		padding: 4px 12px;
 		font-size: fs('normal');
+
+		&.btn-icon {
+			padding: 4px;
+		}
 	}
 
 	&.btn-medium {
 		gap: 8px;
 		padding: 6px 16px;
 		font-size: fs('x-normal');
+
+		&.btn-icon {
+			padding: 6px;
+		}
 	}
 
 	&.btn-big {
 		gap: 4px;
 		padding: 8px 20px;
 		font-size: fs('x-big');
+
+		&.btn-icon {
+			padding: 8px;
+		}
+	}
+
+	&.btn-x-big {
+		gap: 6px;
+		padding: 12px 28px;
+		font-size: fs('x-big');
+
+		&.btn-icon {
+			padding: 12px;
+		}
 	}
 
 	// Color
@@ -56,5 +82,19 @@
 		.svg {
 			color: var(--yellow-color);
 		}
+	}
+
+	&.btn-primary {
+		border-color: var(--font-color);
+
+		.svg {
+			color: var(--font-color);
+		}
+	}
+
+	&.btn-nothing {
+		background: none;
+		border: none;
+		padding: 0;
 	}
 }

@@ -1,5 +1,5 @@
 import './Home.scss';
-import Icon from '../../components/Icon/Icon';
+import Button from '../../components/Button/Button';
 
 function Home() {
 	return (
@@ -15,21 +15,11 @@ function Home() {
 				</h2>
 
 				<div className="home__social">
-					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="github" name="github" size="x-normal" />
-					</a>
-					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="linkedin" name="linkedin" size="x-normal" />
-					</a>
-					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="codepen" name="codepen" size="x-normal" />
-					</a>
-					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="twitter" name="twitter" size="x-normal" />
-					</a>
-					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<Icon title="mail" name="mail" size="x-normal" />
-					</a>
+					<Button type="link" rightIcon="github" justIcon size="x-big" color="primary" action="https://github.com/pedrorxmos" />
+					<Button type="link" rightIcon="linkedin" justIcon size="x-big" color="primary" action="https://www.linkedin.com/in/pedroramosguardiola/" />
+					<Button type="link" rightIcon="codepen" justIcon size="x-big" color="primary" action="https://codepen.io/pedrorxmos" />
+					<Button type="link" rightIcon="twitter" justIcon size="x-big" color="primary" action="https://twitter.com/pedrorxmos" />
+					<Button type="link" rightIcon="mail" justIcon size="x-big" color="primary" action="mailTo:pedrorxmosdev@gmail.com" />
 				</div>
 			</main>
 		</>

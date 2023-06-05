@@ -52,8 +52,8 @@ function Project() {
 						</div>
 						<p className="info__description">{data?.description}</p>
 						<div className="info__actions">
-							<Button type="link" action={data?.demo} value="demo" color="main" icon="external-link" size="medium" />
-							<Button type="link" action={data?.code} value="code" color="secondary" icon="github" size="medium" />
+							<Button type="link" action={data?.demo} value="demo" color="main" leftIcon="external-link" size="medium" />
+							<Button type="link" action={data?.code} value="code" color="secondary" leftIcon="github" size="medium" />
 						</div>
 					</div>
 				</div>
