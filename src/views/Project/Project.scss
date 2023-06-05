@@ -6,11 +6,14 @@
 	@include d-flex(column, 1.5rem);
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	.detail__actions {
 		@include d-flex(row, 0);
 		justify-content: space-between;
 		width: 100%;
+		top: 0;
+		position: absolute;
 
 		.actions__other {
 			@include d-flex(row, 1rem);
@@ -37,7 +40,7 @@
 		}
 
 		.detail__info {
-			flex: 1;
+			flex: 1.25;
 			@include d-flex(column, 2rem);
 			justify-content: center;
 			align-items: stretch;
