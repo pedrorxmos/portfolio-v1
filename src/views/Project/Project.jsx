@@ -15,6 +15,22 @@ function Project() {
 	const nextProject = work?.sort((a, b) => a.order - b.order)[data?.order === work.length - 1 ? 0 : data?.order + 1];
 	const previousProject = work?.sort((a, b) => a.order - b.order)[data?.order === 0 ? work.length - 1 : data?.order - 1];
 
+	const changePreview = (e) => {
+		setTimeout(() => {
+			document.querySelector('.actions__preview .preview__img').style.backgroundImage = `url('/img/${e.target.getAttribute('data-img')}.webp')`;
+			document.querySelector('.actions__preview .preview__title').textContent = e.target.getAttribute('data-title');
+		}, 20);
+	};
+
+	const onMouseEnter = (e) => {
+		document.querySelector('.actions__preview').style.opacity = 0.8;
+		changePreview(e);
+	};
+
+	const onMouseLeave = () => {
+		document.querySelector('.actions__preview').style.opacity = 0;
+	};
+
 	return (
 		<>
 			<main className="project-detail main">
@@ -25,14 +41,34 @@ function Project() {
 					</Link>
 
 					<div className="actions__other">
-						<Link to={`/work/${previousProject?.NO_ID_FIELD}`} className="action cursor-target">
+						<Link
+							to={`/work/${previousProject?.NO_ID_FIELD}`}
+							className="action cursor-target"
+							data-title={previousProject?.title}
+							data-img={previousProject?.img}
+							onMouseEnter={onMouseEnter}
+							onMouseLeave={onMouseLeave}
+							onClick={changePreview}
+						>
 							<Icon title="arrow-left" name="arrow-left" size="medium" />
 							previous
 						</Link>
-						<Link to={`/work/${nextProject?.NO_ID_FIELD}`} className="action cursor-target">
+						<Link
+							to={`/work/${nextProject?.NO_ID_FIELD}`}
+							className="action cursor-target"
+							data-title={nextProject?.title}
+							data-img={nextProject?.img}
+							onMouseEnter={onMouseEnter}
+							onMouseLeave={onMouseLeave}
+							onClick={changePreview}
+						>
 							next
 							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
+						<div className="actions__preview" style={{ opacity: 0 }}>
+							<div className="preview__img"></div>
+							<small className="preview__title">{previousProject?.title}</small>
+						</div>
 					</div>
 				</div>
 				<div className="detail__section">
