@@ -27,10 +27,7 @@ function Topbar() {
 							<Icon title="light mode" name="sun" size="small" />
 						</li>
 						<li className="nav--item">
-							<button className="nav__action cursor-target" onClick={toggleMenu} title="open menu">
-								menu
-								<Icon title="open menu" name="menu" size="small" />
-							</button>
+							<Button value="menu" size="medium" rightIcon="menu" nothing action={toggleMenu} />
 						</li>
 					</ul>
 					<ul className="nav--items nav__menu">
@@ -58,9 +55,7 @@ function Topbar() {
 							<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
 						</li>
 						<li className="nav--item">
-							<button className="nav__action cursor-target" onClick={toggleMenu}>
-								<Icon title="close menu" name="x" size="small" />
-							</button>
+							<Button size="medium" rightIcon="x" nothing action={toggleMenu} />
 						</li>
 					</ul>
 				</nav>

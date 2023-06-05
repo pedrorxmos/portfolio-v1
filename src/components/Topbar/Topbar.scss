@@ -36,18 +36,6 @@
 
 			.nav--item {
 				cursor: pointer;
-
-				.nav__action {
-					@include d-flex(row, 4px);
-					align-items: center;
-					border: none;
-					background: none;
-					color: inherit;
-					cursor: pointer;
-					font-family: $main-font-family;
-					font-size: fs('normal');
-					font-weight: 300;
-				}
 			}
 		}
 
