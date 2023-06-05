@@ -26,10 +26,18 @@
 				background-color: transparent;
 				background-size: cover;
 				background-position: center;
-				transition: background 0.5s;
+				opacity: 0;
+				background-image: url('/img/blank.webp');
 				border-radius: 51% 49% 31% 69% / 58% 42% 58% 42%;
+				@include prefix(transform, scale(0.6));
 				@include prefix(animation, (blob-animation 15s ease-in-out infinite both));
+				@include prefix(transition, (background 0.5s 0.1s, opacity 0.5s 0.1s, transform 0.3s 0.1s));
 				// @include prefix(mask-image, linear-gradient(180deg, white 0%, white 60%, transparent 90%));
+
+				&.open {
+					opacity: 0.8;
+					@include prefix(transform, scale(1));
+				}
 			}
 		}
 
