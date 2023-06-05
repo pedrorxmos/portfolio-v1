@@ -1,8 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
 
-import { doc } from 'firebase/firestore';
-import { useFirestore, useFirestoreDocData } from 'reactfire';
-
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import './Project.scss';
@@ -10,38 +7,39 @@ import SvgHash from '../../icons/Hash';
 import SvgHeart from '../../icons/Heart';
 import SvgArrowLeft from '../../icons/ArrowLeft';
 import SvgArrowRight from '../../icons/ArrowRight';
+import { useCollection, useDoc } from '../../hooks/getFirestore';
 
 function Project() {
 	const id = useParams().id;
-	const aboutData = doc(useFirestore(), 'projects', id);
-	const { data } = useFirestoreDocData(aboutData);
 
-	console.log(data);
+	const work = useCollection('projects');
+	const data = useDoc('projects', id);
+
+	const nextProject = work?.sort((a, b) => a.order - b.order)[data?.order === work.length - 1 ? 0 : data?.order + 1];
+	const previousProject = work?.sort((a, b) => a.order - b.order)[data?.order === 0 ? work.length - 1 : data?.order - 1];
 
 	return (
 		<>
 			<main className="project-detail main">
 				<div className="detail__actions">
-					<Link to="/work" className="action">
-						<SvgArrowLeft />
+					<Link to="/work" className="action cursor-target">
+						<SvgArrowLeft title="arrow" />
 						back
 					</Link>
 
 					<div className="actions__other">
-						<Link className="action">
-							<SvgArrowLeft />
+						<Link to={`/work/${previousProject?.NO_ID_FIELD}`} className="action cursor-target">
+							<SvgArrowLeft title="arrow" />
 							previous
 						</Link>
-						<Link className="action">
+						<Link to={`/work/${nextProject?.NO_ID_FIELD}`} className="action cursor-target">
 							next
-							<SvgArrowRight />
+							<SvgArrowRight title="arrow" />
 						</Link>
 					</div>
 				</div>
 				<div className="detail__section">
-					<div className="detail__img">
-						<img src={`/img/${data?.img}.webp`} alt={`${data?.title} image`} />
-					</div>
+					<div className="detail__img">{data && <img src={`/img/${data?.img}.webp`} alt={`${data?.title} image`} />}</div>
 
 					<div className="detail__info">
 						<div className="info__title">
