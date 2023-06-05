@@ -17,7 +17,7 @@ function Cursor() {
 
 	return (
 		<>
-			<div className="cursor">
+			<div className="cursor" style={{ transform: `translate(${window.innerWidth / 2}px, ${window.innerHeight / 2}px) translate(-50%, -50%)` }}>
 				<div className="cursor-dot"></div>
 			</div>
 		</>

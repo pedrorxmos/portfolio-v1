@@ -6,7 +6,7 @@
 	@include d-flex(row, 0);
 	justify-content: space-between;
 	align-items: center;
-	padding: 2.35rem 3rem;
+	padding: 1.666667rem 3rem;
 	background-color: var(--light-color-40);
 	border-bottom: 3px solid var(--purple-color);
 	transition: background-color 0.3s;
@@ -18,8 +18,9 @@
 
 	.project__info {
 		flex: 1;
-
 		text-align: right;
+		@include d-flex(column, 0.666667rem);
+
 		.project__tags {
 			@include d-flex(row, 1rem);
 			justify-content: flex-end;

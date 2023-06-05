@@ -1,5 +1,6 @@
 :root {
 	--bg-color: #{color('light80')};
+	--light-color: #{color('light100')};
 	--light-color-40: #{color-opacity('light100', 0.4)};
 	--light-color-50: #{color-opacity('light100', 0.5)};
 	--light-color-80: #{color-opacity('light100', 0.8)};

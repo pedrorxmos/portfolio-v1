@@ -5,12 +5,16 @@ import SvgHash from '../../icons/Hash';
 import './ProjectButton.scss';
 
 function ProjectButton({ id, title, tags, img }) {
+	const selectedWork = document.querySelector('.selected-work');
+
 	const onMouseEnter = () => {
-		document.querySelector('.selected-work').style.backgroundImage = `url('/img/${img}.webp')`;
+		selectedWork.style.backgroundImage = `url('/img/${img}.webp')`;
+		selectedWork.classList.add('open');
 	};
 
 	const onMouseLeave = () => {
-		document.querySelector('.selected-work').style.backgroundImage = `url('/img/blank.webp')`;
+		// selectedWork.style.backgroundImage = `url('/img/blank.webp')`;
+		selectedWork.classList.remove('open');
 	};
 
 	return (

@@ -1,22 +1,18 @@
-import { collection } from 'firebase/firestore';
-import { useFirestore, useFirestoreCollectionData } from 'reactfire';
-
 import SvgChevronDown from '../../icons/ChevronDown';
 import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
+import { useCollection } from '../../hooks/getFirestore';
 
 function Work() {
-	const workData = collection(useFirestore(), 'projects');
-	const { data } = useFirestoreCollectionData(workData);
-	console.log(data);
+	const data = useCollection('projects');
 
 	return (
 		<>
 			<main className="work main">
 				<div className="work__container">
 					<div className="work__img">
-						<div style={{ backgroundImage: `url('/img/blank.webp')` }} className="selected-work"></div>
+						<div className="selected-work"></div>
 					</div>
 					<div className="work__projects">
 						<div className="work__header">
