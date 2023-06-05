@@ -1,14 +1,10 @@
 import Footer from '../../components/Footer/Footer';
+import { useCollection } from '../../hooks/getFirestore';
 import SvgHeart from '../../icons/Heart';
 import './About.scss';
 
-import { collection } from 'firebase/firestore';
-import { useFirestore, useFirestoreCollectionData } from 'reactfire';
-
 function About() {
-	const aboutData = collection(useFirestore(), 'about');
-	const { data } = useFirestoreCollectionData(aboutData);
-	// console.log(data);
+	const data = useCollection('about');
 
 	return (
 		<>
