@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import SvgGithub from '../../icons/Github';
-import SvgExternalLink from '../../icons/ExternalLink';
 import './Button.scss';
+import Icon from '../Icon/Icon';
 
 function Button({ type, value, color, icon, size, action }) {
 	const iconSizeMap = {
@@ -10,16 +9,11 @@ function Button({ type, value, color, icon, size, action }) {
 		big: 'normal',
 	};
 
-	const iconMap = {
-		github: <SvgGithub size={iconSizeMap[size]} title="github" />,
-		'external-link': <SvgExternalLink size={iconSizeMap[size]} title="external-link" />,
-	};
-
 	return (
 		<>
 			{type !== 'link' && (
 				<button className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''} cursor-target`} onClick={action}>
-					{icon ? iconMap[icon] : ''}
+					{icon ? <Icon title="icon" name="icon" size={iconSizeMap[size]} /> : ''}
 					{value}
 				</button>
 			)}
@@ -30,7 +24,7 @@ function Button({ type, value, color, icon, size, action }) {
 					target="_blank"
 					rel="noreferrer"
 				>
-					{icon ? iconMap[icon] : ''}
+					{icon ? <Icon title="icon" name="icon" size={iconSizeMap[size]} /> : ''}
 					{value}
 				</a>
 			)}

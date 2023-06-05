@@ -1,6 +1,3 @@
-import SvgSun from '../../icons/Sun';
-import SvgCross from '../../icons/Cross';
-import SvgMenu from '../../icons/Menu';
 import './Topbar.scss';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
@@ -27,13 +24,12 @@ function Topbar() {
 							</a>
 						</li>
 						<li className="nav--item cursor-target">
-							<SvgSun title="Light Mode" size="small" />
-							{/* <Icon title="sun" name="sun" /> */}
+							<Icon title="light mode" name="sun" size="small" />
 						</li>
 						<li className="nav--item">
 							<button className="nav__action cursor-target" onClick={toggleMenu} title="open menu">
 								menu
-								<SvgMenu title="Open menu" size="small" />
+								<Icon title="open menu" name="menu" size="small" />
 							</button>
 						</li>
 					</ul>
@@ -63,7 +59,7 @@ function Topbar() {
 						</li>
 						<li className="nav--item">
 							<button className="nav__action cursor-target" onClick={toggleMenu}>
-								<SvgCross title="Close menu" size="small" />
+								<Icon title="close menu" name="x" size="small" />
 							</button>
 						</li>
 					</ul>

@@ -1,6 +1,6 @@
 import Footer from '../../components/Footer/Footer';
+import Icon from '../../components/Icon/Icon';
 import { useCollection } from '../../hooks/getFirestore';
-import SvgHeart from '../../icons/Heart';
 import './About.scss';
 
 function About() {
@@ -14,7 +14,7 @@ function About() {
 				<div className="about__items">
 					{data?.map((e) => (
 						<div key={e.title} className="about__card">
-							<SvgHeart size="x-big" title={e.icon} />
+							<Icon title={e.icon} name={'heart'} size="x-big" />
 							<div className="card__info">
 								<h3>{e.title}</h3>
 								<p>{e.value}</p>

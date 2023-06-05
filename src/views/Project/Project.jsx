@@ -3,11 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import './Project.scss';
-import SvgHash from '../../icons/Hash';
-import SvgHeart from '../../icons/Heart';
-import SvgArrowLeft from '../../icons/ArrowLeft';
-import SvgArrowRight from '../../icons/ArrowRight';
 import { useCollection, useDoc } from '../../hooks/getFirestore';
+import Icon from '../../components/Icon/Icon';
 
 function Project() {
 	const id = useParams().id;
@@ -23,18 +20,18 @@ function Project() {
 			<main className="project-detail main">
 				<div className="detail__actions">
 					<Link to="/work" className="action cursor-target">
-						<SvgArrowLeft title="arrow" />
+						<Icon title="arrow-left" name="arrow-left" size="medium" />
 						back
 					</Link>
 
 					<div className="actions__other">
 						<Link to={`/work/${previousProject?.NO_ID_FIELD}`} className="action cursor-target">
-							<SvgArrowLeft title="arrow" />
+							<Icon title="arrow-left" name="arrow-left" size="medium" />
 							previous
 						</Link>
 						<Link to={`/work/${nextProject?.NO_ID_FIELD}`} className="action cursor-target">
 							next
-							<SvgArrowRight title="arrow" />
+							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
 					</div>
 				</div>
@@ -47,7 +44,7 @@ function Project() {
 							<div className="info__tags">
 								{data?.tags.map((tag, index) => (
 									<div key={index} className="info__tag" style={{ '--tag-color': tag.color }}>
-										<SvgHash title="hash icon" size="x-small" />
+										<Icon title="hash" name="hash" size="x-small" />
 										{tag.tag}
 									</div>
 								))}
@@ -63,7 +60,7 @@ function Project() {
 
 				<div className="detail__section">
 					<div className="detail__card">
-						<SvgHeart size="x-big" title="tools" />
+						<Icon title="tools" name="heart" size="x-big" />
 						<div className="card__info">
 							<h2 className="h3">Details</h2>
 							<span>
@@ -78,7 +75,7 @@ function Project() {
 						</div>
 					</div>
 					<div className="detail__card">
-						<SvgHeart size="x-big" title="tools" />
+						<Icon title="tools" name="heart" size="x-big" />
 						<div className="card__info">
 							<h2 className="h3">Tools used</h2>
 							<div className="detail__tools">

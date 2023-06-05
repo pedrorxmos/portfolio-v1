@@ -1,10 +1,5 @@
-import SvgGithub from '../../icons/Github';
-import SvgLinkedin from '../../icons/Linkedin';
-import SvgCodepen from '../../icons/Codepen';
-import SvgTwitter from '../../icons/Twitter';
-import SvgMail from '../../icons/Mail';
-
 import './Footer.scss';
+import Icon from '../Icon/Icon';
 
 function Footer() {
 	return (
@@ -13,19 +8,19 @@ function Footer() {
 				<small>designed and coded with ♥ by Pedro Ramos</small>
 				<div className="footer__social">
 					<a href="https://github.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgGithub size="small" title="github" />
+						<Icon title="github" name="github" size="small" />
 					</a>
 					<a href="https://www.linkedin.com/in/pedroramosguardiola/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgLinkedin size="small" title="linkedin" />
+						<Icon title="linkedin" name="linkedin" size="small" />
 					</a>
 					<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgCodepen size="small" title="codepen" />
+						<Icon title="codepen" name="codepen" size="small" />
 					</a>
 					<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgTwitter size="small" title="twitter" />
+						<Icon title="twitter" name="twitter" size="small" />
 					</a>
 					<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer">
-						<SvgMail size="small" title="mail" />
+						<Icon title="mail" name="mail" size="small" />
 					</a>
 				</div>
 			</div>
