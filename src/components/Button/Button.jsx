@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 import Icon from '../Icon/Icon';
 
-function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, action }) {
+function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, action, nothing }) {
 	const iconSizeMap = {
 		small: 'x-small',
 		medium: 'small',
@@ -14,7 +14,9 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 		<>
 			{type !== 'link' && (
 				<button
-					className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${justIcon ? ` btn-icon` : ''} cursor-target`}
+					className={`btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${justIcon ? ` btn-icon` : ''}${
+						nothing ? ` btn-nothing` : ''
+					} cursor-target`}
 					onClick={action}
 				>
 					{leftIcon ? <Icon title={leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
@@ -25,7 +27,9 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 			{type === 'link' && (
 				<a
 					href={action}
-					className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${justIcon ? ` btn-icon` : ''} cursor-target`}
+					className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${justIcon ? ` btn-icon` : ''}${
+						nothing ? ` btn-nothing` : ''
+					} cursor-target`}
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -49,4 +53,5 @@ Button.propTypes = {
 	size: PropTypes.string,
 	action: PropTypes.any,
 	justIcon: PropTypes.bool,
+	nothing: PropTypes.bool,
 };
