@@ -4,6 +4,7 @@ import { FirestoreProvider, FirestoreSdkContext, useFirebaseApp } from 'reactfir
 import Cursor from './components/Cursor/Cursor';
 import Topbar from './components/Topbar/Topbar';
 import './scss/global.scss';
+import Div100vh from 'react-div-100vh';
 
 function App() {
 	const firestoreInstance = getFirestore(useFirebaseApp());
@@ -11,9 +12,11 @@ function App() {
 	return (
 		<>
 			<FirestoreProvider sdk={firestoreInstance}>
-				<Cursor />
-				<Topbar />
-				<Outlet />
+				<Div100vh>
+					<Cursor />
+					<Topbar />
+					<Outlet />
+				</Div100vh>
 			</FirestoreProvider>
 		</>
 	);
