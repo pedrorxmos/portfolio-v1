@@ -128,7 +128,7 @@ function Project() {
 				</div>
 			</main>
 
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

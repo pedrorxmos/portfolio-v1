@@ -3,13 +3,14 @@ import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
 import { useCollection } from '../../hooks/getFirestore';
 import Icon from '../../components/Icon/Icon';
+import { use100vh } from 'react-div-100vh';
 
 function Work() {
 	const data = useCollection('projects');
 
 	return (
 		<>
-			<main className="work main">
+			<main className="work main" style={{ height: use100vh() }}>
 				<div className="work__container">
 					<div className="work__img">
 						<div className="selected-work"></div>
@@ -38,7 +39,7 @@ function Work() {
 					</div>
 				</div>
 			</main>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

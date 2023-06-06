@@ -1,10 +1,11 @@
 import './Home.scss';
 import Button from '../../components/Button/Button';
+import { use100vh } from 'react-div-100vh';
 
 function Home() {
 	return (
 		<>
-			<main className="home">
+			<main className="home" style={{ height: use100vh(), overflow: 'hidden' }}>
 				<big className="home__prefix">Hello, I&apos;m</big>
 				<h1 className="home__name">
 					<span>Pedro</span>

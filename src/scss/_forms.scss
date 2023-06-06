@@ -57,8 +57,22 @@
 		}
 
 		.form--area {
-			min-height: 11rem;
+			height: 11rem;
 			resize: vertical;
+
+			&::-webkit-scrollbar {
+				width: 8px;
+				height: 100px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: none;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background: var(--scroll-color);
+			}
 		}
 	}
 }

@@ -49,6 +49,7 @@
 				@include d-flex(row, 0);
 				justify-content: space-between;
 				align-items: flex-end;
+				position: sticky;
 
 				.work__title {
 					@include d-flex(column, 6px);

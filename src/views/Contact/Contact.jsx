@@ -1,7 +1,8 @@
 import Button from '../../components/Button/Button';
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 import './Contact.scss';
 import Icon from '../../components/Icon/Icon';
+import { use100vh } from 'react-div-100vh';
 
 function Contact() {
 	const onFocus = (e) => {
@@ -63,7 +64,7 @@ function Contact() {
 					</div>
 				</div>
 			</main>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

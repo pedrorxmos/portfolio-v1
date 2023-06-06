@@ -6,7 +6,7 @@
 	@include d-flex(column, 24px);
 	justify-content: flex-start;
 	align-items: center;
-	overflow-y: scroll;
+	padding-top: 2rem;
 
 	.about__items {
 		display: grid;
@@ -15,7 +15,7 @@
 		gap: 24px;
 		max-width: 1064px;
 		margin: 0 auto;
-		padding-bottom: 4rem;
+		padding-bottom: 3rem;
 
 		.about__card {
 			@include d-flex(row, 1rem);
@@ -51,5 +51,6 @@
 
 	@include mq(min-width, 760px) {
 		justify-content: center;
+		padding-top: 5rem;
 	}
 }
