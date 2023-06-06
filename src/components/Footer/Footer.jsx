@@ -1,11 +1,14 @@
 import './Footer.scss';
 import Button from '../Button/Button';
+import Icon from '../Icon/Icon';
 
 function Footer() {
 	return (
 		<footer className="footer">
 			<div className="footer__content">
-				<small>designed and coded with ♥ by Pedro Ramos</small>
+				<small className="footer__copy">
+					designed and coded with <Icon title="heart" name="heart" size="x-small" /> by Pedro Ramos
+				</small>
 				<div className="footer__social">
 					<Button type="link" rightIcon="github" justIcon size="medium" action="https://github.com/pedrorxmos" nothing />
 					<Button type="link" rightIcon="linkedin" justIcon size="medium" action="https://www.linkedin.com/in/pedroramosguardiola/" nothing />
