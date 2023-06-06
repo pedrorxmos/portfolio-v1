@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { getFirestore } from 'firebase/firestore';
-import { FirestoreProvider, FirestoreSdkContext, useFirebaseApp } from 'reactfire';
+import { FirestoreProvider, useFirebaseApp } from 'reactfire';
 import Cursor from './components/Cursor/Cursor';
 import Topbar from './components/Topbar/Topbar';
 import './scss/global.scss';
