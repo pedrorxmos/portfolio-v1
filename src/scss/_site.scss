@@ -35,6 +35,8 @@ main {
 	&.main {
 		padding-top: 84px;
 		padding-bottom: 59px;
+		padding-left: 16px;
+		padding-right: 16px;
 		// height: calc(100vh - 84px - 44px);
 
 		&::-webkit-scrollbar {
