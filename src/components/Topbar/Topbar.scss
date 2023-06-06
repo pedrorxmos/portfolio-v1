@@ -8,6 +8,11 @@
 	align-items: center;
 	padding: 0 80px;
 	height: 84px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
 
 	.logo {
 		font-family: $headers-font-family;

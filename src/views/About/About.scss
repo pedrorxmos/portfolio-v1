@@ -6,7 +6,8 @@
 	@include d-flex(column, 24px);
 	justify-content: center;
 	align-items: center;
-	padding: 0 108px;
+	padding-right: 108px;
+	padding-left: 108px;
 
 	.about__items {
 		display: grid;
