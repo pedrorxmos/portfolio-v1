@@ -114,24 +114,29 @@
 
 			.svg {
 				align-self: center;
+				flex-grow: 0;
+				flex-shrink: 0;
 			}
 
 			.card__info {
 				@include d-flex(column, 0.5rem);
 
 				.detail__tools {
-					flex: 1;
 					@include d-flex(row, 1rem);
-					align-items: center;
+					align-items: flex-start;
 					justify-content: flex-start;
 					flex-wrap: wrap;
 
 					.detail__tool {
 						background: var(--light-color);
-						padding: 0.45rem 1rem;
+						padding: 0.3rem 1rem;
 						border-radius: 8px;
 					}
 				}
+			}
+
+			&:first-child {
+				width: 360px;
 			}
 
 			&:last-child {

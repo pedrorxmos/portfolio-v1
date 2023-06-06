@@ -89,7 +89,7 @@ function Project() {
 						<p className="info__description">{data?.description}</p>
 						<div className="info__actions">
 							<Button type="link" action={data?.demo} value="demo" color="main" leftIcon="external-link" size="medium" />
-							<Button type="link" action={data?.code} value="code" color="secondary" leftIcon="github" size="medium" />
+							{data?.code && <Button type="link" action={data?.code} value="code" color="secondary" leftIcon="github" size="medium" />}
 						</div>
 					</div>
 				</div>
@@ -100,14 +100,16 @@ function Project() {
 						<div className="card__info">
 							<h2 className="h3">Details</h2>
 							<span>
-								<small>category:</small> e-commerce
+								<small>category:</small> {data?.category}
 							</span>
 							<span>
 								<small>year:</small> {data?.year}
 							</span>
-							<span>
-								<small>design:</small> {data?.design.value}
-							</span>
+							{data?.details.map((det, index) => (
+								<span key={index}>
+									<small>{det.title}:</small> {det.value}
+								</span>
+							))}
 						</div>
 					</div>
 					<div className="detail__card">
