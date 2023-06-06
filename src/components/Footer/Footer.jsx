@@ -7,7 +7,7 @@ function Footer() {
 		<footer className="footer">
 			<div className="footer__content">
 				<small className="footer__copy">
-					designed and coded with <Icon title="heart" name="heart" size="x-small" /> by Pedro Ramos
+					designed & coded with <Icon title="heart" name="heart" size="x-small" /> by Pedro Ramos
 				</small>
 				<div className="footer__social">
 					<Button type="link" rightIcon="github" justIcon size="medium" action="https://github.com/pedrorxmos" nothing />
