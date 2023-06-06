@@ -6,7 +6,7 @@
 	@include d-flex(row, 0);
 	align-items: stretch;
 	justify-content: center;
-	padding-top: 8rem;
+	padding-top: calc(8rem + 84px);
 
 	.work__container {
 		@include d-flex(row, 1rem);

@@ -6,7 +6,7 @@
 	@include d-flex(column, 24px);
 	justify-content: flex-start;
 	align-items: center;
-	padding-top: 2rem;
+	padding-top: calc(2rem + 84px);
 
 	.about__items {
 		display: grid;
@@ -51,6 +51,6 @@
 
 	@include mq(min-width, 760px) {
 		justify-content: center;
-		padding-top: 5rem;
+		padding-top: calc(5rem + 84px);
 	}
 }

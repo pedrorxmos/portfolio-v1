@@ -36,14 +36,12 @@ main {
 	}
 
 	&.main {
-		margin-top: 84px;
 		// padding-bottom: 59px;
 		padding-left: 24px;
 		padding-right: 24px;
 		// height: calc(100vh - 84px - 44px);
 
 		@include mq(min-width, 600px) {
-			margin-top: 84px;
 			// padding-bottom: 44px;
 			max-width: unset;
 			margin-left: 0;
