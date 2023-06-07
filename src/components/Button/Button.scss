@@ -15,6 +15,7 @@
 	font-family: $main-font-family;
 	background-color: var(--light-color-40);
 	cursor: pointer;
+	z-index: 100;
 
 	&:hover {
 		background-color: var(--light-color-80);
