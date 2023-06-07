@@ -4,6 +4,7 @@ import { FirestoreProvider, useFirebaseApp } from 'reactfire';
 import Cursor from './components/Cursor/Cursor';
 import Topbar from './components/Topbar/Topbar';
 import './scss/global.scss';
+import Grain from './components/Grain/Grain';
 function App() {
 	const firestoreInstance = getFirestore(useFirebaseApp());
 
@@ -15,6 +16,7 @@ function App() {
 
 				<Outlet />
 				<Topbar />
+				<Grain />
 				{/* </Div100vh> */}
 			</FirestoreProvider>
 		</>
