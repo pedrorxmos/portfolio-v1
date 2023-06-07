@@ -82,6 +82,12 @@
 
 				.work__title {
 					@include d-flex(column, 6px);
+
+					@include mq(max-width, 360px) {
+						small {
+							font-size: fs('x-small');
+						}
+					}
 				}
 
 				.work__filter {

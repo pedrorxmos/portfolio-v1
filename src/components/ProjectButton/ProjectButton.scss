@@ -6,14 +6,22 @@
 	@include d-flex(row, 0);
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.666667rem 3rem;
+	padding: 1.333333rem 1.5rem;
 	background-color: var(--light-color-40);
 	border-bottom: 3px solid var(--purple-color);
 	transition: background-color 0.3s;
 
+	@include mq(min-width, 960px) {
+		padding: 1.666667rem 3rem;
+	}
+
 	& > .svg {
 		max-width: 0px;
 		transition: max-width 0.5s;
+
+		@include mq(max-width, 960px) {
+			display: none;
+		}
 	}
 
 	.project__info {
@@ -24,6 +32,7 @@
 		.project__tags {
 			@include d-flex(row, 1rem);
 			justify-content: flex-end;
+			flex-wrap: wrap;
 
 			.project__tag {
 				@include d-flex(row, 0);
