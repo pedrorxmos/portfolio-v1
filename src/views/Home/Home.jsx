@@ -3,6 +3,9 @@ import Button from '../../components/Button/Button';
 import { use100vh } from 'react-div-100vh';
 
 function Home() {
+	if (document.querySelector('main').classList.contains('home')) document.querySelector('body').style.overflow = 'hidden';
+	else document.querySelector('body').style.overflow = 'scroll';
+
 	return (
 		<>
 			<main className="home" style={{ height: use100vh(), overflow: 'hidden' }}>

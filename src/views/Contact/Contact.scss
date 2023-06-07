@@ -45,7 +45,16 @@
 		}
 
 		.contact__social {
-			@include d-flex(row, 2.25rem);
+			@include d-flex(row, 1.5rem);
+			padding-bottom: 4rem;
+
+			@include mq(min-width, 340px) {
+				gap: 1.75rem;
+			}
+
+			@include mq(min-width, 380px) {
+				gap: 2.25rem;
+			}
 
 			@include mq(min-width, 960px) {
 				flex-direction: column;

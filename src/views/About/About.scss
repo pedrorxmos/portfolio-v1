@@ -17,6 +17,10 @@
 		margin: 0 auto;
 		padding-bottom: 3rem;
 
+		@include mq(max-width, 400px) {
+			grid-auto-rows: 0fr;
+		}
+
 		.about__card {
 			@include d-flex(row, 1rem);
 			align-items: center;
@@ -27,6 +31,10 @@
 			* {
 				flex-grow: 0;
 				flex-shrink: 1;
+			}
+
+			@include mq(max-width, 400px) {
+				flex-direction: column;
 			}
 
 			@include mq(min-width, 960px) {
@@ -40,6 +48,10 @@
 			.card__info {
 				@include d-flex(column, 0.75rem);
 				width: 100%;
+
+				@include mq(max-width, 400px) {
+					text-align: center;
+				}
 			}
 		}
 

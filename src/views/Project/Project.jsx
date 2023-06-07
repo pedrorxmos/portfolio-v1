@@ -37,7 +37,7 @@ function Project() {
 				<div className="detail__actions">
 					<Link to="/work" className="action cursor-target btn">
 						<Icon title="arrow-left" name="arrow-left" size="medium" />
-						back
+						<span>back</span>
 					</Link>
 
 					<div className="actions__other">
@@ -51,7 +51,7 @@ function Project() {
 							onClick={changePreview}
 						>
 							<Icon title="arrow-left" name="arrow-left" size="medium" />
-							previous
+							<span>previous</span>
 						</Link>
 						<Link
 							to={`/work/${nextProject?.NO_ID_FIELD}`}
@@ -62,7 +62,7 @@ function Project() {
 							onMouseLeave={onMouseLeave}
 							onClick={changePreview}
 						>
-							next
+							<span>next</span>
 							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
 						<div className="actions__preview" style={{ opacity: 0 }}>

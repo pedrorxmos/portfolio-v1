@@ -7,10 +7,12 @@ import { use100vh } from 'react-div-100vh';
 function Topbar() {
 	const openMenu = () => {
 		document.querySelector('.nav').classList.add('nav-open');
+		document.querySelector('body').style.overflowY = 'hidden';
 	};
 
 	const closeMenu = () => {
 		document.querySelector('.nav').classList.remove('nav-open');
+		document.querySelector('body').style.overflowY = 'auto';
 	};
 
 	return (

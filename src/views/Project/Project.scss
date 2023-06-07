@@ -15,7 +15,7 @@
 		justify-content: space-between;
 		width: 100%;
 		top: 84px;
-		position: fixed;
+		position: absolute;
 		padding: 0 24px;
 		z-index: 10;
 
@@ -66,6 +66,16 @@
 		.actions__other {
 			@include d-flex(row, 1.5rem);
 			position: relative;
+
+			@include mq(max-width, 400px) {
+				gap: 1rem;
+
+				.action {
+					span {
+						display: none;
+					}
+				}
+			}
 
 			.actions__preview {
 				background-color: var(--light-color);
@@ -160,6 +170,14 @@
 				@include d-flex(row, 2.25rem);
 				justify-content: center;
 				align-items: center;
+
+				@include mq(max-width, 340px) {
+					gap: 1.5rem;
+				}
+
+				@include mq(max-width, 320px) {
+					gap: 0.75rem;
+				}
 			}
 		}
 
@@ -171,6 +189,10 @@
 			border-bottom: 3px solid var(--purple-color);
 			align-self: stretch;
 			padding: 1.5rem 2rem;
+
+			@include mq(max-width, 400px) {
+				flex-direction: column;
+			}
 
 			@include mq(min-width, 960px) {
 				padding: 1.875rem 2.5rem;
@@ -199,11 +221,19 @@
 				@include d-flex(column, 0.5rem);
 				width: 100%;
 
+				@include mq(max-width, 400px) {
+					text-align: center;
+				}
+
 				.detail__tools {
 					@include d-flex(row, 1rem);
 					align-items: flex-start;
 					justify-content: flex-start;
 					flex-wrap: wrap;
+
+					@include mq(max-width, 400px) {
+						justify-content: center;
+					}
 
 					.detail__tool {
 						background: var(--light-color);
