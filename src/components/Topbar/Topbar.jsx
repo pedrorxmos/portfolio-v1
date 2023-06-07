@@ -12,7 +12,7 @@ function Topbar() {
 
 	const closeMenu = () => {
 		document.querySelector('.nav').classList.remove('nav-open');
-		document.querySelector('body').style.overflowY = 'auto';
+		if (!document.querySelector('main')?.classList.contains('home')) document.querySelector('body').style.overflowY = 'auto';
 	};
 
 	return (
