@@ -6,13 +6,25 @@
 	@include d-flex(row, 0);
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 80px;
+	padding: 0 24px;
 	height: 84px;
 	position: fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: 99;
+	z-index: 100;
+
+	@include mq(min-width, 600px) {
+		padding: 0 32px;
+	}
+
+	@include mq(min-width, 960px) {
+		padding: 0 48px;
+	}
+
+	@include mq(min-width, 1280px) {
+		padding: 0 96px;
+	}
 
 	.logo {
 		font-family: $headers-font-family;
@@ -31,12 +43,57 @@
 			overflow: hidden;
 			animation: width 0.3s;
 
+			.nav--list {
+				@include d-flex(row, 1.5rem);
+				justify-content: flex-end;
+				align-items: center;
+			}
+
 			&.nav__actions {
 				display: flex;
 			}
 
 			&.nav__menu {
 				display: none;
+
+				.overlay {
+					display: none;
+				}
+
+				@include mq(max-width, 960px) {
+					display: flex;
+
+					.overlay {
+						display: block;
+						width: 100vw;
+						height: var(--use-100vh);
+						background-color: rgba(0, 0, 0, 0.25);
+						opacity: 0;
+						position: fixed;
+						top: 0;
+						left: 0;
+						pointer-events: none;
+						@include prefix(transition, (opacity 0.3s));
+					}
+
+					.btn {
+						display: none;
+					}
+
+					.nav--list {
+						position: fixed;
+						top: 0;
+						right: 0;
+						transform: translateX(100%);
+						height: var(--use-100vh);
+						background: var(--bg-color);
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
+						padding: 8rem 5rem;
+						@include prefix(transition, (transform 0.3s));
+					}
+				}
 			}
 
 			.nav--item {
@@ -52,6 +109,26 @@
 
 				&.nav__menu {
 					display: flex;
+
+					.btn {
+						display: flex;
+					}
+
+					@include mq(max-width, 960px) {
+						.overlay {
+							opacity: 1;
+							pointer-events: all;
+						}
+
+						.nav--list {
+							transform: translateX(0);
+							gap: 3rem;
+							font-size: fs('x-normal');
+							.btn {
+								font-size: fs('x-normal');
+							}
+						}
+					}
 				}
 			}
 		}

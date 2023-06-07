@@ -82,9 +82,5 @@
 		@include mq(min-width, 1280px) {
 			padding: 12px 96px;
 		}
-
-		@include mq(min-width, 1440px) {
-			padding: 12px 80px;
-		}
 	}
 }

@@ -12,8 +12,9 @@ function App() {
 			<FirestoreProvider sdk={firestoreInstance}>
 				{/* <Div100vh> */}
 				<Cursor />
-				<Topbar />
+
 				<Outlet />
+				<Topbar />
 				{/* </Div100vh> */}
 			</FirestoreProvider>
 		</>

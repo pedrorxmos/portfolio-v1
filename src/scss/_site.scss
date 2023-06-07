@@ -56,6 +56,10 @@ main {
 	}
 
 	&.main {
+		& + .topbar {
+			background-color: var(--bg-color);
+		}
+
 		// padding-bottom: 59px;
 		padding-left: 24px;
 		padding-right: 24px;
