@@ -23,9 +23,29 @@ body {
 	font-weight: 300;
 	color: var(--font-color);
 	margin: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+
 	// overflow: hidden;
 	&::-webkit-scrollbar {
-		display: none;
+		width: 0px;
+
+		@include prefix(transition, (opacity 0.3s));
+	}
+
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: var(--scroll-color);
+	}
+
+	@include mq(max-width, 1080px) {
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
 	}
 }
 

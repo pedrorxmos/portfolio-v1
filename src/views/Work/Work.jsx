@@ -10,10 +10,13 @@ function Work() {
 
 	return (
 		<>
-			<main className="work main" style={{ height: use100vh() }}>
+			<main className="work main" style={{ '--use-100vh': `${use100vh()}px` }}>
 				<div className="work__container">
 					<div className="work__img">
-						<div className="selected-work"></div>
+						{/* <img src="/img/blank.webp" className="selected-work" alt="selected project image" /> */}
+						{data?.map((e) => (
+							<img className="selected-work" id={e.NO_ID_FIELD} key={e.NO_ID_FIELD} src={`/img/${e.img}.webp`} alt={`${e.title} project image`} />
+						))}
 					</div>
 					<div className="work__projects">
 						<div className="work__header">
@@ -33,7 +36,7 @@ function Work() {
 							{data
 								?.sort((a, b) => a.order - b.order)
 								.map((e) => (
-									<ProjectButton key={e.NO_ID_FIELD} id={e.NO_ID_FIELD} title={e.title} img={e.img} tags={e.tags} />
+									<ProjectButton key={e.NO_ID_FIELD} id={e.NO_ID_FIELD} title={e.title} tags={e.tags} />
 								))}
 						</div>
 					</div>
