@@ -8,6 +8,7 @@
 	width: fit-content;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+	z-index: 999;
 
 	.cursor-dot {
 		pointer-events: none;

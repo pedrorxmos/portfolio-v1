@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import './Project.scss';
 import { useCollection, useDoc } from '../../hooks/getFirestore';
@@ -35,15 +35,15 @@ function Project() {
 		<>
 			<main className="project-detail main">
 				<div className="detail__actions">
-					<Link to="/work" className="action cursor-target">
+					<Link to="/work" className="action cursor-target btn">
 						<Icon title="arrow-left" name="arrow-left" size="medium" />
-						back
+						<span>back</span>
 					</Link>
 
 					<div className="actions__other">
 						<Link
 							to={`/work/${previousProject?.NO_ID_FIELD}`}
-							className="action cursor-target"
+							className="action cursor-target btn"
 							data-title={previousProject?.title}
 							data-img={previousProject?.img}
 							onMouseEnter={onMouseEnter}
@@ -51,18 +51,18 @@ function Project() {
 							onClick={changePreview}
 						>
 							<Icon title="arrow-left" name="arrow-left" size="medium" />
-							previous
+							<span>previous</span>
 						</Link>
 						<Link
 							to={`/work/${nextProject?.NO_ID_FIELD}`}
-							className="action cursor-target"
+							className="action cursor-target btn"
 							data-title={nextProject?.title}
 							data-img={nextProject?.img}
 							onMouseEnter={onMouseEnter}
 							onMouseLeave={onMouseLeave}
 							onClick={changePreview}
 						>
-							next
+							<span>next</span>
 							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
 						<div className="actions__preview" style={{ opacity: 0 }}>
@@ -128,7 +128,7 @@ function Project() {
 				</div>
 			</main>
 
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

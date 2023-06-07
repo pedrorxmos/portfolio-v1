@@ -9,6 +9,10 @@
 		@include prefix(transition, background 0.3s);
 		cursor: text;
 
+		@include mq(max-width, 350px) {
+			padding: 1rem 0.75rem;
+		}
+
 		.form--label {
 			position: absolute;
 			top: 1.5rem;
@@ -17,6 +21,18 @@
 			pointer-events: none;
 			@include prefix(transition, (top 0.3s, font-size 0.3s));
 			border-radius: 8px;
+
+			@include mq(max-width, 350px) {
+				height: 1.25rem;
+				width: 1.25rem;
+			}
+
+			.svg {
+				@include mq(max-width, 350px) {
+					height: 1.25rem;
+					width: 1.25rem;
+				}
+			}
 		}
 
 		.form--input {
@@ -57,8 +73,22 @@
 		}
 
 		.form--area {
-			min-height: 11rem;
+			height: 11rem;
 			resize: vertical;
+
+			&::-webkit-scrollbar {
+				width: 8px;
+				height: 100px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: none;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background: var(--scroll-color);
+			}
 		}
 	}
 }

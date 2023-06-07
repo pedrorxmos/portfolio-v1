@@ -5,29 +5,58 @@
 .work {
 	@include d-flex(row, 0);
 	align-items: stretch;
-	justify-content: center;
-	padding-top: 8rem;
+	justify-content: flex-start;
+	padding-top: calc(5rem + 10vh + 84px);
+
+	@include mq(min-width, 960px) {
+		&.main {
+			max-width: unset;
+			padding-left: 96px;
+			padding-right: 96px;
+		}
+	}
+
+	@include mq(min-width, 1080px) {
+		min-height: var(--use-100vh);
+		max-height: var(--use-100vh);
+		overflow: hidden;
+	}
 
 	.work__container {
 		@include d-flex(row, 1rem);
 		width: 100%;
 		justify-content: center;
 		align-items: stretch;
+		overflow: hidden;
 
 		.work__img {
 			flex: calc(45% - 8px);
 			width: 100%;
-			padding: 0 1.5rem 4rem;
+			height: 100%;
+			padding: 0 1.5rem;
+			align-self: center;
+			display: block;
+			position: relative;
+
+			@include mq(max-width, 1080px) {
+				display: none;
+			}
 
 			.selected-work {
+				position: absolute;
+				top: 0;
 				width: 100%;
-				height: 100%;
-				aspect-ratio: 1 / 1.058;
-				background-color: transparent;
-				background-size: cover;
-				background-position: center;
+				height: auto;
+				// aspect-ratio: 1 / 1.058;
+				padding-bottom: 2rem;
+				// background-color: transparent;
+				// background-size: cover;
+				// background-position: center;
+				object-fit: cover;
 				opacity: 0;
-				background-image: url('/img/blank.webp');
+				display: block;
+				z-index: 1;
+				// background-image: url('/img/blank.webp');
 				border-radius: 51% 49% 31% 69% / 58% 42% 58% 42%;
 				@include prefix(transform, scale(0.6));
 				@include prefix(animation, (blob-animation 15s ease-in-out infinite both));
@@ -36,7 +65,8 @@
 
 				&.open {
 					opacity: 0.8;
-					@include prefix(transform, scale(1));
+					z-index: 2;
+					@include prefix(transform, scale(0.9));
 				}
 			}
 		}
@@ -52,11 +82,22 @@
 
 				.work__title {
 					@include d-flex(column, 6px);
+
+					@include mq(max-width, 360px) {
+						small {
+							font-size: fs('x-small');
+						}
+					}
 				}
 
 				.work__filter {
 					@include d-flex(row, 0.75rem);
 					align-items: center;
+
+					@include mq(max-width, 600px) {
+						gap: 0.2rem;
+						flex-direction: column;
+					}
 
 					.dropdown {
 						background-color: var(--light-color-50);
@@ -65,6 +106,17 @@
 						@include d-flex(row, 10px);
 						padding: 4px 8px;
 						border-radius: 10px;
+
+						@include mq(max-width, 600px) {
+							padding: 8px 16px;
+							gap: 5px;
+							font-size: fs('normal');
+
+							.svg {
+								height: 1.25rem;
+								width: 1.25rem;
+							}
+						}
 					}
 				}
 			}
@@ -89,6 +141,15 @@
 				&::-webkit-scrollbar-thumb {
 					border-radius: 10px;
 					background: var(--scroll-color);
+				}
+
+				@include mq(max-width, 1080px) {
+					padding-right: 0;
+					padding-bottom: 3rem;
+
+					&::-webkit-scrollbar {
+						display: none;
+					}
 				}
 			}
 		}

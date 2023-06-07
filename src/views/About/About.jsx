@@ -1,4 +1,3 @@
-import Footer from '../../components/Footer/Footer';
 import Icon from '../../components/Icon/Icon';
 import { useCollection } from '../../hooks/getFirestore';
 import './About.scss';
@@ -23,7 +22,7 @@ function About() {
 					))}
 				</div>
 			</main>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

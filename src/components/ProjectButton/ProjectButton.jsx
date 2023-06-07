@@ -2,23 +2,33 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProjectButton.scss';
 import Icon from '../Icon/Icon';
+import { useEffect, useRef } from 'react';
 
-function ProjectButton({ id, title, tags, img }) {
-	const selectedWork = document.querySelector('.selected-work');
+function ProjectButton({ id, title, tags }) {
+	const selectedWork = useRef(null);
+
+	useEffect(() => {
+		selectedWork.current = document.querySelector(`#${id}`);
+	});
 
 	const onMouseEnter = () => {
-		selectedWork.style.backgroundImage = `url('/img/${img}.webp')`;
-		selectedWork.classList.add('open');
+		selectedWork?.current.classList.add('open');
 	};
 
 	const onMouseLeave = () => {
-		// selectedWork.style.backgroundImage = `url('/img/blank.webp')`;
-		selectedWork.classList.remove('open');
+		selectedWork?.current.classList.remove('open');
 	};
 
 	return (
 		<>
-			<Link to={`/work/${id}`} className="cursor-target project-button" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+			<Link
+				to={`/work/${id}`}
+				className="cursor-target project-button"
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+				onPointerEnter={onMouseEnter}
+				onPointerLeave={onMouseLeave}
+			>
 				<Icon title={`go to ${title}`} name="arrow-left" size="x-normal" />
 				<div className="project__info">
 					<h2 className="h3">{title}</h2>
@@ -42,5 +52,4 @@ ProjectButton.propTypes = {
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	tags: PropTypes.array.isRequired,
-	img: PropTypes.string.isRequired,
 };

@@ -4,33 +4,65 @@
 
 .about {
 	@include d-flex(column, 24px);
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	padding-right: 108px;
-	padding-left: 108px;
+	padding-top: calc(2rem + 84px);
 
 	.about__items {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		grid-auto-rows: 1fr;
 		gap: 24px;
+		max-width: 1064px;
+		margin: 0 auto;
+		padding-bottom: 3rem;
+
+		@include mq(max-width, 400px) {
+			grid-auto-rows: 0fr;
+		}
 
 		.about__card {
 			@include d-flex(row, 1rem);
 			align-items: center;
 			background-color: var(--light-color-40);
 			border-bottom: 3px solid var(--purple-color);
-			padding: 2.25rem 3rem;
+			padding: 1.5rem 2rem;
 
 			* {
 				flex-grow: 0;
 				flex-shrink: 1;
 			}
 
+			@include mq(max-width, 400px) {
+				flex-direction: column;
+			}
+
+			@include mq(min-width, 960px) {
+				padding: 1.875rem 2.5rem;
+			}
+
+			@include mq(min-width, 1280px) {
+				padding: 2.25rem 3rem;
+			}
+
 			.card__info {
 				@include d-flex(column, 0.75rem);
 				width: 100%;
+
+				@include mq(max-width, 400px) {
+					text-align: center;
+				}
 			}
 		}
+
+		@include mq(min-width, 760px) {
+			grid-template-columns: 1fr 1fr;
+			padding-bottom: 0;
+		}
+	}
+
+	@include mq(min-width, 760px) {
+		justify-content: center;
+		padding-top: calc(5rem + 84px);
 	}
 }

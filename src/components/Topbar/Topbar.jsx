@@ -2,62 +2,70 @@ import './Topbar.scss';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
+import { use100vh } from 'react-div-100vh';
 
 function Topbar() {
-	const toggleMenu = () => {
-		document.querySelector('.nav').classList.toggle('nav-open');
+	const openMenu = () => {
+		document.querySelector('.nav').classList.add('nav-open');
+		document.querySelector('body').style.overflowY = 'hidden';
+	};
+
+	const closeMenu = () => {
+		document.querySelector('.nav').classList.remove('nav-open');
+		document.querySelector('body').style.overflowY = 'auto';
 	};
 
 	return (
 		<>
-			<header className="topbar">
+			<header className="topbar" style={{ '--use-100vh': `${use100vh()}px` }}>
 				<span className="logo">
 					<Link to="/" className="cursor-target">
 						Pedro Ramos
 					</Link>
 				</span>
 				<nav className="nav">
-					<ul className="nav--items nav__actions">
-						<li className="nav--item">
-							<a href="#locale" className="nav--item__locale cursor-target" alt="change language">
-								en
-							</a>
-						</li>
-						<li className="nav--item cursor-target">
-							<Icon title="light mode" name="sun" size="small" />
-						</li>
-						<li className="nav--item">
-							<Button value="menu" size="medium" rightIcon="menu" nothing action={toggleMenu} />
-						</li>
-					</ul>
-					<ul className="nav--items nav__menu">
-						<li className="nav--item">
-							<Link to="/" className="cursor-target">
-								home
-							</Link>
-						</li>
-						<li className="nav--item">
-							<Link to="/about" className="cursor-target">
-								about
-							</Link>
-						</li>
-						<li className="nav--item">
-							<Link to="/work" className="cursor-target">
-								work
-							</Link>
-						</li>
-						<li className="nav--item">
-							<Link to="/contact" className="cursor-target">
-								contact
-							</Link>
-						</li>
-						<li className="nav--item">
-							<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
-						</li>
-						<li className="nav--item">
-							<Button size="medium" rightIcon="x" nothing action={toggleMenu} />
-						</li>
-					</ul>
+					<div className="nav--items nav__actions">
+						<ul className="nav--list ">
+							<li className="nav--item">
+								<a href="#locale" className="nav--item__locale cursor-target" alt="change language">
+									en
+								</a>
+							</li>
+							<li className="nav--item cursor-target">
+								<Icon title="light mode" name="sun" size="small" />
+							</li>
+						</ul>
+						<Button value="menu" size="medium" rightIcon="menu" nothing action={openMenu} />
+					</div>
+					<div className="nav--items  nav__menu">
+						<div className="overlay" onClick={closeMenu}></div>
+						<ul className="nav--list">
+							<li className="nav--item">
+								<Link to="/" className="cursor-target" onClick={closeMenu}>
+									home
+								</Link>
+							</li>
+							<li className="nav--item">
+								<Link to="/about" className="cursor-target" onClick={closeMenu}>
+									about
+								</Link>
+							</li>
+							<li className="nav--item">
+								<Link to="/work" className="cursor-target" onClick={closeMenu}>
+									work
+								</Link>
+							</li>
+							<li className="nav--item">
+								<Link to="/contact" className="cursor-target" onClick={closeMenu}>
+									contact
+								</Link>
+							</li>
+							<li className="nav--item">
+								<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
+							</li>
+						</ul>
+						<Button size="big" rightIcon="x" nothing action={closeMenu} />
+					</div>
 				</nav>
 			</header>
 		</>

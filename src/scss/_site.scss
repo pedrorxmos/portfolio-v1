@@ -15,6 +15,7 @@
 
 html {
 	font-size: fs('normal');
+	background-color: var(--bg-color);
 }
 
 body {
@@ -23,26 +24,79 @@ body {
 	font-weight: 300;
 	color: var(--font-color);
 	margin: 0;
-	overflow: hidden;
-}
+	overflow-y: auto;
+	overflow-x: hidden;
 
-#root {
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
+	// overflow: hidden;
+	&::-webkit-scrollbar {
+		width: 0px;
+
+		@include prefix(transition, (opacity 0.3s));
+	}
+
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: var(--scroll-color);
+	}
+
+	@include mq(max-width, 1080px) {
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+	}
 }
 
 main {
-	overflow: hidden;
-	flex: 1;
 	width: 100%;
-	height: inherit;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
 	&.main {
-		max-width: 1280px;
-		margin: 0 auto;
-		padding-top: 84px;
-		padding-bottom: 44px;
-		// height: calc(100vh);
+		& + .topbar {
+			background-color: var(--bg-color);
+		}
+
+		// padding-bottom: 59px;
+		padding-left: 24px;
+		padding-right: 24px;
+		// height: calc(100vh - 84px - 44px);
+
+		@include mq(min-width, 600px) {
+			// padding-bottom: 44px;
+			max-width: unset;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+
+		@include mq(min-width, 960px) {
+			max-width: 840px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		@include mq(min-width, 1280px) {
+			max-width: unset;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 96px;
+			padding-right: 96px;
+		}
+
+		@include mq(min-width, 1440px) {
+			max-width: 1280px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
