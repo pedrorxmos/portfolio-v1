@@ -3,21 +3,61 @@
 @import '../../scss/functions';
 
 .project-detail {
-	@include d-flex(column, 1.5rem);
+	@include d-flex(column, 3rem);
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	padding-top: calc(3.5rem + 84px);
+	padding-bottom: 3rem;
 
 	.detail__actions {
 		@include d-flex(row, 0);
 		justify-content: space-between;
 		width: 100%;
-		top: 0;
-		position: absolute;
+		top: 84px;
+		position: fixed;
+		padding: 0 24px;
+		z-index: 10;
+
+		@include mq(min-width, 600px) {
+			// padding-bottom: 44px;
+			max-width: unset;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+
+		@include mq(min-width, 960px) {
+			max-width: 840px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		@include mq(min-width, 1280px) {
+			max-width: unset;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 96px;
+			padding-right: 96px;
+		}
+
+		@include mq(min-width, 1440px) {
+			max-width: 1280px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
 
 		.action {
 			@include d-flex(row, 4px);
 			align-items: stretch;
+			background-color: var(--light-color-40);
+			border: none;
+
 			.svg {
 				stroke-width: 1;
 			}
@@ -55,19 +95,28 @@
 	}
 
 	.detail__section {
-		@include d-flex(row, 1rem);
+		@include d-flex(column, 1rem);
 		justify-content: stretch;
 		width: 100%;
+		align-items: stretch;
+
+		@include mq(min-width, 1280px) {
+			flex-direction: row;
+			gap: 1rem;
+			justify-content: stretch;
+			align-items: center;
+		}
 
 		.detail__img {
 			width: 100%;
 			flex: 1;
 			padding: 0 0.75rem;
+			z-index: 1;
 
 			img {
 				border-radius: 12px;
 				width: 100%;
-				height: 100%;
+				// height: auto;
 				aspect-ratio: 16 / 9;
 				object-fit: cover;
 			}
@@ -78,6 +127,15 @@
 			@include d-flex(column, 2rem);
 			justify-content: center;
 			align-items: stretch;
+			padding: 0 0.75rem;
+
+			@include mq(min-width, 600px) {
+				padding: 0 1rem;
+			}
+
+			@include mq(min-width, 1280px) {
+				padding: 0;
+			}
 
 			.info__title {
 				@include d-flex(column, 0);
@@ -107,10 +165,29 @@
 
 		.detail__card {
 			@include d-flex(row, 1.5rem);
-			align-items: stretch;
+			justify-content: stretch;
+			width: 100%;
 			background-color: var(--light-color-40);
 			border-bottom: 3px solid var(--purple-color);
-			padding: 2.25rem 3rem;
+			align-self: stretch;
+			padding: 1.5rem 2rem;
+
+			@include mq(min-width, 960px) {
+				padding: 1.875rem 2.5rem;
+			}
+
+			@include mq(min-width, 1280px) {
+				align-content: stretch;
+				padding: 2.25rem 3rem;
+
+				&:first-child {
+					width: 360px;
+				}
+
+				&:last-child {
+					flex: 1;
+				}
+			}
 
 			.svg {
 				align-self: center;
@@ -120,6 +197,7 @@
 
 			.card__info {
 				@include d-flex(column, 0.5rem);
+				width: 100%;
 
 				.detail__tools {
 					@include d-flex(row, 1rem);
@@ -133,14 +211,6 @@
 						border-radius: 8px;
 					}
 				}
-			}
-
-			&:first-child {
-				width: 360px;
-			}
-
-			&:last-child {
-				flex: 1;
 			}
 		}
 	}

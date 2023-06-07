@@ -1,4 +1,4 @@
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
 import { useCollection } from '../../hooks/getFirestore';
