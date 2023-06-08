@@ -16,6 +16,21 @@ export default function Model(props) {
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 
+	const [pointer, setPointer] = useState({ x: 0, y: 0 });
+
+	window.addEventListener('mousemove', (e) => {
+		const ndcX = (e.pageX / size.width) * 2 - 1;
+		const ndcY = -(e.pageY / size.height) * 2 + 1;
+
+		// Create a 3D vector in NDC space
+		const vector = new THREE.Vector3(ndcX, ndcY, -90);
+
+		// Convert the vector from NDC space to world space
+		vector.unproject(camera);
+
+		setPointer(vector);
+	});
+
 	// useFrame(({ mouse, viewport }) => {
 	// 	// mesh.current.position.y += 0.01;
 	// 	// if (dir > 0) {
@@ -32,18 +47,19 @@ export default function Model(props) {
 
 	useFrame(({ mouse }) => {
 		const worldPosition = new THREE.Vector3();
-		const x = mouse.x * size.width;
-		const y = mouse.y * size.height * 5;
+		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
+		const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
 		worldPosition.set(x, y, -90);
 		worldPosition.unproject(camera);
 
 		mesh.current.lookAt(worldPosition);
-		console.log(mesh);
+		// console.log(mesh);
 	});
 
 	const { nodes, materials } = useGLTF('/models/eye.glb');
+	materials.material.color = new THREE.Color('hsl(50, 100%, 70%)');
 	useEffect(() => {
-		// console.log(camera);
+		console.log(materials);
 	}, []);
 	return (
 		<group {...props} dispose={null}>
