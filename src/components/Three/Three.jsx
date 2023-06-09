@@ -21,7 +21,7 @@ function Three() {
 					<BlobOne />
 					<BlobTwo />
 					{/* <BlobThree /> */}
-					{/* <LineOne /> */}
+					<LineOne />
 					<LineTwo />
 				</Canvas>
 			</div>
