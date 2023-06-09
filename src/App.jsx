@@ -5,6 +5,7 @@ import Cursor from './components/Cursor/Cursor';
 import Topbar from './components/Topbar/Topbar';
 import './scss/global.scss';
 import Grain from './components/Grain/Grain';
+import Three from './components/Three/Three';
 function App() {
 	const firestoreInstance = getFirestore(useFirebaseApp());
 
@@ -12,11 +13,11 @@ function App() {
 		<>
 			<FirestoreProvider sdk={firestoreInstance}>
 				{/* <Div100vh> */}
-				<Cursor />
-
+				{/* <Cursor /> */}
+				<Three />
 				<Outlet />
 				<Topbar />
-				<Grain />
+				{/* <Grain /> */}
 				{/* </Div100vh> */}
 			</FirestoreProvider>
 		</>

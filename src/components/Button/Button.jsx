@@ -20,7 +20,7 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 					onClick={action}
 				>
 					{leftIcon ? <Icon title={leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
-					<span>{value}</span>
+					{value ? <span>{value}</span> : ''}
 					{rightIcon ? <Icon title={rightIcon} name={rightIcon} size={iconSizeMap[size]} /> : ''}
 				</button>
 			)}
@@ -34,7 +34,7 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 					rel="noreferrer"
 				>
 					{leftIcon ? <Icon title={leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
-					<span>{value}</span>
+					{value ? <span>{value}</span> : ''}
 					{rightIcon ? <Icon title={rightIcon} name={rightIcon} size={iconSizeMap[size]} /> : ''}
 				</a>
 			)}

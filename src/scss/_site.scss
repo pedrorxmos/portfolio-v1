@@ -54,6 +54,7 @@ main {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+	z-index: 10;
 
 	&.main {
 		& + .topbar {
