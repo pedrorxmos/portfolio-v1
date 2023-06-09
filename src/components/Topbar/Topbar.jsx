@@ -12,7 +12,9 @@ function Topbar() {
 
 	const closeMenu = () => {
 		document.querySelector('.nav').classList.remove('nav-open');
-		if (!document.querySelector('main')?.classList.contains('home')) document.querySelector('body').style.overflowY = 'auto';
+		setTimeout(() => {
+			if (!document.querySelector('main')?.classList.contains('home')) document.querySelector('body').style.overflowY = 'auto';
+		}, 10);
 	};
 
 	return (
