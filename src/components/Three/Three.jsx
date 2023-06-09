@@ -18,9 +18,9 @@ function Three() {
 					<hemisphereLight args={['#fff', '#333', 0.5]} />
 					<Light />
 					<Eye />
-					{/* <BlobOne /> */}
+					<BlobOne />
 					<BlobTwo />
-					{/* <BlobThree /> */}
+					<BlobThree />
 					<LineOne />
 					<LineTwo />
 				</Canvas>
