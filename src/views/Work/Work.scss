@@ -7,6 +7,7 @@
 	align-items: stretch;
 	justify-content: flex-start;
 	padding-top: calc(5rem + 10vh + 84px);
+	z-index: 100;
 
 	@include mq(min-width, 960px) {
 		&.main {
@@ -28,6 +29,7 @@
 		justify-content: center;
 		align-items: stretch;
 		overflow: hidden;
+		z-index: 100;
 
 		.work__img {
 			flex: calc(45% - 8px);

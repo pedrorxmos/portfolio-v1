@@ -7,6 +7,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	padding-top: calc(2rem + 84px);
+	z-index: 100;
 
 	.about__items {
 		display: grid;
@@ -16,6 +17,7 @@
 		max-width: 1064px;
 		margin: 0 auto;
 		padding-bottom: 3rem;
+		z-index: 100;
 
 		@include mq(max-width, 400px) {
 			grid-auto-rows: 0fr;

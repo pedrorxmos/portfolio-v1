@@ -2,6 +2,13 @@
 @import '../../scss/mixins';
 @import '../../scss/functions';
 
+.main {
+	& + .topbar {
+		background-color: var(--bg-color);
+		z-index: 100;
+	}
+}
+
 .topbar {
 	@include d-flex(row, 0);
 	justify-content: space-between;
@@ -13,7 +20,7 @@
 	top: 0;
 	left: 0;
 	border: none;
-	z-index: 20;
+	z-index: 100;
 
 	@include mq(min-width, 600px) {
 		padding: 0 32px;
@@ -44,6 +51,7 @@
 	.nav {
 		@include d-flex(row, 0);
 		justify-content: flex-end;
+		z-index: 20;
 
 		.nav--items {
 			@include d-flex(row, 1.5rem);
@@ -109,12 +117,14 @@
 						@include mq(min-width, 360px) {
 							padding: 8rem 5rem 0;
 						}
+						z-index: 100;
 					}
 				}
 			}
 
 			.nav--item {
 				cursor: pointer;
+				z-index: 100;
 			}
 		}
 

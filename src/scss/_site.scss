@@ -54,13 +54,7 @@ main {
 	&::-webkit-scrollbar {
 		display: none;
 	}
-	z-index: 10;
-
-	.main {
-		& + .topbar {
-			background-color: var(--bg-color);
-		}
-	}
+	z-index: 800;
 
 	// padding-bottom: 59px;
 	padding-left: 24px;
