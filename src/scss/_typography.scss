@@ -1,19 +1,19 @@
 p {
 	font-size: fs('normal');
 	margin: 0;
-	z-index: 100;
+	z-index: 6;
 }
 
 small {
 	font-size: fs('small');
 	margin: 0;
-	z-index: 100;
+	z-index: 6;
 }
 
 big {
 	font-size: fs('x-normal');
 	margin: 0;
-	z-index: 100;
+	z-index: 6;
 }
 
 ul,
@@ -22,7 +22,7 @@ li {
 	padding: 0;
 	margin: 0;
 	display: inherit;
-	z-index: 100;
+	z-index: 6;
 }
 
 a {

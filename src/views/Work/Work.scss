@@ -57,7 +57,7 @@
 				object-fit: cover;
 				opacity: 0;
 				display: block;
-				z-index: 15;
+				z-index: 100;
 				// background-image: url('/img/blank.webp');
 				border-radius: 51% 49% 31% 69% / 58% 42% 58% 42%;
 				@include prefix(transform, scale(0.6));

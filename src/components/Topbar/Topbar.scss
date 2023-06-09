@@ -5,7 +5,6 @@
 .main {
 	& + .topbar {
 		background-color: var(--bg-color);
-		z-index: 100;
 	}
 }
 
@@ -20,7 +19,7 @@
 	top: 0;
 	left: 0;
 	border: none;
-	z-index: 100;
+	z-index: 4;
 
 	@include mq(min-width, 600px) {
 		padding: 0 32px;
@@ -38,6 +37,7 @@
 		font-family: $headers-font-family;
 		font-weight: 500;
 		font-size: fs('normal');
+		z-index: 100;
 
 		@include mq(min-width, 340px) {
 			font-size: fs('x-normal');
@@ -51,7 +51,6 @@
 	.nav {
 		@include d-flex(row, 0);
 		justify-content: flex-end;
-		z-index: 20;
 
 		.nav--items {
 			@include d-flex(row, 1.5rem);
@@ -75,6 +74,7 @@
 
 				.overlay {
 					display: none;
+					z-index: 50;
 				}
 
 				@include mq(max-width, 960px) {
@@ -117,7 +117,6 @@
 						@include mq(min-width, 360px) {
 							padding: 8rem 5rem 0;
 						}
-						z-index: 100;
 					}
 				}
 			}
