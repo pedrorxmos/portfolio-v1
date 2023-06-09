@@ -1,6 +1,21 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
 .threejs {
 	width: 100vw;
 	z-index: 0;
 	position: fixed;
+	top: 0;
+	left: 0;
 	pointer-events: none;
+	overflow: -moz-hidden-unscrollable;
+	filter: blur(0px);
+	@include prefix(transition, (filter, 0.5s));
+}
+
+.main {
+	& ~ .threejs {
+		filter: blur(30px);
+	}
 }

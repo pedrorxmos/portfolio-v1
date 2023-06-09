@@ -14,8 +14,9 @@ function App() {
 			<FirestoreProvider sdk={firestoreInstance}>
 				{/* <Div100vh> */}
 				{/* <Cursor /> */}
-				<Three />
+
 				<Outlet />
+				<Three />
 				<Topbar />
 				{/* <Grain /> */}
 				{/* </Div100vh> */}
