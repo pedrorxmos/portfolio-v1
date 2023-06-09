@@ -15,8 +15,11 @@ export default function Model(props) {
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
-
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
+	const sizeH = maxSize.x * 0.038;
+	const posH = [maxSize.x * 0.6, maxSize.y * 0.5, 0];
+	const sizeV = maxSize.x * 0.08;
+	const posV = [maxSize.x * 0.23, maxSize.y * 0.62, 0];
 
 	window.addEventListener('mousemove', (e) => {
 		const ndcX = (e.pageX / size.width) * 2 - 1;
@@ -30,6 +33,32 @@ export default function Model(props) {
 
 		setPointer(vector);
 	});
+
+	const getSize = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return maxSize.x * 0.09;
+		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.08;
+		if (res > 0.75 && res <= 1.02) return maxSize.x * 0.062;
+		if (res > 1.2 && res <= 0.75) return maxSize.x * 0.075;
+		if (res > 0.75 && res <= 1.25) return maxSize.x * 0.052;
+		if (res > 1.25 && res <= 1.4) return maxSize.x * 0.045;
+		if (res > 1.4 && res <= 1.6) return maxSize.x * 0.039;
+		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.038;
+		if (res > 1.75) return maxSize.x * 0.039;
+	};
+
+	const getPos = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return [maxSize.x * 0.18, maxSize.y * 0.68, 0];
+		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.23, maxSize.y * 0.67, 0];
+		if (res > 0.6 && res <= 0.75) return [maxSize.x * 0.23, maxSize.y * 0.59, 0];
+		if (res > 0.75 && res <= 1.02) return [maxSize.x * 0.35, maxSize.y * 0.55, 0];
+		if (res > 1.02 && res <= 1.25) return [maxSize.x * 0.42, maxSize.y * 0.53, 0];
+		if (res > 1.25 && res <= 1.6) return [maxSize.x * 0.6, maxSize.y * 0.5, 0];
+		if (res > 1.6) return [maxSize.x * 0.6, maxSize.y * 0.5, 0];
+	};
 
 	useFrame(() => {
 		const worldPosition = new THREE.Vector3();
@@ -51,9 +80,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - maxSize.x * 0.4, maxSize.y / 6.5 + 0.5, 0]}
+				position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={window.innerWidth * 0.000185}
+				scale={getSize()}
 			/>
 		</group>
 	);

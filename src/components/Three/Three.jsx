@@ -20,8 +20,8 @@ function Three() {
 					<Eye />
 					<BlobOne />
 					<BlobTwo />
-					<BlobThree />
-					<LineOne />
+					{/* <BlobThree /> */}
+					{/* <LineOne /> */}
 					<LineTwo />
 				</Canvas>
 			</div>
