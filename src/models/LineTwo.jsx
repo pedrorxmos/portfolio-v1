@@ -25,6 +25,36 @@ export default function Model(props) {
 		setPointer(vector);
 	});
 
+	const getSize = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return maxSize.x * 0.055;
+		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.05;
+		if (res > 0.75 && res <= 1.02) return maxSize.x * 0.045;
+		if (res > 1.2 && res <= 0.75) return maxSize.x * 0.04;
+		if (res > 0.75 && res <= 1.25) return maxSize.x * 0.035;
+		if (res > 1.25 && res <= 1.4) return maxSize.x * 0.03;
+		if (res > 1.4 && res <= 1.6) return maxSize.x * 0.028;
+		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.027;
+		if (res > 1.75) return maxSize.x * 0.028;
+
+		return maxSize.x * 0.035;
+	};
+
+	const getPos = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];
+		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];
+		if (res > 0.6 && res <= 0.75) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];
+		if (res > 0.75 && res <= 1.02) return [maxSize.x * 0.45, maxSize.y * -0.8, 0];
+		if (res > 1.02 && res <= 1.25) return [maxSize.x * 0.5, maxSize.y * -0.78, 0];
+		if (res > 1.25 && res <= 1.6) return [maxSize.x * 0.55, maxSize.y * -0.8, 0];
+		if (res > 1.6) return [maxSize.x * 0.55, maxSize.y * -0.8, 0];
+
+		return [maxSize.x * 0.55, maxSize.y * -0.8, 0];
+	};
+
 	useFrame(() => {
 		const worldPosition = new THREE.Vector3();
 		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
@@ -45,9 +75,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.yellow}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - maxSize.x * 0.35, usePixeltoScene(0, window.innerHeight / 6.5).y + 0.5, 0]}
+				position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={window.innerWidth * 0.00009}
+				scale={getSize()}
 			/>
 		</group>
 	);

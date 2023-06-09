@@ -46,6 +46,8 @@ export default function Model(props) {
 		if (res > 1.4 && res <= 1.6) return maxSize.x * 0.039;
 		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.038;
 		if (res > 1.75) return maxSize.x * 0.039;
+
+		return maxSize.x * 0.052;
 	};
 
 	const getPos = () => {
@@ -58,6 +60,8 @@ export default function Model(props) {
 		if (res > 1.02 && res <= 1.25) return [maxSize.x * 0.42, maxSize.y * 0.53, 0];
 		if (res > 1.25 && res <= 1.6) return [maxSize.x * 0.6, maxSize.y * 0.5, 0];
 		if (res > 1.6) return [maxSize.x * 0.6, maxSize.y * 0.5, 0];
+
+		return [maxSize.x * 0.35, maxSize.y * 0.55, 0];
 	};
 
 	useFrame(() => {
