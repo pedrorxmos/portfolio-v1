@@ -48,9 +48,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.yellow}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - 0, maxSize.y + 0.25, 0]}
+				position={[maxSize.x - 0.2, maxSize.y, 0]}
 				rotation={[0, 0, 0]}
-				scale={0.5}
+				scale={maxSize.x * 0.08}
 			/>
 		</group>
 	);

@@ -51,9 +51,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - maxSize.x * 0.45, usePixeltoScene(0, window.innerHeight / 1.8).y + 0.5, 0]}
+				position={[maxSize.x - maxSize.x * 0.4, maxSize.y / 6.5 + 0.5, 0]}
 				rotation={[0, 0, 0]}
-				scale={window.innerWidth * 0.00017}
+				scale={window.innerWidth * 0.000185}
 			/>
 		</group>
 	);
