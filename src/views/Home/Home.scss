@@ -4,16 +4,25 @@
 
 .home {
 	position: relative;
-
+	@include d-flex(column, 2rem);
+	align-items: center;
+	justify-content: center;
+	padding-top: 84px;
 	.home__name {
-		font-size: 34vw;
-		position: absolute;
-		left: 8px;
-		bottom: 0;
 		@include d-flex(column, 0);
-		font-weight: 400;
 		width: fit-content;
-		line-height: 77.5%;
+		align-items: flex-start;
+
+		.home__prefix {
+			padding-left: 4px;
+		}
+
+		h1 {
+			line-height: 77.5%;
+			font-weight: 400;
+			font-size: 3.5rem;
+			text-align: center;
+		}
 
 		// @supports (-webkit-touch-callout: none) {
 		// 	/* CSS specific to iOS devices */
@@ -21,19 +30,9 @@
 		// }
 	}
 
-	.home__prefix {
-		position: absolute;
-		left: 3.75vw;
-		bottom: 52.2954vw;
-	}
-
 	.home__title {
-		position: absolute;
-		left: 56.90498vw;
-		bottom: calc(58.2954vw - 30px);
-		font-size: fs('normal');
 		color: var(--purple-color);
-		padding-right: 1rem;
+		text-align: center;
 	}
 
 	.home__social {
@@ -41,10 +40,6 @@
 		justify-content: center;
 		align-items: center;
 		width: fit-content;
-		position: absolute;
-		right: 50%;
-		transform: translateX(50%);
-		bottom: 85.5vw;
 		z-index: 100;
 
 		.btn {
@@ -65,9 +60,9 @@
 	}
 
 	@include mq(min-width, 340px) {
-		.home__title {
-			bottom: calc(56.2954vw - 30px);
-		}
+		// .home__title {
+		// 	bottom: calc(56.2954vw - 30px);
+		// }
 
 		.home__social {
 			.btn {
@@ -82,7 +77,7 @@
 
 	@include mq(min-width, 360px) {
 		.home__social {
-			bottom: 75.5vw;
+			// bottom: 75.5vw;
 
 			.btn {
 				.svg {
@@ -100,132 +95,192 @@
 	}
 
 	@include mq(min-width, 400px) {
-		.home__title {
-			bottom: calc(54.2954vw - 30px);
-		}
+		.home__name {
+			.home__prefix {
+				padding-left: 4px;
+			}
 
-		.home__social {
-			flex-direction: column;
-			transform: translateX(0);
-			right: 4vw;
-			bottom: 65.5vw;
-		}
-	}
-
-	@include mq(min-width, 480px) {
-		.home__social {
-			bottom: 60.5vw;
+			h1 {
+				font-size: 4rem;
+			}
 		}
 	}
 
-	@include mq(min-width, 565px) {
-		.home__title {
-			bottom: calc(52.2954vw - 30px);
-		}
+	@include mq(min-width, 500px) {
+		.home__name {
+			.home__prefix {
+				padding-left: 6px;
+			}
 
-		.home__social {
-			right: 4vw;
-			bottom: 24.2954vw;
+			h1 {
+				font-size: 5rem;
+			}
 		}
 	}
 
 	@include mq(min-width, 600px) {
 		.home__name {
-			font-size: 34vw;
-			left: 8px;
-		}
+			.home__prefix {
+				padding-left: 6px;
+			}
 
-		.home__prefix {
-			left: 3.75vw;
-			bottom: 52.2954vw;
-		}
-
-		.home__title {
-			left: 54.90498vw;
-			bottom: calc(52.2954vw - 30px);
-		}
-
-		.home__social {
-			right: 4.75vw;
-			gap: 1.25rem;
+			h1 {
+				font-size: 6rem;
+			}
 		}
 	}
 
-	@include mq(min-width, 740px) {
-		.home__title {
-			font-size: fs('x-normal');
-		}
-	}
-
-	@include mq(min-width, 950px) {
+	@include mq(min-width, 960px) {
 		.home__name {
-			font-size: 28.75vw;
-			left: -10px;
-		}
+			.home__prefix {
+				padding-left: 8px;
+			}
 
-		.home__prefix {
-			left: 1.25vw;
-			bottom: 44.2204vw;
-		}
-
-		.home__title {
-			left: 45.90498vw;
-			bottom: calc(44.2204vw - 30px);
-			font-size: fs('big');
-		}
-
-		.home__social {
-			right: 48px;
-			bottom: 32px;
-			gap: 1.5rem;
+			h1 {
+				font-size: 7rem;
+			}
 		}
 	}
 
-	@include mq(min-width, 1080px) {
+	@include mq(min-width, 1280px) {
 		.home__name {
-			font-size: 26.5vw;
-		}
+			.home__prefix {
+				padding-left: 10px;
+			}
 
-		.home__prefix {
-			left: 1.25vw;
-			bottom: 40.7596vw;
-		}
-
-		.home__title {
-			left: 42.31242vw;
-			bottom: calc(40.7596vw - 30px);
+			h1 {
+				font-size: 8rem;
+			}
 		}
 	}
 
-	@include mq(min-width, 1195px) {
-		.home__name {
-			font-size: 23.703472vw;
-		}
+	// @include mq(min-width, 400px) {
+	// 	.home__title {
+	// 		bottom: calc(54.2954vw - 30px);
+	// 	}
 
-		.home__prefix {
-			left: 1.25vw;
-			bottom: 36.458333vw;
-		}
+	// 	.home__social {
+	// 		flex-direction: column;
+	// 		transform: translateX(0);
+	// 		right: 4vw;
+	// 		bottom: 65.5vw;
+	// 	}
+	// }
 
-		.home__title {
-			left: 37.847222vw;
-			bottom: calc(36.458333vw - 30px);
-		}
-	}
+	// @include mq(min-width, 480px) {
+	// 	.home__social {
+	// 		bottom: 60.5vw;
+	// 	}
+	// }
 
-	@include mq(min-width, 1441px) {
-		.home__name {
-			font-size: 22.2222vw;
-		}
+	// @include mq(min-width, 565px) {
+	// 	.home__title {
+	// 		bottom: calc(52.2954vw - 30px);
+	// 	}
 
-		.home__prefix {
-			left: 1.25vw;
-			bottom: 34.17998vw;
-		}
+	// 	.home__social {
+	// 		right: 4vw;
+	// 		bottom: 24.2954vw;
+	// 	}
+	// }
 
-		.home__title {
-			left: 35.48208vw;
-			bottom: calc(34.17998vw - 30px);
-		}
-	}
+	// @include mq(min-width, 600px) {
+	// 	.home__name {
+	// 		font-size: 34vw;
+	// 		left: 8px;
+	// 	}
+
+	// 	.home__prefix {
+	// 		left: 3.75vw;
+	// 		bottom: 52.2954vw;
+	// 	}
+
+	// 	.home__title {
+	// 		left: 54.90498vw;
+	// 		bottom: calc(52.2954vw - 30px);
+	// 	}
+
+	// 	.home__social {
+	// 		right: 4.75vw;
+	// 		gap: 1.25rem;
+	// 	}
+	// }
+
+	// @include mq(min-width, 740px) {
+	// 	.home__title {
+	// 		font-size: fs('x-normal');
+	// 	}
+	// }
+
+	// @include mq(min-width, 950px) {
+	// 	.home__name {
+	// 		font-size: 28.75vw;
+	// 		left: -10px;
+	// 	}
+
+	// 	.home__prefix {
+	// 		left: 1.25vw;
+	// 		bottom: 44.2204vw;
+	// 	}
+
+	// 	.home__title {
+	// 		left: 45.90498vw;
+	// 		bottom: calc(44.2204vw - 30px);
+	// 		font-size: fs('big');
+	// 	}
+
+	// 	.home__social {
+	// 		right: 48px;
+	// 		bottom: 32px;
+	// 		gap: 1.5rem;
+	// 	}
+	// }
+
+	// @include mq(min-width, 1080px) {
+	// 	.home__name {
+	// 		font-size: 26.5vw;
+	// 	}
+
+	// 	.home__prefix {
+	// 		left: 1.25vw;
+	// 		bottom: 40.7596vw;
+	// 	}
+
+	// 	.home__title {
+	// 		left: 42.31242vw;
+	// 		bottom: calc(40.7596vw - 30px);
+	// 	}
+	// }
+
+	// @include mq(min-width, 1195px) {
+	// 	.home__name {
+	// 		font-size: 23.703472vw;
+	// 	}
+
+	// 	.home__prefix {
+	// 		left: 1.25vw;
+	// 		bottom: 36.458333vw;
+	// 	}
+
+	// 	.home__title {
+	// 		left: 37.847222vw;
+	// 		bottom: calc(36.458333vw - 30px);
+	// 	}
+	// }
+
+	// @include mq(min-width, 1441px) {
+	// 	.home__name {
+	// 		font-size: 22.2222vw;
+	// 	}
+
+	// 	.home__prefix {
+	// 		left: 1.25vw;
+	// 		bottom: 34.17998vw;
+	// 	}
+
+	// 	.home__title {
+	// 		left: 35.48208vw;
+	// 		bottom: calc(34.17998vw - 30px);
+	// 	}
+	// }
 }
