@@ -13,7 +13,7 @@
 	top: 0;
 	left: 0;
 	border: none;
-	z-index: 3;
+	z-index: 20;
 
 	@include mq(min-width, 600px) {
 		padding: 0 32px;
