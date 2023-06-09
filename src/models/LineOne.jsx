@@ -25,6 +25,38 @@ export default function Model(props) {
 		setPointer(vector);
 	});
 
+	const getSize = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return maxSize.x * 0.06;
+		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.052;
+		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.04;
+		if (res > 0.75 && res <= 1.02) return maxSize.x * 0.035;
+		if (res > 1.2 && res <= 0.75) return maxSize.x * 0.032;
+		if (res > 0.75 && res <= 1.25) return maxSize.x * 0.026;
+		if (res > 1.25 && res <= 1.4) return maxSize.x * 0.024;
+		if (res > 1.4 && res <= 1.6) return maxSize.x * 0.021;
+		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.019;
+		if (res > 1.75) return maxSize.x * 0.021;
+
+		return maxSize.x * 0.019;
+	};
+
+	const getPos = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return [maxSize.x * -1.4, maxSize.y * -0.26, 0];
+		if (res > 0.45 && res <= 0.6) return [maxSize.x * -1.1, maxSize.y * -0.25, 0];
+		if (res > 0.6 && res <= 0.75) return [maxSize.x * -0.85, maxSize.y * -0.22, 0];
+		if (res > 0.75 && res <= 1.02) return [maxSize.x * -0.92, maxSize.y * -0.18, 0];
+		if (res > 1.02 && res <= 1.25) return [maxSize.x * -0.85, maxSize.y * -0.21, 0];
+		if (res > 1.25 && res <= 1.4) return [maxSize.x * -0.87, maxSize.y * -0.15, 0];
+		if (res > 1.4 && res <= 1.6) return [maxSize.x * -0.86, maxSize.y * -0.15, 0];
+		if (res > 1.6) return [maxSize.x * -0.85, maxSize.y * -0.1, 0];
+
+		return [maxSize.x * -0.85, maxSize.y * -0.15, 0];
+	};
+
 	useFrame(() => {
 		const worldPosition = new THREE.Vector3();
 		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
@@ -45,9 +77,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - maxSize.x * 1.75, usePixeltoScene(0, window.innerHeight / 4).y + 0.5, 0]}
+				position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={window.innerWidth * 0.00008}
+				scale={getSize()}
 			/>
 		</group>
 	);

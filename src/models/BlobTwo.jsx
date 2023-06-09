@@ -9,7 +9,7 @@ export default function Model(props) {
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
-
+	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
 	window.addEventListener('mousemove', (e) => {
@@ -25,6 +25,40 @@ export default function Model(props) {
 		setPointer(vector);
 	});
 
+	const getSize = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return maxSize.x * 0.06;
+		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.055;
+		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.048;
+		if (res > 0.75 && res <= 0.9) return maxSize.x * 0.04;
+		if (res > 0.9 && res <= 1.02) return maxSize.x * 0.038;
+		if (res > 1.02 && res <= 0.75) return maxSize.x * 0.034;
+		if (res > 0.75 && res <= 1.25) return maxSize.x * 0.034;
+		if (res > 1.25 && res <= 1.4) return maxSize.x * 0.03;
+		if (res > 1.4 && res <= 1.6) return maxSize.x * 0.028;
+		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.027;
+		if (res > 1.75) return maxSize.x * 0.03;
+
+		return maxSize.x * 0.052;
+	};
+
+	const getPos = () => {
+		const res = window.innerWidth / window.innerHeight;
+
+		if (res <= 0.45) return [maxSize.x * 0.72, maxSize.y * -0.34, 0];
+		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.7, maxSize.y * -0.32, 0];
+		if (res > 0.6 && res <= 0.75) return [maxSize.x * 0.66, maxSize.y * -0.3, 0];
+		if (res > 0.75 && res <= 0.9) return [maxSize.x * 0.35, maxSize.y * -0.27, 0];
+		if (res > 0.9 && res <= 1.02) return [maxSize.x * 0.3, maxSize.y * -0.28, 0];
+		if (res > 1.02 && res <= 1.1) return [maxSize.x * 0.15, maxSize.y * -0.35, 0];
+		if (res > 1.1 && res <= 1.4) return [maxSize.x * 0.1, maxSize.y * -0.38, 0];
+		if (res > 1.4 && res <= 1.6) return [maxSize.x * 0.03, maxSize.y * -0.38, 0];
+		if (res > 1.6) return [maxSize.x * 0.03, maxSize.y * -0.39, 0];
+
+		return [maxSize.x * 0.03, maxSize.y * -0.4, 0];
+	};
+
 	useFrame(() => {
 		const worldPosition = new THREE.Vector3();
 		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
@@ -38,8 +72,11 @@ export default function Model(props) {
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 	useEffect(() => {
-		// console.log(materials);
-	}, []);
+		materials.purple.color = color;
+		document.querySelector(':root').className !== 'dark'
+			? setColor(new THREE.Color('hsl(256, 45%, 80%)'))
+			: setColor(new THREE.Color('hsl(255, 44%, 59%)'));
+	}, [color]);
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -48,9 +85,9 @@ export default function Model(props) {
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={[maxSize.x - maxSize.x * 0.85, usePixeltoScene(0, window.innerHeight / 3.2).y + 0.5, 0]}
+				position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={window.innerWidth * 0.0001}
+				scale={getSize()}
 			/>
 		</group>
 	);
