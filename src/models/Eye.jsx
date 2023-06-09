@@ -39,6 +39,7 @@ export default function Model(props) {
 
 		if (res <= 0.45) return maxSize.x * 0.09;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.08;
+		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.075;
 		if (res > 0.75 && res <= 1.02) return maxSize.x * 0.062;
 		if (res > 1.2 && res <= 0.75) return maxSize.x * 0.075;
 		if (res > 0.75 && res <= 1.25) return maxSize.x * 0.052;
