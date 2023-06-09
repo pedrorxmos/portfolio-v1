@@ -17,6 +17,14 @@ function Topbar() {
 		}, 10);
 	};
 
+	const changeTheme = () => {
+		document.querySelector(':root').className === 'dark'
+			? (document.querySelector(':root').className = 'light')
+			: (document.querySelector(':root').className = 'dark');
+
+		console.log(document.querySelector(':root').classList);
+	};
+
 	return (
 		<>
 			<header className="topbar" style={{ '--use-100vh': `${use100vh()}px` }}>
@@ -34,7 +42,7 @@ function Topbar() {
 								</a>
 							</li>
 							<li className="nav--item cursor-target">
-								<Icon title="light mode" name="sun" size="small" />
+								<Button size="medium" rightIcon="sun" nothing action={changeTheme} />
 							</li>
 						</ul>
 						<Button value="menu" size="medium" rightIcon="menu" nothing action={openMenu} />
