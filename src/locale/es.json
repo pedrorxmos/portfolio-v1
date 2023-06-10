@@ -12,7 +12,8 @@
   "about-subtitle": "una descripcion corta sobre mi",
   "work-title": "Trabajo Destacado",
   "work-subtitle": "haz click en el proyecto para ver mas detalles",
-  "filter": "filtro",
+  "filter": "Filtro",
+  "filter-title": "Todo",
   "project-details": "Detalles",
   "project-tools": "Herramientas utilizadas",
   "project-category": "categoria",
@@ -20,9 +21,11 @@
   "project-back-button": "atras",
   "project-previous-button": "anterior",
   "project-next-button": "siguiente",
+  "project-demo": "demo",
+  "project-code": "código",
   "contact-title": "Contacto",
   "contact-name-form": "nombre",
   "contact-email-form": "correo",
   "contact-message-form": "mensaje",
-  "contact-button": "pongamonos en Contacto"
+  "contact-button": "pongamonos en contacto"
 }
