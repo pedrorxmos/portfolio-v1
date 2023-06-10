@@ -35,7 +35,7 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 					rel="noreferrer"
 					title={title}
 				>
-					{leftIcon ? <Icon title={tititle || leftIcontle} name={leftIcon} size={iconSizeMap[size]} /> : ''}
+					{leftIcon ? <Icon title={title || leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
 					{value ? <span>{value}</span> : ''}
 					{rightIcon ? <Icon title={title || rightIcon} name={rightIcon} size={iconSizeMap[size]} /> : ''}
 				</a>
