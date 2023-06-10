@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
+import { motion } from 'framer-motion-3d';
 import { usePixeltoScene } from '../hooks/useThreeFunctions';
 
 export default function Model({ pointer }) {
@@ -77,18 +78,21 @@ export default function Model({ pointer }) {
 			: setColor(new THREE.Color('hsl(260, 12%, 32%)'));
 	}, [color]);
 	return (
-		<group dispose={null}>
-			<mesh
+		<motion.group dispose={null}>
+			<motion.mesh
 				ref={mesh}
 				geometry={nodes?.blob2.geometry}
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={getPos()}
+				// position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={getSize()}
+				initial={{ scale: getSize(), x: 0, y: 0 }}
+				transition={{ duration: 0.3 }}
+				// scale={getSize()}
+				animate={{ scale: getSize(), x: getPos()[0], y: getPos()[1] }}
 			/>
-		</group>
+		</motion.group>
 	);
 }
 
