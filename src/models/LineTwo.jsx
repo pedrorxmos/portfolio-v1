@@ -55,6 +55,7 @@ export default function Model({ pointer }) {
 		const res = window.innerWidth / window.innerHeight;
 
 		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
+		if (document.querySelector('main').classList.contains('project-detail')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
 
 		if (document.querySelector('main').classList.contains('work')) {
 			if (res <= 0.75) return [maxSize.x * 0.1, maxSize.y * 0.24, 0];
