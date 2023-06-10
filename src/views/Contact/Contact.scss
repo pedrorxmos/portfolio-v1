@@ -47,6 +47,8 @@
 		.contact__social {
 			@include d-flex(row, 1.5rem);
 			padding-bottom: 4rem;
+			justify-content: center;
+			align-items: center;
 
 			@include mq(min-width, 340px) {
 				gap: 1.75rem;
@@ -58,6 +60,7 @@
 
 			@include mq(min-width, 960px) {
 				flex-direction: column;
+				padding-bottom: 0;
 			}
 
 			a {
@@ -73,16 +76,16 @@
 					padding: 8px 12px;
 					font-size: fs('small');
 					font-weight: 400;
-					background: var(--threejs-purple);
+					background: var(--light-purple-color);
 					border-radius: 29px;
 					line-height: 80%;
 					z-index: 100;
-					@include prefix(transition, (top 0.3s, opacity 0.3s));
+					@include prefix(transition, (top 0.2s, opacity 0.3s));
 				}
 
 				&:nth-child(2n) {
 					&::after {
-						background: var(--threejs-yellow);
+						background: var(--light-yellow-color);
 					}
 				}
 
@@ -98,11 +101,12 @@
 						left: 0px;
 						top: 50%;
 						transform: translateY(-50%);
-						@include prefix(transition, (left 0.3s, opacity 0.3s));
+						@include prefix(transition, (left 0.2s, opacity 0.3s));
 					}
 
 					&:hover {
 						&::after {
+							top: 50%;
 							left: calc(100% + 10px);
 						}
 					}

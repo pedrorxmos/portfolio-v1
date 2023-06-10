@@ -8,10 +8,9 @@
 
 	--purple-color: #{color('purple60')};
 	--yellow-color: #{color('yellow20')};
+	--light-purple-color: #{color('purple100')};
+	--light-yellow-color: #{color('yellow100')};
 
 	--text-selected-color: #{color-opacity('yellow100', 0.4)};
 	--scroll-color: #{color-opacity('purple80', 0.7)};
-
-	--threejs-purple: #{color('purple100')};
-	--threejs-yellow: #{color('purple60')};
 }
