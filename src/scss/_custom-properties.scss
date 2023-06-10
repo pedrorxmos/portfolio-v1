@@ -19,17 +19,17 @@
 
 :root.dark {
 	--bg-color: hsl(40, 2%, 18%);
-	--light-color: #{color('dark40')};
-	--light-color-40: #{color-opacity('dark40', 0.4)};
-	--light-color-50: #{color-opacity('dark40', 0.5)};
-	--light-color-80: #{color-opacity('dark40', 0.8)};
+	--light-color: #{color('dark0')};
+	--light-color-40: #{color-opacity('dark0', 0.4)};
+	--light-color-50: #{color-opacity('dark0', 0.5)};
+	--light-color-80: #{color-opacity('dark0', 0.8)};
 	--font-color: #{color('light100')};
 	--subtitle-color: #{color('purple80')};
 
 	--purple-color: #{color('purple80')};
 	--yellow-color: #{color('yellow40')};
-	--light-purple-color: #{color('purple100')};
-	--light-yellow-color: #{color('yellow100')};
+	--light-purple-color: #{color('purple40')};
+	--light-yellow-color: #{color('yellow0')};
 
 	--text-selected-color: #{color-opacity('yellow100', 0.4)};
 	--scroll-color: #{color-opacity('purple80', 0.7)};

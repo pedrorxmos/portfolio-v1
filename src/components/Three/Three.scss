@@ -10,12 +10,14 @@
 	left: 0;
 	pointer-events: none;
 	overflow: -moz-hidden-unscrollable;
+	opacity: 1;
 	filter: blur(0px);
-	@include prefix(transition, (filter, 0.5s));
+	@include prefix(transition, (filter 0.5s, opacity 0.5s));
 }
 
 .main {
 	& ~ .threejs {
-		filter: blur(30px);
+		filter: blur(40px);
+		opacity: 0.8;
 	}
 }

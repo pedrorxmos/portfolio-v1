@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 import Icon from '../Icon/Icon';
 
-function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, action, nothing }) {
+function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, action, nothing, title }) {
 	const iconSizeMap = {
 		small: 'x-small',
 		medium: 'small',
@@ -18,10 +18,11 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 						nothing ? ` btn-nothing` : ''
 					} cursor-target`}
 					onClick={action}
+					title={title}
 				>
-					{leftIcon ? <Icon title={leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
+					{leftIcon ? <Icon title={title} name={leftIcon} size={iconSizeMap[size]} /> : ''}
 					{value ? <span>{value}</span> : ''}
-					{rightIcon ? <Icon title={rightIcon} name={rightIcon} size={iconSizeMap[size]} /> : ''}
+					{rightIcon ? <Icon title={title} name={rightIcon} size={iconSizeMap[size]} /> : ''}
 				</button>
 			)}
 			{type === 'link' && (
@@ -32,10 +33,11 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 					} cursor-target`}
 					target="_blank"
 					rel="noreferrer"
+					title={title}
 				>
-					{leftIcon ? <Icon title={leftIcon} name={leftIcon} size={iconSizeMap[size]} /> : ''}
+					{leftIcon ? <Icon title={title} name={leftIcon} size={iconSizeMap[size]} /> : ''}
 					{value ? <span>{value}</span> : ''}
-					{rightIcon ? <Icon title={rightIcon} name={rightIcon} size={iconSizeMap[size]} /> : ''}
+					{rightIcon ? <Icon title={title} name={rightIcon} size={iconSizeMap[size]} /> : ''}
 				</a>
 			)}
 		</>
@@ -54,4 +56,5 @@ Button.propTypes = {
 	action: PropTypes.any,
 	justIcon: PropTypes.bool,
 	nothing: PropTypes.bool,
+	title: PropTypes.string,
 };
