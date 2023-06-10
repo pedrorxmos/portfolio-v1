@@ -4,13 +4,12 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { usePixeltoScene } from '../hooks/useThreeFunctions';
 
-export default function Model(props) {
+export default function Model({ pointer }) {
 	const mesh = React.useRef();
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
-	const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
 	// window.addEventListener('mousemove', (e) => {
 	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
@@ -59,16 +58,16 @@ export default function Model(props) {
 		return [maxSize.x * 0.03, maxSize.y * -0.4, 0];
 	};
 
-	// useFrame(() => {
-	// 	const worldPosition = new THREE.Vector3();
-	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-	// 	worldPosition.set(x, y, -90);
-	// 	worldPosition.unproject(camera);
+	useFrame(() => {
+		const worldPosition = new THREE.Vector3();
+		const x = (pointer.x * size.width) / (0.003 * window.innerWidth);
+		const y = (pointer.y * size.height) / (0.001 * window.innerHeight);
+		worldPosition.set(x, y, -90);
+		worldPosition.unproject(camera);
 
-	// 	mesh.current.lookAt(worldPosition);
-	// 	// console.log(mesh);
-	// });
+		mesh.current.lookAt(worldPosition);
+		// console.log(mesh);
+	});
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 	useEffect(() => {
@@ -78,7 +77,7 @@ export default function Model(props) {
 			: setColor(new THREE.Color('hsl(260, 12%, 32%)'));
 	}, [color]);
 	return (
-		<group {...props} dispose={null}>
+		<group dispose={null}>
 			<mesh
 				ref={mesh}
 				geometry={nodes?.blob2.geometry}
