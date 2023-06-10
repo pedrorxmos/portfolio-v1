@@ -3,11 +3,14 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import { use100vh } from 'react-div-100vh';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useGetValue, usePostValue } from '../../hooks/localStorage';
+import { LocaleContext, localeMap } from '../../providers/LocaleContext';
+import en from '../../locale/en.json';
+import es from '../../locale/es.json';
 
 function Topbar() {
-	const [theme, setTheme] = useState(useGetValue('theme') || 'light');
+	const [theme, setTheme] = useState(useGetValue('theme', 'light'));
 	const openMenu = () => {
 		document.querySelector('.nav').classList.add('nav-open');
 		document.querySelector('body').style.overflowY = 'hidden';
@@ -22,6 +25,18 @@ function Topbar() {
 
 	const changeTheme = (e) => {
 		theme === 'dark' ? setTheme('light') : setTheme('dark');
+	};
+
+	const { locale, setLocale } = useContext(LocaleContext);
+
+	const setLoc = (value) => {
+		document.querySelector('.locale__items').classList.remove('open');
+		setLocale(localeMap.find((e) => e.localeName === value));
+		usePostValue('locale', value);
+	};
+
+	const toggleLoc = (e) => {
+		document.querySelector('.locale__items').classList.toggle('open');
 	};
 
 	useEffect(() => {
@@ -47,9 +62,16 @@ function Topbar() {
 					<div className="nav--items nav__actions">
 						<ul className="nav--list ">
 							<li className="nav--item">
-								<a href="#locale" className="nav--item__locale cursor-target" alt="change language">
-									en
-								</a>
+								<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={toggleLoc}>
+									{locale.localeName}
+								</button>
+								<div className="locale__items open">
+									{localeMap.map((l) => (
+										<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={() => setLoc(l.localeName)}>
+											{l.localeTitle}
+										</button>
+									))}
+								</div>
 							</li>
 							<li className="nav--item">
 								<button className={`theme-button ${theme} cursor-target`} onClick={changeTheme}>

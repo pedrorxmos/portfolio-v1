@@ -1,5 +1,5 @@
-export const useGetValue = (key) => {
-	if (!localStorage.getItem(key)) localStorage.setItem(key, '');
+export const useGetValue = (key, def) => {
+	if (!localStorage.getItem(key)) localStorage.setItem(key, def);
 	return localStorage.getItem(key) ? localStorage.getItem(key) : '';
 };
 
