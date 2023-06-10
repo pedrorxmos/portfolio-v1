@@ -2,9 +2,12 @@
 @import '../../scss/mixins';
 @import '../../scss/functions';
 
-.main {
+.work,
+.about,
+.contact,
+.project {
 	& ~ .topbar {
-		background-color: var(--bg-color-50);
+		background-color: var(--bg-color-10);
 		@include prefix(backdrop-filter, (blur(20px)));
 	}
 }
