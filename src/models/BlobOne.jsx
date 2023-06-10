@@ -35,7 +35,7 @@ export default function Model({ pointer }) {
 			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.105;
 			if (res > 1.25) return maxSize.x * 0.06;
 
-			return maxSize.x * 0.07;
+			return maxSize.x * 0.06;
 		}
 
 		if (res <= 0.45) return maxSize.x * 0.054;
@@ -59,12 +59,14 @@ export default function Model({ pointer }) {
 
 		if (document.querySelector('main').classList.contains('work')) return [maxSize.x * -0.7, maxSize.y * -1.3, 0];
 
+		if (document.querySelector('main').classList.contains('contact')) return [maxSize.x * -0.7, maxSize.y * -1.3, 0];
+
 		if (document.querySelector('main').classList.contains('project-detail')) {
 			if (res <= 0.75) return [maxSize.x * 0.25, maxSize.y * -0.34, 0];
 			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.25, maxSize.y * -0.32, 0];
 			if (res > 1.25) return [maxSize.x * 0.25, maxSize.y * -0.3, 0];
 
-			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+			return [maxSize.x * 0.25, maxSize.y * -0.3, 0];
 		}
 
 		if (res <= 0.45) return [maxSize.x * -0.62, maxSize.y * -0.56, 0];

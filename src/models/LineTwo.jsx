@@ -35,7 +35,7 @@ export default function Model({ pointer }) {
 			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.04;
 			if (res > 1.25) return maxSize.x * 0.03;
 
-			return maxSize.x * 0.04;
+			return maxSize.x * 0.03;
 		}
 
 		if (res <= 0.45) return maxSize.x * 0.055;
@@ -48,7 +48,7 @@ export default function Model({ pointer }) {
 		if (res > 1.6 && res <= 1.75) return maxSize.x * 0.027;
 		if (res > 1.75) return maxSize.x * 0.028;
 
-		return maxSize.x * 0.035;
+		return maxSize.x * 0.028;
 	};
 
 	const getPos = () => {
@@ -56,13 +56,14 @@ export default function Model({ pointer }) {
 
 		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
 		if (document.querySelector('main').classList.contains('project-detail')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
+		if (document.querySelector('main').classList.contains('contact')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
 
 		if (document.querySelector('main').classList.contains('work')) {
 			if (res <= 0.75) return [maxSize.x * 0.1, maxSize.y * 0.24, 0];
 			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.025, maxSize.y * 0.29, 0];
 			if (res > 1.25) return [maxSize.x * -0.05, maxSize.y * 0.34, 0];
 
-			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+			return [maxSize.x * -0.05, maxSize.y * 0.34, 0];
 		}
 
 		if (res <= 0.45) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];

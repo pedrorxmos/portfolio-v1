@@ -30,6 +30,14 @@ export default function Model({ pointer }) {
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('contact')) {
+			if (res <= 0.75) return maxSize.x * 0.055;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.0385;
+			if (res > 1.25) return maxSize.x * 0.025;
+
+			return maxSize.x * 0.025;
+		}
+
 		if (res <= 0.45) return maxSize.x * 0.06;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.052;
 		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.04;
@@ -50,6 +58,14 @@ export default function Model({ pointer }) {
 		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
 		if (document.querySelector('main').classList.contains('project-detail')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
 		if (document.querySelector('main').classList.contains('work')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
+
+		if (document.querySelector('main').classList.contains('contact')) {
+			if (res <= 0.75) return [maxSize.x * -0.32, maxSize.y * 0.15, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.15, maxSize.y * 0.25, 0];
+			if (res > 1.25) return [maxSize.x * 0.02, maxSize.y * 0.35, 0];
+
+			return [maxSize.x * 0.02, maxSize.y * 0.35, 0];
+		}
 
 		if (res <= 0.45) return [maxSize.x * -1.4, maxSize.y * -0.26, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * -1.1, maxSize.y * -0.25, 0];

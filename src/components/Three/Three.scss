@@ -17,7 +17,7 @@
 
 .main {
 	& ~ .threejs {
-		filter: blur(0px);
+		filter: blur(80px);
 		opacity: 0.8;
 	}
 }
