@@ -19,7 +19,7 @@ export const localeMap = [
 ];
 
 export function LocacleProvider({ children }) {
-	const [locale, setLocale] = useState(localeMap.find((e) => e.localeName === useGetValue('locale')) || 'en');
+	const [locale, setLocale] = useState(localeMap.find((e) => e.localeName === useGetValue('locale', 'en')));
 
 	return (
 		<LocaleContext.Provider
