@@ -28,6 +28,14 @@ export default function Model({ pointer }) {
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('about')) {
+			if (res <= 0.75) return maxSize.x * 0.12;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.095;
+			if (res > 1.25) return maxSize.x * 0.07;
+
+			return maxSize.x * 0.07;
+		}
+
 		if (res <= 0.45) return maxSize.x * 0.06;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.055;
 		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.048;
@@ -45,6 +53,14 @@ export default function Model({ pointer }) {
 
 	const getPos = () => {
 		const res = window.innerWidth / window.innerHeight;
+
+		if (document.querySelector('main').classList.contains('about')) {
+			if (res <= 0.75) return [maxSize.x * 0.4, maxSize.y * 0.34, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.3, maxSize.y * -0.25, 0];
+			if (res > 1.25) return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+
+			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+		}
 
 		if (res <= 0.45) return [maxSize.x * 0.72, maxSize.y * -0.34, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.7, maxSize.y * -0.32, 0];
@@ -88,7 +104,7 @@ export default function Model({ pointer }) {
 				// position={getPos()}
 				rotation={[0, 0, 0]}
 				initial={{ scale: getSize(), x: 0, y: 0 }}
-				transition={{ duration: 0.3 }}
+				transition={{ duration: 0.5 }}
 				// scale={getSize()}
 				animate={{ scale: getSize(), x: getPos()[0], y: getPos()[1] }}
 			/>

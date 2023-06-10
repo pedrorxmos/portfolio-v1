@@ -52,6 +52,8 @@ export default function Model({ pointer }) {
 	const getPos = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('main')) return [maxSize.x * 1.3, maxSize.y * 1.3, 0];
+
 		if (res <= 0.45) return [maxSize.x * 0.18, maxSize.y * 0.68, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.23, maxSize.y * 0.67, 0];
 		if (res > 0.6 && res <= 0.75) return [maxSize.x * 0.23, maxSize.y * 0.59, 0];
@@ -92,7 +94,7 @@ export default function Model({ pointer }) {
 				// position={getPos()}
 				rotation={[0, 0, 0]}
 				initial={{ scale: getSize(), x: 0, y: 0 }}
-				transition={{ duration: 0.3 }}
+				transition={{ duration: 0.5 }}
 				// scale={getSize()}
 				animate={{ scale: getSize(), x: getPos()[0], y: getPos()[1] }}
 			/>
