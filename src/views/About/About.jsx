@@ -1,15 +1,18 @@
+import { useContext } from 'react';
 import Icon from '../../components/Icon/Icon';
-import { useCollection } from '../../hooks/getFirestore';
+import { useCollection } from '../../hooks/firestore';
 import './About.scss';
+import { LocaleContext } from '../../providers/LocaleContext';
 
 function About() {
-	const data = useCollection('about');
+	const { locale } = useContext(LocaleContext);
+	const data = useCollection(locale.locale['firebase-about']);
 
 	return (
 		<>
 			<main className="about main">
-				<h1>About me</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi error mollitia eos itaque quis maxime inventore.</p>
+				<h1>{locale.locale['about-title']}</h1>
+				<p>{locale.locale['about-subtitle']}</p>
 				<div className="about__items">
 					{data?.map((e) => (
 						<div key={e.title} className="about__card">

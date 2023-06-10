@@ -20,6 +20,7 @@
 	left: 0;
 	border: none;
 	z-index: 6;
+	overflow: visible;
 
 	@include mq(min-width, 600px) {
 		padding: 0 32px;
@@ -56,7 +57,7 @@
 			@include d-flex(row, 1.5rem);
 			justify-content: flex-end;
 			align-items: center;
-			overflow: hidden;
+			overflow: visible;
 			animation: width 0.3s;
 
 			.nav--list {
@@ -125,6 +126,58 @@
 			.nav--item {
 				cursor: pointer;
 				z-index: 100;
+				position: relative;
+
+				.nav--item__locale {
+					background: none;
+					border: none;
+					font-family: $main-font-family;
+					font-weight: 300;
+					font-size: fs('normal');
+					color: var(--font-color);
+					cursor: pointer;
+				}
+				.locale-overlay {
+					position: fixed;
+					height: var(--use-100vh);
+					width: 100vw;
+					left: 0;
+					top: 0;
+					display: none;
+
+					&.open {
+						display: block;
+					}
+				}
+				.locale__items {
+					@include d-flex(column, 0);
+					justify-content: center;
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					opacity: 0;
+					transform: translateX(-50%);
+					transition: opacity 0.3s, gap 0.3s, top 0.3s;
+					z-index: 50;
+					pointer-events: none;
+
+					&.open {
+						gap: 0.5rem;
+						top: calc(100% + 1rem);
+						opacity: 1;
+						pointer-events: all;
+					}
+
+					.nav--item__locale {
+						background-color: var(--light-color-80);
+						padding: 4px 12px;
+						border-radius: 8px;
+
+						&:hover {
+							background-color: var(--light-color);
+						}
+					}
+				}
 			}
 		}
 

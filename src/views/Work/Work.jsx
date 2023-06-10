@@ -1,12 +1,15 @@
 // import Footer from '../../components/Footer/Footer';
 import './Work.scss';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
-import { useCollection } from '../../hooks/getFirestore';
+import { useCollection } from '../../hooks/firestore';
 import Icon from '../../components/Icon/Icon';
 import { use100vh } from 'react-div-100vh';
+import { useContext } from 'react';
+import { LocaleContext } from '../../providers/LocaleContext';
 
 function Work() {
-	const data = useCollection('projects');
+	const { locale } = useContext(LocaleContext);
+	const data = useCollection(locale.locale['firebase-projects']);
 
 	return (
 		<>
@@ -21,13 +24,13 @@ function Work() {
 					<div className="work__projects">
 						<div className="work__header">
 							<div className="work__title">
-								<h1>Featured Work</h1>
-								<small>click on the project to see more details</small>
+								<h1>{locale.locale['work-title']}</h1>
+								<small>{locale.locale['work-subtitle']}</small>
 							</div>
 							<div className="work__filter">
-								<span>Filter:</span>
+								<span>{locale.locale['filter']}:</span>
 								<button className="cursor-target dropdown">
-									All
+									{locale.locale['filter-title']}
 									<Icon title="dropdown icon" name="chevron-down" size="x-small" />
 								</button>
 							</div>

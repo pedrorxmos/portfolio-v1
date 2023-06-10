@@ -7,14 +7,14 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	padding-top: calc(3.5rem + 84px);
+	padding-top: calc(3.5rem + 92px);
 	padding-bottom: 3rem;
 
 	.detail__actions {
 		@include d-flex(row, 0);
 		justify-content: space-between;
 		width: 100%;
-		top: 84px;
+		top: 90px;
 		position: absolute;
 		padding: 0 24px;
 		z-index: 10;
