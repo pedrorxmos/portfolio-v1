@@ -2,9 +2,13 @@ import Button from '../../components/Button/Button';
 // import Footer from '../../components/Footer/Footer';
 import './Contact.scss';
 import Icon from '../../components/Icon/Icon';
+import { useContext } from 'react';
+import { LocaleContext } from '../../providers/LocaleContext';
 // import { use100vh } from 'react-div-100vh';
 
 function Contact() {
+	const { locale } = useContext(LocaleContext);
+
 	const onFocus = (e) => {
 		e.target.parentElement.style.background = 'var(--light-color-80)';
 	};
@@ -21,27 +25,27 @@ function Contact() {
 			<main className="contact main">
 				<div className="contact-content">
 					<div className="contact--section">
-						<h2>Contact</h2>
+						<h2>{locale.locale['contact-title']}</h2>
 						<form action="" className="contact__form form" autoComplete="off">
 							<label htmlFor="form-name" className="form__item cursor-target">
 								<Icon title="form name icon" name="user" size="normal" />
 								<input type="text" className="form--input" id="form-name" name="form-name" onFocus={onFocus} onBlur={onBlur} required />
-								<span className="form--label">name</span>
+								<span className="form--label">{locale.locale['contact-name-form']}</span>
 							</label>
 
 							<label htmlFor="form-email" className="form__item cursor-target">
 								<Icon title="form email icon" name="at-sign" size="normal" />
 								<input type="email" className="form--input" id="form-email" name="form-email" onFocus={onFocus} onBlur={onBlur} required />
-								<span className="form--label">email</span>
+								<span className="form--label">{locale.locale['contact-email-form']}</span>
 							</label>
 
 							<label htmlFor="form-message" className="form__item cursor-target">
 								<Icon title="form message icon" name="message-circle" size="normal" />
 								<textarea className="form--input form--area" id="form-message" name="form-message" onFocus={onFocus} onBlur={onBlur} required />
-								<span className="form--label">message</span>
+								<span className="form--label">{locale.locale['contact-message-form']}</span>
 							</label>
 
-							<Button value="get in touch" color="main" size="medium" />
+							<Button value={locale.locale['contact-button']} color="main" size="medium" />
 						</form>
 					</div>
 

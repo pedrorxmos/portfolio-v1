@@ -69,13 +69,13 @@ function Topbar() {
 					<div className="nav--items nav__actions">
 						<ul className="nav--list ">
 							<li className="nav--item">
-								<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={toggleLoc}>
+								<button href="#locale" className="nav--item__locale cursor-target" alt={locale.locale['locale-title']} onClick={toggleLoc}>
 									{locale.localeName}
 								</button>
 								<div className="locale-overlay" onClick={closeLoc}></div>
 								<div className="locale__items">
 									{localeMap.map((l) => (
-										<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={() => setLoc(l.localeName)}>
+										<button href="#locale" className="nav--item__locale cursor-target" alt={l.localeTitle} onClick={() => setLoc(l.localeName)}>
 											{l.localeTitle}
 										</button>
 									))}
@@ -83,12 +83,12 @@ function Topbar() {
 							</li>
 							<li className="nav--item">
 								<button className={`theme-button ${theme} cursor-target`} onClick={changeTheme}>
-									<Icon title="switch to dark theme" name="sun" size={'small'} className={'sun'} />
-									<Icon title="switch to light theme" name="moon" size={'small'} className={'moon'} />
+									<Icon title={locale.locale['theme-title-dark']} name="sun" size={'small'} className={'sun'} />
+									<Icon title={locale.locale['theme-title-light']} name="moon" size={'small'} className={'moon'} />
 								</button>
 							</li>
 						</ul>
-						<Button value="menu" size="medium" rightIcon="menu" nothing action={openMenu} />
+						<Button value="menu" size="medium" rightIcon="menu" nothing action={openMenu} title={locale.locale['menu-open']} />
 					</div>
 					<div className="nav--items  nav__menu">
 						<div className="overlay" onClick={closeMenu}></div>
@@ -117,7 +117,7 @@ function Topbar() {
 								<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
 							</li>
 						</ul>
-						<Button size="big" rightIcon="x" nothing action={closeMenu} />
+						<Button size="big" rightIcon="x" nothing action={closeMenu} title={locale.locale['menu-close']} />
 					</div>
 				</nav>
 			</header>
