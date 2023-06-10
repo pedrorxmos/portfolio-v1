@@ -6,21 +6,21 @@ import Topbar from './components/Topbar/Topbar';
 import './scss/global.scss';
 import Grain from './components/Grain/Grain';
 import Three from './components/Three/Three';
+import { LocacleProvider } from './providers/LocaleContext';
 function App() {
 	const firestoreInstance = getFirestore(useFirebaseApp());
 
 	return (
 		<>
-			<FirestoreProvider sdk={firestoreInstance}>
-				{/* <Div100vh> */}
-				{/* <Cursor /> */}
-
-				<Outlet />
-				<Three />
-				<Topbar />
-				{/* <Grain /> */}
-				{/* </Div100vh> */}
-			</FirestoreProvider>
+			<LocacleProvider>
+				<FirestoreProvider sdk={firestoreInstance}>
+					{/* <Cursor /> */}
+					<Outlet />
+					<Three />
+					<Topbar />
+					{/* <Grain /> */}
+				</FirestoreProvider>
+			</LocacleProvider>
 		</>
 	);
 }
