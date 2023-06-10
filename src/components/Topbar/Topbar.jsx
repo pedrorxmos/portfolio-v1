@@ -31,12 +31,19 @@ function Topbar() {
 
 	const setLoc = (value) => {
 		document.querySelector('.locale__items').classList.remove('open');
+		document.querySelector('.locale-overlay').classList.remove('open');
 		setLocale(localeMap.find((e) => e.localeName === value));
 		usePostValue('locale', value);
 	};
 
-	const toggleLoc = (e) => {
+	const toggleLoc = () => {
+		document.querySelector('.locale-overlay').classList.toggle('open');
 		document.querySelector('.locale__items').classList.toggle('open');
+	};
+
+	const closeLoc = () => {
+		document.querySelector('.locale-overlay').classList.remove('open');
+		document.querySelector('.locale__items').classList.remove('open');
 	};
 
 	useEffect(() => {
@@ -65,7 +72,8 @@ function Topbar() {
 								<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={toggleLoc}>
 									{locale.localeName}
 								</button>
-								<div className="locale__items open">
+								<div className="locale-overlay" onClick={closeLoc}></div>
+								<div className="locale__items">
 									{localeMap.map((l) => (
 										<button href="#locale" className="nav--item__locale cursor-target" alt="change language" onClick={() => setLoc(l.localeName)}>
 											{l.localeTitle}
