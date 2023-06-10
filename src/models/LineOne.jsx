@@ -13,18 +13,18 @@ export default function Model(props) {
 
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
-	window.addEventListener('mousemove', (e) => {
-		const ndcX = (e.pageX / size.width) * 2 - 1;
-		const ndcY = -(e.pageY / size.height) * 2 + 1;
+	// window.addEventListener('mousemove', (e) => {
+	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
+	// 	const ndcY = -(e.pageY / size.height) * 2 + 1;
 
-		// Create a 3D vector in NDC space
-		const vector = new THREE.Vector3(ndcX, ndcY, -90);
+	// 	// Create a 3D vector in NDC space
+	// 	const vector = new THREE.Vector3(ndcX, ndcY, -90);
 
-		// Convert the vector from NDC space to world space
-		vector.unproject(camera);
+	// 	// Convert the vector from NDC space to world space
+	// 	vector.unproject(camera);
 
-		setPointer(vector);
-	});
+	// 	setPointer(vector);
+	// });
 
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
@@ -58,16 +58,16 @@ export default function Model(props) {
 		return [maxSize.x * -0.85, maxSize.y * -0.15, 0];
 	};
 
-	useFrame(() => {
-		const worldPosition = new THREE.Vector3();
-		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-		const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-		worldPosition.set(x, y, -90);
-		worldPosition.unproject(camera);
+	// useFrame(() => {
+	// 	const worldPosition = new THREE.Vector3();
+	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
+	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
+	// 	worldPosition.set(x, y, -90);
+	// 	worldPosition.unproject(camera);
 
-		mesh.current.lookAt(worldPosition);
-		// console.log(mesh);
-	});
+	// 	mesh.current.lookAt(worldPosition);
+	// 	// console.log(mesh);
+	// });
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 	useEffect(() => {
