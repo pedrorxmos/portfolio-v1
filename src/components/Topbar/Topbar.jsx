@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useGetValue, usePostValue } from '../../hooks/localStorage';
 
 function Topbar() {
-	const [theme, setTheme] = useState(useGetValue('theme'));
+	const [theme, setTheme] = useState(useGetValue('theme') || 'light');
 	const openMenu = () => {
 		document.querySelector('.nav').classList.add('nav-open');
 		document.querySelector('body').style.overflowY = 'hidden';
