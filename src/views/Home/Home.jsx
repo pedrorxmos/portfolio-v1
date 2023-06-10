@@ -9,7 +9,6 @@ function Home() {
 	else document.querySelector('body').style.overflow = 'scroll';
 
 	const { locale } = useContext(LocaleContext);
-	console.log(locale);
 
 	return (
 		<>

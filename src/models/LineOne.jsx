@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
+import { motion } from 'framer-motion-3d';
 import { useFrame, useThree } from '@react-three/fiber';
 import { usePixeltoScene } from '../hooks/useThreeFunctions';
 
-export default function Model(props) {
+export default function Model({ pointer }) {
 	const mesh = React.useRef();
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 
-	const [pointer, setPointer] = useState({ x: 0, y: 0 });
+	// const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
 	// window.addEventListener('mousemove', (e) => {
 	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
@@ -28,6 +29,14 @@ export default function Model(props) {
 
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
+
+		if (document.querySelector('main').classList.contains('contact')) {
+			if (res <= 0.75) return maxSize.x * 0.055;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.0385;
+			if (res > 1.25) return maxSize.x * 0.025;
+
+			return maxSize.x * 0.025;
+		}
 
 		if (res <= 0.45) return maxSize.x * 0.06;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.052;
@@ -46,6 +55,18 @@ export default function Model(props) {
 	const getPos = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
+		if (document.querySelector('main').classList.contains('project-detail')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
+		if (document.querySelector('main').classList.contains('work')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
+
+		if (document.querySelector('main').classList.contains('contact')) {
+			if (res <= 0.75) return [maxSize.x * -0.32, maxSize.y * 0.15, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.15, maxSize.y * 0.25, 0];
+			if (res > 1.25) return [maxSize.x * 0.02, maxSize.y * 0.35, 0];
+
+			return [maxSize.x * 0.02, maxSize.y * 0.35, 0];
+		}
+
 		if (res <= 0.45) return [maxSize.x * -1.4, maxSize.y * -0.26, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * -1.1, maxSize.y * -0.25, 0];
 		if (res > 0.6 && res <= 0.75) return [maxSize.x * -0.85, maxSize.y * -0.22, 0];
@@ -58,16 +79,16 @@ export default function Model(props) {
 		return [maxSize.x * -0.85, maxSize.y * -0.15, 0];
 	};
 
-	// useFrame(() => {
-	// 	const worldPosition = new THREE.Vector3();
-	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-	// 	worldPosition.set(x, y, -90);
-	// 	worldPosition.unproject(camera);
+	useFrame(() => {
+		const worldPosition = new THREE.Vector3();
+		const x = (pointer.x * size.width) / (0.0025 * window.innerWidth);
+		const y = (pointer.y * size.height) / (0.0006 * window.innerHeight);
+		worldPosition.set(x, y, -90);
+		worldPosition.unproject(camera);
 
-	// 	mesh.current.lookAt(worldPosition);
-	// 	// console.log(mesh);
-	// });
+		mesh.current.lookAt(worldPosition);
+		// console.log(mesh);
+	});
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 	useEffect(() => {
@@ -77,18 +98,21 @@ export default function Model(props) {
 			: setColor(new THREE.Color('hsl(260, 12%, 32%)'));
 	}, [color]);
 	return (
-		<group {...props} dispose={null}>
-			<mesh
+		<motion.group dispose={null}>
+			<motion.mesh
 				ref={mesh}
 				geometry={nodes?.line1.geometry}
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={getPos()}
+				// position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={getSize()}
+				initial={{ scale: getSize(), x: 0, y: 0 }}
+				transition={{ duration: 0.3 }}
+				// scale={getSize()}
+				animate={{ scale: getSize(), x: getPos()[0], y: getPos()[1] }}
 			/>
-		</group>
+		</motion.group>
 	);
 }
 

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
+import { motion } from 'framer-motion-3d';
 import { usePixeltoScene } from '../hooks/useThreeFunctions';
 
-export default function Model(props) {
+export default function Model({ pointer }) {
 	const mesh = React.useRef();
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
-	const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
 	// window.addEventListener('mousemove', (e) => {
 	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
@@ -27,6 +27,30 @@ export default function Model(props) {
 
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
+
+		if (document.querySelector('main').classList.contains('about')) {
+			if (res <= 0.75) return maxSize.x * 0.12;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.095;
+			if (res > 1.25) return maxSize.x * 0.07;
+
+			return maxSize.x * 0.07;
+		}
+
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return maxSize.x * 0.1;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.08;
+			if (res > 1.25) return maxSize.x * 0.06;
+
+			return maxSize.x * 0.06;
+		}
+
+		if (document.querySelector('main').classList.contains('project-detail')) {
+			if (res <= 0.75) return maxSize.x * 0.12;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.0875;
+			if (res > 1.25) return maxSize.x * 0.055;
+
+			return maxSize.x * 0.055;
+		}
 
 		if (res <= 0.45) return maxSize.x * 0.06;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.055;
@@ -46,6 +70,32 @@ export default function Model(props) {
 	const getPos = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('about')) {
+			if (res <= 0.75) return [maxSize.x * 0.4, maxSize.y * 0.34, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.4, maxSize.y * 0.34, 0];
+			if (res > 1.25) return [maxSize.x * 0.4, maxSize.y * 0.34, 0];
+
+			return [maxSize.x * 0, maxSize.y * 0.34, 0];
+		}
+
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return [maxSize.x * 0.25, maxSize.y * -0.34, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.275, maxSize.y * -0.34, 0];
+			if (res > 1.25) return [maxSize.x * 0.3, maxSize.y * -0.34, 0];
+
+			return [maxSize.x * 0.3, maxSize.y * -0.34, 0];
+		}
+
+		if (document.querySelector('main').classList.contains('project-detail')) {
+			if (res <= 0.75) return [maxSize.x * -0.35, maxSize.y * 0.38, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.3, maxSize.y * 0.34, 0];
+			if (res > 1.25) return [maxSize.x * -0.25, maxSize.y * 0.3, 0];
+
+			return [maxSize.x * -0.25, maxSize.y * 0.3, 0];
+		}
+
+		if (document.querySelector('main').classList.contains('contact')) return [maxSize.x * 0.25, maxSize.y * -1.3, 0];
+
 		if (res <= 0.45) return [maxSize.x * 0.72, maxSize.y * -0.34, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.7, maxSize.y * -0.32, 0];
 		if (res > 0.6 && res <= 0.75) return [maxSize.x * 0.66, maxSize.y * -0.3, 0];
@@ -59,16 +109,16 @@ export default function Model(props) {
 		return [maxSize.x * 0.03, maxSize.y * -0.4, 0];
 	};
 
-	// useFrame(() => {
-	// 	const worldPosition = new THREE.Vector3();
-	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-	// 	worldPosition.set(x, y, -90);
-	// 	worldPosition.unproject(camera);
+	useFrame(() => {
+		const worldPosition = new THREE.Vector3();
+		const x = (pointer.x * size.width) / (0.003 * window.innerWidth);
+		const y = (pointer.y * size.height) / (0.001 * window.innerHeight);
+		worldPosition.set(x, y, -90);
+		worldPosition.unproject(camera);
 
-	// 	mesh.current.lookAt(worldPosition);
-	// 	// console.log(mesh);
-	// });
+		mesh.current.lookAt(worldPosition);
+		// console.log(mesh);
+	});
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 	useEffect(() => {
@@ -78,18 +128,21 @@ export default function Model(props) {
 			: setColor(new THREE.Color('hsl(260, 12%, 32%)'));
 	}, [color]);
 	return (
-		<group {...props} dispose={null}>
-			<mesh
+		<motion.group dispose={null}>
+			<motion.mesh
 				ref={mesh}
 				geometry={nodes?.blob2.geometry}
 				receiveShadow
 				material={materials.purple}
 				// position={[maxSize.x + 100, maxSize.y, 0]}
-				position={getPos()}
+				// position={getPos()}
 				rotation={[0, 0, 0]}
-				scale={getSize()}
+				initial={{ scale: getSize(), x: 0, y: 0 }}
+				transition={{ duration: 0.5 }}
+				// scale={getSize()}
+				animate={{ scale: getSize(), x: getPos()[0], y: getPos()[1] }}
 			/>
-		</group>
+		</motion.group>
 	);
 }
 
