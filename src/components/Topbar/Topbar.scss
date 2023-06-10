@@ -4,7 +4,8 @@
 
 .main {
 	& ~ .topbar {
-		background-color: var(--bg-color);
+		background-color: var(--bg-color-50);
+		@include prefix(backdrop-filter, (blur(20px)));
 	}
 }
 
