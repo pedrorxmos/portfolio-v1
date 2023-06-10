@@ -30,6 +30,14 @@ export default function Model({ pointer }) {
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
 
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return maxSize.x * 0.05;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.04;
+			if (res > 1.25) return maxSize.x * 0.03;
+
+			return maxSize.x * 0.04;
+		}
+
 		if (res <= 0.45) return maxSize.x * 0.055;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.05;
 		if (res > 0.75 && res <= 1.02) return maxSize.x * 0.045;
@@ -47,6 +55,14 @@ export default function Model({ pointer }) {
 		const res = window.innerWidth / window.innerHeight;
 
 		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * 0.7, maxSize.y * -1.8, 0];
+
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return [maxSize.x * 0.1, maxSize.y * 0.24, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.025, maxSize.y * 0.29, 0];
+			if (res > 1.25) return [maxSize.x * -0.05, maxSize.y * 0.34, 0];
+
+			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+		}
 
 		if (res <= 0.45) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * 0.35, maxSize.y * -0.8, 0];

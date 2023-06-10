@@ -36,6 +36,14 @@ export default function Model({ pointer }) {
 			return maxSize.x * 0.07;
 		}
 
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return maxSize.x * 0.1;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.08;
+			if (res > 1.25) return maxSize.x * 0.06;
+
+			return maxSize.x * 0.07;
+		}
+
 		if (res <= 0.45) return maxSize.x * 0.06;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.055;
 		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.048;
@@ -56,8 +64,16 @@ export default function Model({ pointer }) {
 
 		if (document.querySelector('main').classList.contains('about')) {
 			if (res <= 0.75) return [maxSize.x * 0.4, maxSize.y * 0.34, 0];
-			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.3, maxSize.y * -0.25, 0];
-			if (res > 1.25) return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.45, maxSize.y * -0.25, 0];
+			if (res > 1.25) return [maxSize.x * 0, maxSize.y * 0.34, 0];
+
+			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
+		}
+
+		if (document.querySelector('main').classList.contains('work')) {
+			if (res <= 0.75) return [maxSize.x * 0.25, maxSize.y * -0.34, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * 0.275, maxSize.y * -0.34, 0];
+			if (res > 1.25) return [maxSize.x * 0.3, maxSize.y * -0.34, 0];
 
 			return [maxSize.x * 0.5, maxSize.y * 0.34, 0];
 		}

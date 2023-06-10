@@ -5,7 +5,7 @@
 .work,
 .about,
 .contact,
-.project {
+.project-detail {
 	& ~ .topbar {
 		background-color: var(--bg-color-10);
 		@include prefix(backdrop-filter, (blur(20px)));

@@ -47,7 +47,9 @@ export default function Model({ pointer }) {
 	const getPos = () => {
 		const res = window.innerWidth / window.innerHeight;
 
-		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * -1.8, maxSize.y * -0.18, 0];
+		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
+
+		if (document.querySelector('main').classList.contains('work')) return [maxSize.x * -2.2, maxSize.y * -0.18, 0];
 
 		if (res <= 0.45) return [maxSize.x * -1.4, maxSize.y * -0.26, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * -1.1, maxSize.y * -0.25, 0];

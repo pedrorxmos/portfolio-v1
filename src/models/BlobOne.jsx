@@ -49,6 +49,8 @@ export default function Model({ pointer }) {
 
 		if (document.querySelector('main').classList.contains('about')) return [maxSize.x * -0.7, maxSize.y * -1.3, 0];
 
+		if (document.querySelector('main').classList.contains('work')) return [maxSize.x * -0.7, maxSize.y * -1.3, 0];
+
 		if (res <= 0.45) return [maxSize.x * -0.62, maxSize.y * -0.56, 0];
 		if (res > 0.45 && res <= 0.6) return [maxSize.x * -0.65, maxSize.y * -0.58, 0];
 		if (res > 0.6 && res <= 0.75) return [maxSize.x * -0.68, maxSize.y * -0.62, 0];
