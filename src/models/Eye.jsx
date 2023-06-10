@@ -15,24 +15,21 @@ export default function Model(props) {
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
+	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
-	const sizeH = maxSize.x * 0.038;
-	const posH = [maxSize.x * 0.6, maxSize.y * 0.5, 0];
-	const sizeV = maxSize.x * 0.08;
-	const posV = [maxSize.x * 0.23, maxSize.y * 0.62, 0];
 
-	window.addEventListener('mousemove', (e) => {
-		const ndcX = (e.pageX / size.width) * 2 - 1;
-		const ndcY = -(e.pageY / size.height) * 2 + 1;
+	// window.addEventListener('mousemove', (e) => {
+	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
+	// 	const ndcY = -(e.pageY / size.height) * 2 + 1;
 
-		// Create a 3D vector in NDC space
-		const vector = new THREE.Vector3(ndcX, ndcY, -90);
+	// 	// Create a 3D vector in NDC space
+	// 	const vector = new THREE.Vector3(ndcX, ndcY, -90);
 
-		// Convert the vector from NDC space to world space
-		vector.unproject(camera);
+	// 	// Convert the vector from NDC space to world space
+	// 	vector.unproject(camera);
 
-		setPointer(vector);
-	});
+	// 	setPointer(vector);
+	// });
 
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
@@ -65,18 +62,24 @@ export default function Model(props) {
 		return [maxSize.x * 0.35, maxSize.y * 0.55, 0];
 	};
 
-	useFrame(() => {
-		const worldPosition = new THREE.Vector3();
-		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-		const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-		worldPosition.set(x, y, -90);
-		worldPosition.unproject(camera);
+	// useFrame(() => {
+	// 	const worldPosition = new THREE.Vector3();
+	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
+	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
+	// 	worldPosition.set(x, y, -90);
+	// 	worldPosition.unproject(camera);
 
-		mesh.current.lookAt(worldPosition);
-		// console.log(mesh);
-	});
+	// 	mesh.current.lookAt(worldPosition);
+	// 	// console.log(mesh);
+	// });
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
+	useEffect(() => {
+		materials.purple.color = color;
+		document.querySelector(':root').className !== 'dark'
+			? setColor(new THREE.Color('hsl(256, 45%, 80%)'))
+			: setColor(new THREE.Color('hsl(260, 15%, 35%)'));
+	}, [color]);
 	return (
 		<group {...props} dispose={null}>
 			<mesh

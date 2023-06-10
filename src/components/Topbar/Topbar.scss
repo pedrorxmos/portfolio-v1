@@ -161,3 +161,72 @@
 		}
 	}
 }
+
+.theme-button {
+	background: none;
+	color: inherit;
+	border: none;
+	overflow: hidden;
+	width: 1.25rem;
+	height: 1.25rem;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+
+	.svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&.light {
+		.sun {
+			transform: translateY(0);
+			&.animation {
+				animation: openTheme 0.5s;
+			}
+		}
+
+		.moon {
+			transform: translateY(120%);
+			&.animation {
+				animation: closeTheme 0.5s;
+			}
+		}
+	}
+
+	&.dark {
+		.moon {
+			transform: translateY(0);
+			&.animation {
+				animation: openTheme 0.5s;
+			}
+		}
+
+		.sun {
+			transform: translateY(120%);
+			&.animation {
+				animation: closeTheme 0.5s;
+			}
+		}
+	}
+}
+
+@keyframes openTheme {
+	0% {
+		transform: translateY(-120%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes closeTheme {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(120%);
+	}
+}

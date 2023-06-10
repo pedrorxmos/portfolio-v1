@@ -3,8 +3,11 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import { use100vh } from 'react-div-100vh';
+import { useEffect, useState } from 'react';
+import { useGetValue, usePostValue } from '../../hooks/localStorage';
 
 function Topbar() {
+	const [theme, setTheme] = useState(useGetValue('theme'));
 	const openMenu = () => {
 		document.querySelector('.nav').classList.add('nav-open');
 		document.querySelector('body').style.overflowY = 'hidden';
@@ -17,13 +20,20 @@ function Topbar() {
 		}, 10);
 	};
 
-	const changeTheme = () => {
-		document.querySelector(':root').className === 'dark'
-			? (document.querySelector(':root').className = 'light')
-			: (document.querySelector(':root').className = 'dark');
-
-		console.log(document.querySelector(':root').classList);
+	const changeTheme = (e) => {
+		theme === 'dark' ? setTheme('light') : setTheme('dark');
 	};
+
+	useEffect(() => {
+		document.querySelector(':root').className = theme;
+		usePostValue('theme', theme);
+		document.querySelectorAll('.theme-button .svg').forEach((svg) => {
+			svg.classList.add('animation');
+			setTimeout(() => {
+				svg.classList.remove('animation');
+			}, 500);
+		});
+	}, [theme]);
 
 	return (
 		<>
@@ -41,8 +51,11 @@ function Topbar() {
 									en
 								</a>
 							</li>
-							<li className="nav--item cursor-target">
-								<Button size="medium" rightIcon="sun" nothing action={changeTheme} />
+							<li className="nav--item">
+								<button className={`theme-button ${theme} cursor-target`} onClick={changeTheme}>
+									<Icon title="switch to dark theme" name="sun" size={'small'} className={'sun'} />
+									<Icon title="switch to light theme" name="moon" size={'small'} className={'moon'} />
+								</button>
 							</li>
 						</ul>
 						<Button value="menu" size="medium" rightIcon="menu" nothing action={openMenu} />

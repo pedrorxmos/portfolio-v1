@@ -11,20 +11,20 @@ export default function Model(props) {
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 	const [color, setColor] = useState(new THREE.Color('hsl(50, 100%, 77%)'));
 
-	const [pointer, setPointer] = useState({ x: 0, y: 0 });
+	// const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
-	window.addEventListener('mousemove', (e) => {
-		const ndcX = (e.pageX / size.width) * 2 - 1;
-		const ndcY = -(e.pageY / size.height) * 2 + 1;
+	// window.addEventListener('mousemove', (e) => {
+	// 	const ndcX = (e.pageX / size.width) * 2 - 1;
+	// 	const ndcY = -(e.pageY / size.height) * 2 + 1;
 
-		// Create a 3D vector in NDC space
-		const vector = new THREE.Vector3(ndcX, ndcY, -90);
+	// 	// Create a 3D vector in NDC space
+	// 	const vector = new THREE.Vector3(ndcX, ndcY, -90);
 
-		// Convert the vector from NDC space to world space
-		vector.unproject(camera);
+	// 	// Convert the vector from NDC space to world space
+	// 	vector.unproject(camera);
 
-		setPointer(vector);
-	});
+	// 	setPointer(vector);
+	// });
 
 	const getSize = () => {
 		const res = window.innerWidth / window.innerHeight;
@@ -57,16 +57,16 @@ export default function Model(props) {
 		return [maxSize.x * -0.52, maxSize.y * -0.73, 0];
 	};
 
-	useFrame(() => {
-		const worldPosition = new THREE.Vector3();
-		const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
-		const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
-		worldPosition.set(x, y, -90);
-		worldPosition.unproject(camera);
+	// useFrame(() => {
+	// 	const worldPosition = new THREE.Vector3();
+	// 	const x = (pointer.x * size.width) / (0.017778 * window.innerWidth);
+	// 	const y = (pointer.y * size.height) / (0.0015 * window.innerHeight);
+	// 	worldPosition.set(x, y, -90);
+	// 	worldPosition.unproject(camera);
 
-		mesh.current.lookAt(worldPosition);
-		// console.log(mesh);
-	});
+	// 	mesh.current.lookAt(worldPosition);
+	// 	// console.log(mesh);
+	// });
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
 
@@ -74,7 +74,7 @@ export default function Model(props) {
 		materials.yellow.color = color;
 		document.querySelector(':root').className !== 'dark'
 			? setColor(new THREE.Color('hsl(50, 100%, 77%)'))
-			: setColor(new THREE.Color('hsl(50, 100%, 42%)'));
+			: setColor(new THREE.Color('hsl(50, 34%, 30%)'));
 	}, [color]);
 	return (
 		<group {...props} dispose={null}>

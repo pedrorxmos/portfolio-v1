@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Icon.scss';
 import { useIconsInnerSVG } from '../../hooks/useIconsInnerSvg';
 
-function Icon({ title, size, name }) {
+function Icon({ title, size, name, className }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ function Icon({ title, size, name }) {
 			strokeWidth={2}
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			className={`svg${size ? ` svg-${size}` : ''} feather feather-${name}`}
+			className={`svg${size ? ` svg-${size}` : ''}${className ? ` ${className}` : ''} feather feather-${name}`}
 		>
 			<title>{title}</title>
 			{useIconsInnerSVG(name)}
