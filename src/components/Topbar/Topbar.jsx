@@ -74,8 +74,14 @@ function Topbar() {
 								</button>
 								<div className="locale-overlay" onClick={closeLoc}></div>
 								<div className="locale__items">
-									{localeMap.map((l) => (
-										<button href="#locale" className="nav--item__locale cursor-target" alt={l.localeTitle} onClick={() => setLoc(l.localeName)}>
+									{localeMap.map((l, index) => (
+										<button
+											key={index}
+											href="#locale"
+											className="nav--item__locale cursor-target"
+											alt={l.localeTitle}
+											onClick={() => setLoc(l.localeName)}
+										>
 											{l.localeTitle}
 										</button>
 									))}
