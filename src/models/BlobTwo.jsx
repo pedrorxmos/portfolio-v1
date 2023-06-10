@@ -75,7 +75,7 @@ export default function Model(props) {
 		materials.purple.color = color;
 		document.querySelector(':root').className !== 'dark'
 			? setColor(new THREE.Color('hsl(256, 45%, 80%)'))
-			: setColor(new THREE.Color('hsl(255, 44%, 59%)'));
+			: setColor(new THREE.Color('hsl(260, 15%, 35%)'));
 	}, [color]);
 	return (
 		<group {...props} dispose={null}>

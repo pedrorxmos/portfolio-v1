@@ -8,6 +8,7 @@ export default function Model(props) {
 	const mesh = React.useRef();
 	const [dir, setDir] = useState(0.0005);
 	const { camera, size } = useThree();
+	const [color, setColor] = useState(new THREE.Color('hsl(256, 45%, 80%)'));
 	const maxSize = usePixeltoScene(window.innerWidth, window.innerHeight);
 
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -69,6 +70,12 @@ export default function Model(props) {
 	});
 
 	const { nodes, materials } = useGLTF('/models/scene.glb');
+	useEffect(() => {
+		materials.purple.color = color;
+		document.querySelector(':root').className !== 'dark'
+			? setColor(new THREE.Color('hsl(256, 45%, 80%)'))
+			: setColor(new THREE.Color('hsl(260, 15%, 35%)'));
+	}, [color]);
 	return (
 		<group {...props} dispose={null}>
 			<mesh

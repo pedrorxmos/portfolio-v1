@@ -1,13 +1,33 @@
-:root {
+:root,
+:root.light {
 	--bg-color: #{color('light80')};
 	--light-color: #{color('light100')};
 	--light-color-40: #{color-opacity('light100', 0.4)};
 	--light-color-50: #{color-opacity('light100', 0.5)};
 	--light-color-80: #{color-opacity('light100', 0.8)};
 	--font-color: #{color('dark0')};
+	--subtitle-color: #{color('purple40')};
 
 	--purple-color: #{color('purple60')};
 	--yellow-color: #{color('yellow20')};
+	--light-purple-color: #{color('purple100')};
+	--light-yellow-color: #{color('yellow100')};
+
+	--text-selected-color: #{color-opacity('yellow100', 0.4)};
+	--scroll-color: #{color-opacity('purple80', 0.7)};
+}
+
+:root.dark {
+	--bg-color: hsl(40, 2%, 18%);
+	--light-color: #{color('dark40')};
+	--light-color-40: #{color-opacity('dark40', 0.4)};
+	--light-color-50: #{color-opacity('dark40', 0.5)};
+	--light-color-80: #{color-opacity('dark40', 0.8)};
+	--font-color: #{color('light100')};
+	--subtitle-color: #{color('purple80')};
+
+	--purple-color: #{color('purple80')};
+	--yellow-color: #{color('yellow40')};
 	--light-purple-color: #{color('purple100')};
 	--light-yellow-color: #{color('yellow100')};
 
