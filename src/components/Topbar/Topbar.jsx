@@ -3,8 +3,11 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon/Icon';
 import { use100vh } from 'react-div-100vh';
+import { useEffect, useState } from 'react';
+import { useGetValue, usePostValue } from '../../hooks/localStorage';
 
 function Topbar() {
+	const [theme, setTheme] = useState(useGetValue('theme'));
 	const openMenu = () => {
 		document.querySelector('.nav').classList.add('nav-open');
 		document.querySelector('body').style.overflowY = 'hidden';
@@ -18,12 +21,13 @@ function Topbar() {
 	};
 
 	const changeTheme = () => {
-		document.querySelector(':root').className === 'dark'
-			? (document.querySelector(':root').className = 'light')
-			: (document.querySelector(':root').className = 'dark');
-
-		console.log(document.querySelector(':root').classList);
+		theme === 'dark' ? setTheme('light') : setTheme('dark');
 	};
+
+	useEffect(() => {
+		document.querySelector(':root').className = theme;
+		usePostValue('theme', theme);
+	});
 
 	return (
 		<>
