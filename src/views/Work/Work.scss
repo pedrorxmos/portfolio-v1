@@ -27,7 +27,7 @@
 		width: 100%;
 		justify-content: center;
 		align-items: stretch;
-		overflow: hidden;
+		overflow: visible;
 
 		.work__img {
 			flex: calc(45% - 8px);
@@ -91,7 +91,7 @@
 
 				.work__filter {
 					@include d-flex(row, 0.75rem);
-					align-items: center;
+					align-items: flex-end;
 					position: relative;
 					@include mq(max-width, 600px) {
 						gap: 0.2rem;
@@ -105,6 +105,8 @@
 						color: var(--font-color);
 						z-index: 4;
 						@include d-flex(row, 10px);
+						align-items: center;
+						text-align: right;
 						padding: 4px 8px;
 						border-radius: 10px;
 
@@ -133,7 +135,7 @@
 						z-index: 1;
 						opacity: 0;
 						@include d-flex(column, 0);
-						width: 200px;
+						width: 260px;
 						pointer-events: none;
 						background-color: var(--light-color);
 						@include prefix(transition, (opacity 0.3s, top 0.3s, gap 0.3s));
@@ -145,7 +147,7 @@
 							border-bottom: 2px solid var(--purple-color);
 							font-weight: 300;
 							font-size: fs('big');
-							padding: 8px 24px;
+							padding: 12px 24px;
 							border-radius: 4px;
 							text-align: right;
 
@@ -154,6 +156,10 @@
 								padding: 8px 18px;
 								border-radius: 4px;
 							}
+						}
+
+						@include mq(min-width, 960px) {
+							width: 200px;
 						}
 
 						&.open {
@@ -170,7 +176,7 @@
 				@include d-flex(column, 0.75rem);
 				align-self: stretch;
 				flex: 1;
-				overflow-y: scroll;
+				overflow-y: auto;
 				padding-bottom: 1rem;
 				padding-right: 0.75rem;
 
