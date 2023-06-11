@@ -67,10 +67,10 @@ function Project() {
 							<span>{locale.locale['project-next-button']}</span>
 							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
-						<div className="actions__preview" style={{ opacity: 0 }}>
+						{/* <div className="actions__preview" style={{ opacity: 0 }}>
 							<div className="preview__img"></div>
 							<small className="preview__title">{previousProject?.title}</small>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="detail__section">
