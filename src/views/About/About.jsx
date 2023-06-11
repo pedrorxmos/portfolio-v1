@@ -3,6 +3,7 @@ import Icon from '../../components/Icon/Icon';
 import { useCollection } from '../../hooks/firestore';
 import './About.scss';
 import { LocaleContext } from '../../providers/LocaleContext';
+import { use100vh } from 'react-div-100vh';
 
 function About() {
 	const { locale } = useContext(LocaleContext);
@@ -10,7 +11,7 @@ function About() {
 
 	return (
 		<>
-			<main className="about main">
+			<main className="about main" style={{ '--use-100vh': `${use100vh()}px` }}>
 				<h1>{locale.locale['about-title']}</h1>
 				<p>{locale.locale['about-subtitle']}</p>
 				<div className="about__items">

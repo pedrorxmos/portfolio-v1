@@ -8,6 +8,10 @@
 	align-items: center;
 	padding-top: 84px;
 
+	@include mq(min-width, 960px) {
+		padding-top: calc(0.5rem + 84px);
+	}
+
 	.contact-content {
 		@include d-flex(column, 3rem);
 		justify-content: space-between;

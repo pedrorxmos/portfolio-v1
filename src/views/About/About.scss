@@ -64,6 +64,7 @@
 
 	@include mq(min-width, 760px) {
 		justify-content: center;
-		padding-top: calc(5rem + 84px);
+		padding-top: 0;
+		height: var(--use-100vh);
 	}
 }
