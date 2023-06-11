@@ -4,12 +4,47 @@ import ProjectButton from '../../components/ProjectButton/ProjectButton';
 import { useCollection } from '../../hooks/firestore';
 import Icon from '../../components/Icon/Icon';
 import { use100vh } from 'react-div-100vh';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { LocaleContext } from '../../providers/LocaleContext';
 
 function Work() {
 	const { locale } = useContext(LocaleContext);
 	const data = useCollection(locale.locale['firebase-projects']);
+	const [categories, setCategories] = useState([]);
+	const [work, setWork] = useState([]);
+	const [filter, setFilter] = useState(locale.locale['filter-title']);
+
+	const changeCategory = (value) => {
+		console.log(value);
+		setWork(value !== locale.locale['filter-title'] ? data?.filter((a) => a.category === value) : data);
+		setFilter(value);
+		closeFilter();
+	};
+
+	const openFilter = () => {
+		document.querySelector('.filter__list').classList.toggle('open');
+		document.querySelector('.dropdown').classList.toggle('open');
+	};
+	const closeFilter = () => {
+		document.querySelector('.filter__list').classList.toggle('open');
+		document.querySelector('.dropdown').classList.toggle('open');
+	};
+
+	useEffect(() => {
+		setFilter(locale.locale['filter-title']);
+	}, [locale]);
+
+	useEffect(() => {
+		setWork(data);
+	}, [data]);
+
+	useEffect(() => {
+		const cat = [];
+		data?.forEach((e) => {
+			!cat.includes(e.category) ? cat.push(e.category) : '';
+		});
+		setCategories(cat);
+	}, [categories, data]);
 
 	return (
 		<>
@@ -28,15 +63,34 @@ function Work() {
 								<small>{locale.locale['work-subtitle']}</small>
 							</div>
 							<div className="work__filter">
-								<span>{locale.locale['filter']}:</span>
-								<button className="cursor-target dropdown">
-									{locale.locale['filter-title']}
+								<span onClick={openFilter}>{locale.locale['filter']}:</span>
+								<button className="cursor-target dropdown" onClick={openFilter}>
+									{filter}
 									<Icon title="dropdown icon" name="chevron-down" size="x-small" />
 								</button>
+								<div className="filter__list">
+									{filter !== locale.locale['filter-title'] && (
+										<button className="filter-button cursor-target" onClick={() => changeCategory(locale.locale['filter-title'])}>
+											{locale.locale['filter-reset']}
+										</button>
+									)}
+
+									{categories.map((category) => {
+										const btn =
+											filter === category ? (
+												''
+											) : (
+												<button className="filter-button cursor-target" onClick={() => changeCategory(category)}>
+													{category}
+												</button>
+											);
+										return btn;
+									})}
+								</div>
 							</div>
 						</div>
 						<div className="work__list">
-							{data
+							{work
 								?.sort((a, b) => a.order - b.order)
 								.map((e) => (
 									<ProjectButton key={e.NO_ID_FIELD} id={e.NO_ID_FIELD} title={e.title} tags={e.tags} />
