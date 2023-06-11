@@ -14,7 +14,7 @@ function App() {
 		<>
 			<LocacleProvider>
 				<FirestoreProvider sdk={firestoreInstance}>
-					<Cursor />
+					{/* <Cursor /> */}
 					<Outlet />
 					<Three />
 					<Topbar />
