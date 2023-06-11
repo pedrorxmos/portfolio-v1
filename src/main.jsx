@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { FirebaseAppProvider } from 'reactfire';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Home from './views/Home/Home.jsx';
 import About from './views/About/About.jsx';
@@ -18,7 +18,7 @@ const firebaseConfig = {
 	appId: import.meta.env.VITE_APP_ID,
 };
 
-const router = createBrowserRouter([
+const router = createHashRouter([
 	{
 		path: '/',
 		element: <App />,
