@@ -1,6 +1,7 @@
 .svg {
 	stroke-width: 1.5;
 	display: block;
+	z-index: inherit;
 
 	&.svg-x-small {
 		//16px
