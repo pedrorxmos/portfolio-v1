@@ -39,7 +39,7 @@
 		font-family: $headers-font-family;
 		font-weight: 500;
 		font-size: fs('normal');
-		z-index: 110;
+		z-index: inherit;
 
 		@include mq(min-width, 340px) {
 			font-size: fs('x-normal');
