@@ -13,11 +13,11 @@ function Error404() {
 
 	return (
 		<>
-			<main className="404 main" style={{ '--use-100vh': `${use100vh()}px` }}>
-				<span className="404-message">{locale.locale['404-message']}</span>
-				<big className="404-number">404</big>
-				<span className="404-message">{locale.locale['404-message']}</span>
-				<Link to="/" className="404-button">
+			<main className="error-404 main" style={{ '--use-100vh': `${use100vh()}px` }}>
+				<span className="error-404-message">{locale.locale['404-message']}</span>
+				<big className="error-404-number">404</big>
+				<span className="error-404-error">{locale.locale['404-error']}</span>
+				<Link to="/" className="error-404-button">
 					{locale.locale['404-back']}
 				</Link>
 			</main>
