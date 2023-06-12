@@ -198,9 +198,11 @@
 
 				&.nav__menu {
 					display: flex;
+					z-index: 100;
 
 					.btn {
 						display: flex;
+						z-index: 102;
 					}
 
 					@include mq(max-width, 960px) {
@@ -210,6 +212,7 @@
 						}
 
 						.nav--list {
+							z-index: 101;
 							transform: translateX(0);
 							gap: 3rem;
 							font-size: fs('x-normal');

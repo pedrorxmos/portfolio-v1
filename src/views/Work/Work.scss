@@ -128,6 +128,20 @@
 						}
 					}
 
+					.filter-overlay {
+						position: fixed;
+						height: var(--use-100vh);
+						width: 100vw;
+						left: 0;
+						top: 0;
+						display: none;
+						z-index: 9;
+
+						&.open {
+							display: block;
+						}
+					}
+
 					.filter__list {
 						position: absolute;
 						right: 0;
@@ -143,6 +157,7 @@
 						.filter-button {
 							cursor: pointer;
 							font-family: $main-font-family;
+							color: var(--font-color);
 							border: none;
 							border-bottom: 2px solid var(--purple-color);
 							font-weight: 300;
@@ -166,7 +181,7 @@
 							pointer-events: all;
 							top: 100%;
 							opacity: 1;
-							z-index: 20;
+							z-index: 10;
 						}
 					}
 				}

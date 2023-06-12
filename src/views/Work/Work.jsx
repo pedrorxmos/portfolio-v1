@@ -24,10 +24,12 @@ function Work() {
 	const openFilter = () => {
 		document.querySelector('.filter__list').classList.toggle('open');
 		document.querySelector('.dropdown').classList.toggle('open');
+		document.querySelector('.filter-overlay').classList.toggle('open');
 	};
 	const closeFilter = () => {
-		document.querySelector('.filter__list').classList.toggle('open');
-		document.querySelector('.dropdown').classList.toggle('open');
+		document.querySelector('.filter__list').classList.remove('open');
+		document.querySelector('.dropdown').classList.remove('open');
+		document.querySelector('.filter-overlay').classList.remove('open');
 	};
 
 	useEffect(() => {
@@ -68,6 +70,7 @@ function Work() {
 									{filter}
 									<Icon title="dropdown icon" name="chevron-down" size="x-small" />
 								</button>
+								<div className="filter-overlay" onClick={closeFilter}></div>
 								<div className="filter__list">
 									{filter !== locale.locale['filter-title'] && (
 										<button className="filter-button cursor-target" onClick={() => changeCategory(locale.locale['filter-title'])}>
