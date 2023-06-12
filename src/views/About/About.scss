@@ -63,13 +63,12 @@
 
 		@include mq(min-width, 760px) {
 			grid-template-columns: 1fr 1fr;
-			padding-bottom: 0;
+			// padding-bottom: 0;
 		}
 	}
 
 	@include mq(min-width, 760px) {
 		justify-content: center;
-		padding-top: 0;
-		height: var(--use-100vh);
+		padding-top: calc(84px + 10vh);
 	}
 }

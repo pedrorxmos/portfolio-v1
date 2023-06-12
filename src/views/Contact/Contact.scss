@@ -7,23 +7,22 @@
 	justify-content: center;
 	align-items: center;
 	padding-top: 84px;
+	padding-bottom: 1rem;
 
 	@include mq(min-width, 960px) {
-		padding-top: calc(0.5rem + 84px);
+		padding-top: calc(8vh + 84px);
 	}
 
 	.contact-content {
 		@include d-flex(column, 3rem);
 		justify-content: space-between;
 		align-items: center;
-		padding-top: 2rem;
 		flex: 1;
 
 		@include mq(min-width, 960px) {
 			flex-direction: row;
 			max-width: 738px;
 			padding-right: 28px;
-			padding-top: 4.5rem;
 			gap: 0;
 		}
 

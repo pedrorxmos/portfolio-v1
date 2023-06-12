@@ -28,9 +28,9 @@ body {
 
 	// overflow: hidden;
 	&::-webkit-scrollbar {
-		width: 0px;
+		width: 8px;
 
-		@include prefix(transition, (opacity 0.3s));
+		// @include prefix(transition, (opacity 0.3s));
 	}
 
 	&::-webkit-scrollbar-track {
@@ -40,12 +40,6 @@ body {
 	&::-webkit-scrollbar-thumb {
 		border-radius: 10px;
 		background: var(--scroll-color);
-	}
-
-	@include mq(max-width, 1080px) {
-		&::-webkit-scrollbar {
-			width: 8px;
-		}
 	}
 }
 
