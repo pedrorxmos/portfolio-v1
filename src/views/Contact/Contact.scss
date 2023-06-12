@@ -16,6 +16,8 @@
 	.form-status-mail {
 		position: fixed;
 		top: 84px;
+		left: 50%;
+		transform: translateX(-50%);
 		background: var(--light-yellow-color);
 		padding: 4px 12px;
 		width: 100%;
@@ -25,7 +27,7 @@
 		@include d-flex(row, 0);
 		justify-content: space-between;
 		align-items: center;
-		z-index: 6;
+		z-index: 12;
 		pointer-events: none;
 		@include prefix(transition, (opacity 0.3s, top 0.3s, background 0.3s));
 		.btn {
