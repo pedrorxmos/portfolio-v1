@@ -12,6 +12,7 @@ This project is made with:
 - [Sass (scss)](https://sass-lang.com/)
 - [ThreeJS](https://threejs.org/)
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber)
+- [Framer Motion 3D](https://www.framer.com/motion/three-introduction/)
 - [EmailJS](https://www.emailjs.com/)
 
 
@@ -43,7 +44,7 @@ $ npm run build
 
 ## Environment Variables
 
-To run this project, you will need the following Cloud Firestore keys and add them to add the following environment variables to your .env file
+To run this project, you will need the following Cloud Firestore & EmailJS keys and add them to add the following environment variables to your .env file
 
 `VITE_API_KEY`
 
@@ -57,9 +58,16 @@ To run this project, you will need the following Cloud Firestore keys and add th
 
 `VITE_APP_ID`
 
+`VITE_EMAIL_SERVICE`
+
+`VITE_EMAIL_TEMPLATE`
+
+`VITE_EMAIL_USER`
+
 ## My Links
 - My web: [pedrorxmos.com](https://pedrorxmos.com)
 - Github: [@pedrorxmos](https://github.com/pedrorxmos)
 - LinkedIn: [@pedroramosguardiola](https://linkedin.com/in/pedroramosguardiola)
 - Codepen: [@pedrorxmos](https://codepen.io/pedrorxmos)
 - Mail: [pedrorxmosdev@gmail.com](mailTo:pedrorxmosdev@gmail.com)
+
