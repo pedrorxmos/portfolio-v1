@@ -20,7 +20,7 @@
 	top: 0;
 	left: 0;
 	border: none;
-	z-index: 10;
+	z-index: 15;
 	overflow: visible;
 
 	@include mq(min-width, 600px) {
