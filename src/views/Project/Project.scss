@@ -3,7 +3,7 @@
 @import '../../scss/functions';
 
 .project-detail {
-	@include d-flex(column, 3rem);
+	@include d-flex(column, 2rem);
 	justify-content: center;
 	align-items: center;
 	position: relative;
