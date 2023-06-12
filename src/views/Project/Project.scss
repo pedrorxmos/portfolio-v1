@@ -226,6 +226,10 @@
 				@include d-flex(column, 0.5rem);
 				width: 100%;
 
+				small {
+					font-weight: 600;
+				}
+
 				@include mq(max-width, 400px) {
 					text-align: center;
 				}
