@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.error-404 {
+	height: var(--use-100vh);
+	@include d-flex(column, 0.5rem);
+	padding-top: 84px;
+	justify-content: center;
+	align-items: center;
+
+	.error-404-message {
+		font-size: fs('big');
+		margin: 0;
+	}
+
+	.error-404-number {
+		font-size: 10rem;
+		font-family: $headers-font-family;
+		margin: 0;
+		line-height: 77.5%;
+	}
+
+	.error-404-error {
+		font-size: fs('big');
+		font-family: $headers-font-family;
+		margin: 0;
+	}
+
+	.error-404-button {
+		color: var(--font-color);
+		@include d-flex(row, 8px);
+		justify-content: center;
+		align-items: center;
+		padding: 6px 16px;
+		border: 2px solid var(--purple-color);
+		border-radius: 5px;
+		font-size: fs('normal');
+		font-weight: 400;
+		font-family: $main-font-family;
+		background-color: var(--light-color-40);
+		cursor: pointer;
+		z-index: 10;
+		margin-top: 1rem;
+	}
+}
