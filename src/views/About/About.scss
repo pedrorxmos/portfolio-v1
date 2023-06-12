@@ -8,6 +8,11 @@
 	align-items: center;
 	padding-top: calc(2rem + 84px);
 
+	.about-subtitle {
+		text-align: center;
+		max-width: 1064px;
+	}
+
 	.about__items {
 		display: grid;
 		grid-template-columns: 1fr;

@@ -13,7 +13,7 @@ function About() {
 		<>
 			<main className="about main" style={{ '--use-100vh': `${use100vh()}px` }}>
 				<h1>{locale.locale['about-title']}</h1>
-				<p>{locale.locale['about-subtitle']}</p>
+				<p className="about-subtitle">{locale.locale['about-subtitle']}</p>
 				<div className="about__items">
 					{data?.map((e) => (
 						<div key={e.title} className="about__card">
