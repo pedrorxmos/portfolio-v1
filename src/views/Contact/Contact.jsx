@@ -62,8 +62,14 @@ function Contact() {
 						<a href="https://twitter.com/" className="cursor-target" target="_blank" rel="noreferrer" title="twitter">
 							<Icon title="twitter" name="twitter" size="x-normal" />
 						</a>
-						<a href="mailTo:pedrorxmosdev@gmail.com" className="cursor-target" target="_blank" rel="noreferrer" title="mail">
-							<Icon title="mail" name="mail" size="x-normal" />
+						<a
+							href="mailTo:pedrorxmosdev@gmail.com"
+							className="cursor-target"
+							target="_blank"
+							rel="noreferrer"
+							title={locale.locale['contact-email-form']}
+						>
+							<Icon title={locale.locale['contact-email-form']} name="mail" size="x-normal" />
 						</a>
 					</div>
 				</div>
