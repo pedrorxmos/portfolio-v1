@@ -14,6 +14,9 @@
 	--light-purple-color: #{color('purple100')};
 	--light-yellow-color: #{color('yellow100')};
 
+	--error-color: hsl(0, 66%, 85%);
+	--success-color: hsl(120, 63%, 86%);
+
 	--text-selected-color: #{color-opacity('yellow100', 0.4)};
 	--scroll-color: #{color-opacity('purple80', 0.7)};
 }
@@ -32,6 +35,9 @@
 	--yellow-color: #{color('yellow40')};
 	--light-purple-color: #{color('purple40')};
 	--light-yellow-color: #{color('yellow0')};
+
+	--error-color: hsl(0, 66%, 60%);
+	--success-color: hsl(120, 33%, 49%);
 
 	--text-selected-color: #{color-opacity('yellow100', 0.4)};
 	--scroll-color: #{color-opacity('purple80', 0.7)};

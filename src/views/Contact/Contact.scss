@@ -6,11 +6,55 @@
 	@include d-flex(row, 0);
 	justify-content: center;
 	align-items: center;
-	padding-top: 84px;
+	padding-top: calc(1.5rem + 84px);
 	padding-bottom: 1rem;
 
 	@include mq(min-width, 960px) {
 		padding-top: calc(8vh + 84px);
+	}
+
+	.form-status-mail {
+		position: fixed;
+		top: 84px;
+		background: var(--light-yellow-color);
+		padding: 4px 12px;
+		width: 100%;
+		opacity: 0;
+		max-width: 300px;
+		margin: 0 1rem;
+		@include d-flex(row, 0);
+		justify-content: space-between;
+		align-items: center;
+		z-index: 6;
+		pointer-events: none;
+		@include prefix(transition, (opacity 0.3s, top 0.3s, background 0.3s));
+		.btn {
+			pointer-events: all;
+		}
+
+		&.open {
+			opacity: 1;
+			top: 94px;
+		}
+
+		&.sent {
+			background: var(--success-color);
+		}
+
+		&.error {
+			background: var(--error-color);
+		}
+
+		.status-message {
+			@include d-flex(row, 0.5rem);
+			align-items: center;
+			line-height: 0%;
+
+			.svg {
+				width: 0.8333rem;
+				height: 0.8333rem;
+			}
+		}
 	}
 
 	.contact-content {

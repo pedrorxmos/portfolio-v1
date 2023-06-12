@@ -2,12 +2,13 @@ import Button from '../../components/Button/Button';
 // import Footer from '../../components/Footer/Footer';
 import './Contact.scss';
 import Icon from '../../components/Icon/Icon';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LocaleContext } from '../../providers/LocaleContext';
 // import { use100vh } from 'react-div-100vh';
 
 function Contact() {
 	const { locale } = useContext(LocaleContext);
+	const [mailStatus, setMailStatus] = useState('message thing');
 
 	const onFocus = (e) => {
 		e.target.parentElement.style.background = 'var(--light-color-80)';
@@ -20,13 +21,31 @@ function Contact() {
 		else e.target.classList.remove('error');
 	};
 
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		document.querySelector('.form-status-mail').classList.add('open');
+	};
+
+	const closeMssg = (e) => {
+		document.querySelector('.form-status-mail').classList.remove('open');
+	};
+
 	return (
 		<>
 			<main className="contact main">
+				<div className="form-status-mail">
+					<small className="status-message">
+						<Icon title="send" name="send" size="x-small" />
+						{mailStatus}
+					</small>
+
+					<Button size="small" rightIcon="x" nothing action={closeMssg} title={locale.locale['menu-close']} />
+				</div>
 				<div className="contact-content">
 					<div className="contact--section">
 						<h2>{locale.locale['contact-title']}</h2>
-						<form action="" className="contact__form form" autoComplete="off">
+						<form onSubmit={sendEmail} className="contact__form form" autoComplete="off">
 							<label htmlFor="form-name" className="form__item cursor-target">
 								<Icon title="form name icon" name="user" size="normal" />
 								<input type="text" className="form--input" id="form-name" name="form-name" onFocus={onFocus} onBlur={onBlur} required />
