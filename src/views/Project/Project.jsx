@@ -111,7 +111,15 @@ function Project() {
 							</span>
 							{data?.details.map((det, index) => (
 								<span key={index}>
-									<small>{det.title}:</small> {det.value}
+									<small>{det.title}:</small>
+									{det.url ? (
+										<a href={det.url} alt="project design url" target="_blank">
+											{` ${det.value}`}
+											<Icon name="external-link" size="x-small" title="link to design" />
+										</a>
+									) : (
+										` ${det.value}`
+									)}
 								</span>
 							))}
 						</div>
