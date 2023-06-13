@@ -17,7 +17,7 @@ function About() {
 				<div className="about__items">
 					{data?.map((e) => (
 						<div key={e.title} className="about__card">
-							<Icon title={e.icon} name={'heart'} size="x-big" />
+							<Icon title={e.icon} name={e.icon} size="x-big" />
 							<div className="card__info">
 								<h3>{e.title}</h3>
 								<p>{e.value}</p>
