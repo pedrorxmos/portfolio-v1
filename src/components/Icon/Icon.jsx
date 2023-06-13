@@ -14,7 +14,7 @@ function Icon({ title, size, name, className }) {
 			strokeWidth={2}
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			className={`svg${size ? ` svg-${size}` : ''}${className ? ` ${className}` : ''} feather feather-${name}`}
+			className={`svg${size ? ` svg-${size}` : ''}${className ? ` ${className}` : ''} feather hero ${name}`}
 		>
 			<title>{title}</title>
 			{useIconsInnerSVG(name)}

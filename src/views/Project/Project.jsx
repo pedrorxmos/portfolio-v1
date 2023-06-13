@@ -100,7 +100,7 @@ function Project() {
 
 				<div className="detail__section">
 					<div className="detail__card">
-						<Icon title="tools" name="heart" size="x-big" />
+						<Icon title="details" name="sparkle" size="x-big" />
 						<div className="card__info">
 							<h2 className="h3">{locale.locale['project-details']}</h2>
 							<span>
@@ -117,7 +117,7 @@ function Project() {
 						</div>
 					</div>
 					<div className="detail__card">
-						<Icon title="tools" name="heart" size="x-big" />
+						<Icon title="tools" name="tools" size="x-big" />
 						<div className="card__info">
 							<h2 className="h3">{locale.locale['project-tools']}</h2>
 							<div className="detail__tools">
