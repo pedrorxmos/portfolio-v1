@@ -31,5 +31,11 @@
   "contact-button": "pongamonos en contacto",
   "404-error": "Página no encontrada",
   "404-message": "Upss!",
-  "404-back": "back to main"
+  "404-back": "back to main",
+  "cv-name": "PedroARamosGuardiola",
+  "nav-home": "inicio",
+  "nav-about": "sobre mi",
+  "nav-work": "trabajo",
+  "nav-contact": "contacto",
+  "nav-cv": "mi curriculum"
 }

@@ -101,26 +101,32 @@ function Topbar() {
 						<ul className="nav--list">
 							<li className="nav--item">
 								<Link to="/" className="cursor-target" onClick={closeMenu}>
-									home
+									{locale.locale['nav-home']}
 								</Link>
 							</li>
 							<li className="nav--item">
 								<Link to="/about" className="cursor-target" onClick={closeMenu}>
-									about
+									{locale.locale['nav-about']}
 								</Link>
 							</li>
 							<li className="nav--item">
 								<Link to="/work" className="cursor-target" onClick={closeMenu}>
-									work
+									{locale.locale['nav-work']}
 								</Link>
 							</li>
 							<li className="nav--item">
 								<Link to="/contact" className="cursor-target" onClick={closeMenu}>
-									contact
+									{locale.locale['nav-contact']}
 								</Link>
 							</li>
 							<li className="nav--item">
-								<Button type="link" value="my resume" size="small" color="secondary" action="#mycv" />
+								<Button
+									type="link"
+									value={locale.locale['nav-cv']}
+									size="small"
+									color="secondary"
+									action={`../../../${locale.locale['cv-name']}.pdf`}
+								/>
 							</li>
 						</ul>
 						<Button size="big" rightIcon="x" nothing action={closeMenu} title={locale.locale['menu-close']} />
