@@ -26,18 +26,18 @@ function Contact() {
 	const sendEmail = (e) => {
 		e.preventDefault();
 
-		setMailStatus('sending');
+		setMailStatus(locale.locale['form-pending']);
 		document.querySelector('.form-status-mail').classList.add('open');
 
 		emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE, import.meta.env.VITE_EMAIL_TEMPLATE, form.current, import.meta.env.VITE_EMAIL_USER).then(
 			(result) => {
-				console.log(result.text);
-				setMailStatus('sent');
+				// console.log(result.text);
+				setMailStatus(locale.locale['form-sent']);
 				document.querySelector('.form-status-mail').classList.add('sent');
 			},
 			(error) => {
-				console.log(error.text);
-				setMailStatus('error');
+				// console.log(error.text);
+				setMailStatus(`${locale.locale['form-pending']}: ${error.text}`);
 				document.querySelector('.form-status-mail').classList.add('error');
 			}
 		);
