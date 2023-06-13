@@ -9,6 +9,7 @@ import Work from './views/Work/Work.jsx';
 import Contact from './views/Contact/Contact.jsx';
 import Project from './views/Project/Project.jsx';
 import Error404 from './views/Error404/Error404.jsx';
+import Privacy from './views/Privacy/Privacy.jsx';
 
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_API_KEY,
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
 			{
 				path: 'contact',
 				element: <Contact />,
+			},
+			{
+				path: 'privacy',
+				element: <Privacy />,
 			},
 			{
 				path: '*',

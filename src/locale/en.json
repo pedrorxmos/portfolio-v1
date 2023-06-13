@@ -32,6 +32,8 @@
   "form-pending": "sending message",
   "form-sent": "message sent!",
   "form-error": "error",
+  "form-consent": "By submitting this form you are accepting the",
+  "form-privacy": "Privacy Policy",
   "404-error": "Page not found",
   "404-message": "Oopss!",
   "404-back": "back to main",

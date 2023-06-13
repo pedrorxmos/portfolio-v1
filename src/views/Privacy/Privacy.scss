@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/functions';
+
+.privacy {
+	padding-top: 96px;
+	padding-bottom: 4rem;
+	@include d-flex(column, 1rem);
+
+	ol,
+	li {
+		list-style-type: style type;
+		padding: auto;
+		margin: 0;
+		z-index: 6;
+	}
+}

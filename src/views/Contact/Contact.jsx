@@ -5,6 +5,7 @@ import Icon from '../../components/Icon/Icon';
 import emailjs from '@emailjs/browser';
 import { useContext, useState, useRef } from 'react';
 import { LocaleContext } from '../../providers/LocaleContext';
+import { Link } from 'react-router-dom';
 // import { use100vh } from 'react-div-100vh';
 
 function Contact() {
@@ -41,6 +42,8 @@ function Contact() {
 				document.querySelector('.form-status-mail').classList.add('error');
 			}
 		);
+
+		e.target.reset();
 	};
 
 	const closeMssg = (e) => {
@@ -83,6 +86,13 @@ function Contact() {
 								<textarea className="form--input form--area" id="form-message" name="form-message" onFocus={onFocus} onBlur={onBlur} required />
 								<span className="form--label">{locale.locale['contact-message-form']}</span>
 							</label>
+
+							<small className="form-consent">
+								{locale.locale['form-consent']}{' '}
+								<a href="/privacy" target="_blank">
+									{locale.locale['form-privacy']}
+								</a>
+							</small>
 
 							<Button value={locale.locale['contact-button']} color="main" size="medium" />
 						</form>

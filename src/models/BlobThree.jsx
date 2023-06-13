@@ -46,6 +46,14 @@ export default function Model({ pointer }) {
 			return maxSize.x * 0.05;
 		}
 
+		if (document.querySelector('main').classList.contains('privacy')) {
+			if (res <= 0.75) return maxSize.x * 0.11;
+			if (res > 0.75 && res <= 1.25) return maxSize.x * 0.08;
+			if (res > 1.25) return maxSize.x * 0.05;
+
+			return maxSize.x * 0.05;
+		}
+
 		if (res <= 0.45) return maxSize.x * 0.082;
 		if (res > 0.45 && res <= 0.6) return maxSize.x * 0.08;
 		if (res > 0.6 && res <= 0.75) return maxSize.x * 0.07;
@@ -72,6 +80,14 @@ export default function Model({ pointer }) {
 		}
 
 		if (document.querySelector('main').classList.contains('contact')) {
+			if (res <= 0.75) return [maxSize.x * 0.05, maxSize.y * -0.4, 0];
+			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.075, maxSize.y * -0.325, 0];
+			if (res > 1.25) return [maxSize.x * -0.2, maxSize.y * -0.25, 0];
+
+			return [maxSize.x * -0.2, maxSize.y * -0.25, 0];
+		}
+
+		if (document.querySelector('main').classList.contains('privacy')) {
 			if (res <= 0.75) return [maxSize.x * 0.05, maxSize.y * -0.4, 0];
 			if (res > 0.75 && res <= 1.25) return [maxSize.x * -0.075, maxSize.y * -0.325, 0];
 			if (res > 1.25) return [maxSize.x * -0.2, maxSize.y * -0.25, 0];
