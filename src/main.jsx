@@ -20,7 +20,7 @@ const firebaseConfig = {
 	appId: import.meta.env.VITE_APP_ID,
 };
 
-const router = createHashRouter([
+const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,

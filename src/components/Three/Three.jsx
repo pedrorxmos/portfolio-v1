@@ -13,16 +13,19 @@ import * as THREE from 'three';
 
 function Three() {
 	const [pointer, setPointer] = useState({ x: 0, y: 0 });
+
+	const onMouseMove = (e) => {
+		const ndcX = (e.pageX / window.innerWidth) * 2 - 1;
+		const ndcY = -(e.pageY / window.innerHeight) * 2 + 1;
+		// console.log(ndcX);
+		// Create a 3D vector in NDC space
+		const vector = new THREE.Vector3(ndcX, ndcY, -90);
+		// Convert the vector from NDC space to world space
+		setPointer(vector);
+	};
+
 	useEffect(() => {
-		window.addEventListener('mousemove', (e) => {
-			const ndcX = (e.pageX / window.innerWidth) * 2 - 1;
-			const ndcY = -(e.pageY / window.innerHeight) * 2 + 1;
-			// console.log(ndcX);
-			// Create a 3D vector in NDC space
-			const vector = new THREE.Vector3(ndcX, ndcY, -90);
-			// Convert the vector from NDC space to world space
-			setPointer(vector);
-		});
+		window.addEventListener('mousemove', onMouseMove);
 	}, []);
 
 	return (
