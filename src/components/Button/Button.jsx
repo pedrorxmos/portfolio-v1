@@ -2,7 +2,19 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 import Icon from '../Icon/Icon';
 
-function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, action, nothing, title }) {
+function Button({
+	type,
+	value,
+	color,
+	leftIcon,
+	rightIcon,
+	justIcon,
+	size,
+	action,
+	nothing,
+	title,
+	target = '_blank',
+}) {
 	const iconSizeMap = {
 		small: 'x-small',
 		medium: 'small',
@@ -28,10 +40,10 @@ function Button({ type, value, color, leftIcon, rightIcon, justIcon, size, actio
 			{type === 'link' && (
 				<a
 					href={action}
-					className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${justIcon ? ` btn-icon` : ''}${
-						nothing ? ` btn-nothing` : ''
-					} cursor-target`}
-					target="_blank"
+					className={`link btn${color ? ` btn-${color}` : ''}${size ? ` btn-${size}` : ''}${
+						justIcon ? ` btn-icon` : ''
+					}${nothing ? ` btn-nothing` : ''} cursor-target`}
+					target={target}
 					rel="noreferrer"
 					title={title}
 				>
@@ -57,4 +69,5 @@ Button.propTypes = {
 	justIcon: PropTypes.bool,
 	nothing: PropTypes.bool,
 	title: PropTypes.string,
+	target: PropTypes.string,
 };
