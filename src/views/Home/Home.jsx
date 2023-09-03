@@ -68,11 +68,11 @@ function Home() {
 
 				<div className="home__actions">
 					<Link className="home--action" to="/work">
-						<span>my work</span>
+						<span>{locale.locale['home-work']}</span>
 						<Icon name="arrow-right" size="x-small" title="my work" />
 					</Link>
 					<Link className="home--action" to="/contact">
-						<span>contact me</span>
+						<span>{locale.locale['home-contact']}</span>
 						<Icon name="arrow-right" size="x-small" title="contact me" />
 					</Link>
 				</div>
