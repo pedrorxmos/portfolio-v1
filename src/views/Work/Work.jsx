@@ -55,7 +55,13 @@ function Work() {
 					<div className="work__img">
 						{/* <img src="/img/blank.webp" className="selected-work" alt="selected project image" /> */}
 						{data?.map((e) => (
-							<img className="selected-work" id={e.NO_ID_FIELD} key={e.NO_ID_FIELD} src={`/img/${e.img}.webp`} alt={`${e.title} project image`} />
+							<img
+								className="selected-work"
+								id={e.NO_ID_FIELD}
+								key={e.NO_ID_FIELD}
+								src={e.img}
+								alt={`${e.title} project image`}
+							/>
 						))}
 					</div>
 					<div className="work__projects">
@@ -73,7 +79,10 @@ function Work() {
 								<div className="filter-overlay" onClick={closeFilter}></div>
 								<div className="filter__list">
 									{filter !== locale.locale['filter-title'] && (
-										<button className="filter-button cursor-target" onClick={() => changeCategory(locale.locale['filter-title'])}>
+										<button
+											className="filter-button cursor-target"
+											onClick={() => changeCategory(locale.locale['filter-title'])}
+										>
 											{locale.locale['filter-reset']}
 										</button>
 									)}

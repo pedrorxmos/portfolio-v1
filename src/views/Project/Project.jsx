@@ -15,23 +15,9 @@ function Project() {
 	const data = useDoc(locale.locale['firebase-projects'], id);
 
 	const nextProject = work?.sort((a, b) => a.order - b.order)[data?.order === work.length - 1 ? 0 : data?.order + 1];
-	const previousProject = work?.sort((a, b) => a.order - b.order)[data?.order === 0 ? work.length - 1 : data?.order - 1];
-
-	const changePreview = (e) => {
-		setTimeout(() => {
-			document.querySelector('.actions__preview .preview__img').style.backgroundImage = `url('/img/${e.target.getAttribute('data-img')}.webp')`;
-			document.querySelector('.actions__preview .preview__title').textContent = e.target.getAttribute('data-title');
-		}, 20);
-	};
-
-	const onMouseEnter = (e) => {
-		document.querySelector('.actions__preview').style.opacity = 0.8;
-		changePreview(e);
-	};
-
-	const onMouseLeave = () => {
-		document.querySelector('.actions__preview').style.opacity = 0;
-	};
+	const previousProject = work?.sort((a, b) => a.order - b.order)[
+		data?.order === 0 ? work.length - 1 : data?.order - 1
+	];
 
 	return (
 		<>
@@ -43,38 +29,18 @@ function Project() {
 					</Link>
 
 					<div className="actions__other">
-						<Link
-							to={`/work/${previousProject?.NO_ID_FIELD}`}
-							className="action cursor-target btn"
-							data-title={previousProject?.title}
-							data-img={previousProject?.img}
-							onMouseEnter={onMouseEnter}
-							onMouseLeave={onMouseLeave}
-							onClick={changePreview}
-						>
+						<Link to={`/work/${previousProject?.NO_ID_FIELD}`} className="action cursor-target btn">
 							<Icon title="arrow-left" name="arrow-left" size="medium" />
 							<span>{locale.locale['project-previous-button']}</span>
 						</Link>
-						<Link
-							to={`/work/${nextProject?.NO_ID_FIELD}`}
-							className="action cursor-target btn"
-							data-title={nextProject?.title}
-							data-img={nextProject?.img}
-							onMouseEnter={onMouseEnter}
-							onMouseLeave={onMouseLeave}
-							onClick={changePreview}
-						>
+						<Link to={`/work/${nextProject?.NO_ID_FIELD}`} className="action cursor-target btn">
 							<span>{locale.locale['project-next-button']}</span>
 							<Icon title="arrow-right" name="arrow-right" size="medium" />
 						</Link>
-						{/* <div className="actions__preview" style={{ opacity: 0 }}>
-							<div className="preview__img"></div>
-							<small className="preview__title">{previousProject?.title}</small>
-						</div> */}
 					</div>
 				</div>
 				<div className="detail__section">
-					<div className="detail__img">{data && <img src={`/img/${data?.img}.webp`} alt={`${data?.title} image`} />}</div>
+					<div className="detail__img">{data && <img src={data.img} alt={`${data?.title} image`} />}</div>
 
 					<div className="detail__info">
 						<div className="info__title">
@@ -90,9 +56,23 @@ function Project() {
 						</div>
 						<p className="info__description">{data?.description}</p>
 						<div className="info__actions">
-							<Button type="link" action={data?.demo} value={locale.locale['project-demo']} color="main" leftIcon="external-link" size="medium" />
+							<Button
+								type="link"
+								action={data?.demo}
+								value={locale.locale['project-demo']}
+								color="main"
+								leftIcon="external-link"
+								size="medium"
+							/>
 							{data?.code && (
-								<Button type="link" action={data?.code} value={locale.locale['project-code']} color="secondary" leftIcon="github" size="medium" />
+								<Button
+									type="link"
+									action={data?.code}
+									value={locale.locale['project-code']}
+									color="secondary"
+									leftIcon="github"
+									size="medium"
+								/>
 							)}
 						</div>
 					</div>
