@@ -108,7 +108,7 @@ function Contact() {
 						<a href="https://codepen.io/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer" title="codepen">
 							<Icon title="codepen" name="codepen" size="x-normal" />
 						</a>
-						<a href="https://twitter.com/pedrorxmos" className="cursor-target" target="_blank" rel="noreferrer" title="twitter">
+						<a href="https://twitter.com/pedrorxmosdev" className="cursor-target" target="_blank" rel="noreferrer" title="twitter">
 							<Icon title="twitter" name="twitter" size="x-normal" />
 						</a>
 						<a
