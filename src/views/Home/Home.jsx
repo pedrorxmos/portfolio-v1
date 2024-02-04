@@ -54,7 +54,7 @@ function Home() {
 						justIcon
 						size="x-big"
 						color="primary"
-						action="https://twitter.com/pedrorxmos"
+						action="https://twitter.com/pedrorxmosdev"
 					/>
 					<Button
 						type="link"
