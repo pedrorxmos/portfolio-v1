@@ -8,6 +8,8 @@ import Grain from './components/Grain/Grain';
 import Three from './components/Three/Three';
 import { LocacleProvider } from './providers/LocaleContext';
 import ScrollToTop from './components/ScrollToTop';
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
 	const firestoreInstance = getFirestore(useFirebaseApp());
 
@@ -23,6 +25,7 @@ function App() {
 					<Grain />
 				</FirestoreProvider>
 			</LocacleProvider>
+			<Analytics />
 		</>
 	);
 }
