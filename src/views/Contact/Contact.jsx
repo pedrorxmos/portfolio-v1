@@ -35,15 +35,14 @@ function Contact() {
 				// console.log(result.text);
 				setMailStatus(locale.locale['form-sent']);
 				document.querySelector('.form-status-mail').classList.add('sent');
+				form.current.reset();
 			},
 			(error) => {
-				// console.log(error.text);
-				setMailStatus(`${locale.locale['form-pending']}: ${error.text}`);
+				console.error('EmailJS error:', error);
+				setMailStatus(`${locale.locale['form-error']}: ${error.text || error.message}`);
 				document.querySelector('.form-status-mail').classList.add('error');
 			}
 		);
-
-		e.target.reset();
 	};
 
 	const closeMssg = (e) => {

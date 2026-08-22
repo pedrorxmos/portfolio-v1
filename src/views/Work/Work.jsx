@@ -46,7 +46,7 @@ function Work() {
 			!cat.includes(e.category) ? cat.push(e.category) : '';
 		});
 		setCategories(cat);
-	}, [categories, data]);
+	}, [data]);
 
 	return (
 		<>
@@ -92,7 +92,7 @@ function Work() {
 											filter === category ? (
 												''
 											) : (
-												<button className="filter-button cursor-target" onClick={() => changeCategory(category)}>
+																<button key={category} className="filter-button cursor-target" onClick={() => changeCategory(category)}>
 													{category}
 												</button>
 											);
